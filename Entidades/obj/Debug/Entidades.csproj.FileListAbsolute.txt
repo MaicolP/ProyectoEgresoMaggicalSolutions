@@ -1,0 +1,10 @@
+c:\users\administrador\documents\visual studio 2015\Projects\Software del Pañol\Entidades\bin\Debug\Entidades.dll
+c:\users\administrador\documents\visual studio 2015\Projects\Software del Pañol\Entidades\bin\Debug\Entidades.pdb
+c:\users\administrador\documents\visual studio 2015\Projects\Software del Pañol\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+c:\users\administrador\documents\visual studio 2015\Projects\Software del Pañol\Entidades\obj\Debug\Entidades.dll
+c:\users\administrador\documents\visual studio 2015\Projects\Software del Pañol\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\bin\Debug\Entidades.pdb
