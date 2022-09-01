@@ -8,3 +8,8 @@ C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\obj\Debug\Entidades.d
 C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\bin\Debug\Entidades.dll
 C:\Users\Administrador\Documents\SofwareDelPanol\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.pdb

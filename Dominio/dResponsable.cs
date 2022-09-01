@@ -33,5 +33,11 @@ namespace Dominio
             pResponsable unR = new pResponsable();
             return unR.listarResponsableSegunTipo(docente);
         }
+
+        public eResponsable buscarResponsable(eResponsable responsable)
+        {
+            pResponsable unR = new pResponsable();
+            return unR.buscarResponsable(responsable);
+        }
     }
 }

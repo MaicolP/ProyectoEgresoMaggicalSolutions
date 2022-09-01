@@ -20,14 +20,14 @@ namespace Persistencia
 
         public void bajaResponsable(eResponsable responsable)
         {
-            string consultaSQL = "DELETE FROM responsable WHERE ci='" + responsable.ci + "';";
+            string consultaSQL = "DELETE responsable, usuario FROM responsable INNER JOIN usuario ON usuario.id_usuario=responsable.id_responsable WHERE usuario.ci='" + responsable.ci + "';";
             ejecutarSQL(consultaSQL);
         }
 
         public List<eResponsable> listarResponsable()
         {
             List<eResponsable> _responsables = new List<eResponsable>();
-            string consultaSQL = "SELECT * FROM usuario INNER JOIN responsable ON usuario.id_usuario=responsable.id_responsable;";
+            string consultaSQL = "SELECT id_usuario, ci, nombre, apellido, clave FROM usuario INNER JOIN responsable ON usuario.id_usuario=responsable.id_responsable;";
             MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
             while (resultado.Read())
             {
@@ -39,7 +39,7 @@ namespace Persistencia
         public List<eResponsable> listarResponsableSegunTipo(bool docente) //True son docentes y false alumnos
         {
             List<eResponsable> _responsables = new List<eResponsable>();
-            string consultaSQL = "SELECT * FROM usuario INNER JOIN responsable ON usuario.id_usuario=responsable.id_responsable WHERE docente=" + docente + ";";
+            string consultaSQL = "SELECT id_usuario, ci, nombre, apellido, clave FROM usuario INNER JOIN responsable ON usuario.id_usuario=responsable.id_responsable WHERE docente=" + docente + ";";
             MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
             while (resultado.Read())
             {
@@ -57,6 +57,18 @@ namespace Persistencia
             responsable.apellido = resultado.GetString("apellido");
             responsable.clave = resultado.GetString("clave");
 
+            return responsable;
+        }
+
+        public eResponsable buscarResponsable(eResponsable responsable)
+        {
+            string consultaSQL = "SELECT * FROM responsable INNER JOIN usuario ON usuario.id_usuario=responsable.id_responsable WHERE usuario.ci='" + responsable.ci + "';";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            responsable = null;
+            while (resultado.Read())
+            {
+                responsable = recrearR(resultado);
+            }
             return responsable;
         }
     }

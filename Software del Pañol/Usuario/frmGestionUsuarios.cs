@@ -22,6 +22,8 @@ namespace Software_del_Pañol
         private void frmGestionUsuarios_Load(object sender, EventArgs e)
         {
             cbxTipoUsuario.SelectedIndex = 0;
+            actualizarDgv();
+            modoEdicion(false);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace Software_del_Pañol
                         unC.altaResponsable(responsable);
                     }
 
-                    cbxTipoUsuario_SelectedIndexChanged(cbxTipoUsuario, EventArgs.Empty); //Invoca el evento del cbx para realizar el refresh del dgv
+                    actualizarDgv();
 
                     mskCi.Clear();
                     txtNombre.Clear();
@@ -94,16 +96,108 @@ namespace Software_del_Pañol
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            dUsuario unU = new dUsuario();
-            DialogResult result = MessageBox.Show("Está seguro que desea eliminar los siguientes " + dgvUsuarios.SelectedRows.Count.ToString() +
-                            " usuarios?", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("Está seguro que desea eliminar el usuario con la CI " + dgvUsuarios.CurrentCell.OwningRow.Cells["ci"].Value.ToString() +
+                            " ?", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (result == DialogResult.OK)
             {
-                
+                eResponsable responsable = new eResponsable();
+                responsable.ci = mskCi.Text;
+                dResponsable unDR = new dResponsable();
+
+                if (unDR.buscarResponsable(responsable) != null)
+                {
+                    unDR.bajaResponsable(responsable);
+                } else
+                {
+                    eAsisTec asisTec = new eAsisTec();
+                    asisTec.ci = mskCi.Text;
+                    dAsisTec unDAsis = new dAsisTec();
+                    unDAsis.bajaAsisTec(asisTec);
+                }
+                actualizarDgv();
             }
         }
 
         private void cbxTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            actualizarDgv();
+        }
+
+        private void modoEdicion(bool aux)
+        {
+            if (aux == true)
+            {
+                btnAgregar.Hide();
+                btnEliminar.Show();
+                btnModificar.Show();
+                mskCi.Enabled = false;
+
+                rbAlumno.Enabled = false;
+                rbDocente.Enabled = false;
+                rbAsisTec.Enabled = false;
+            } else
+            {
+                btnAgregar.Show();
+                mskCi.Enabled = true;
+                btnEliminar.Hide();
+                btnModificar.Hide();
+
+                mskCi.Clear();
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtClave.Clear();
+
+                rbAlumno.Enabled = true;
+                rbDocente.Enabled = true;
+                rbAsisTec.Enabled = true;
+            }
+        }
+
+        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedCells.Count != 0)
+            {
+                modoEdicion(true);
+                dUsuario unDu = new dUsuario();
+                eUsuario usuario = new eUsuario();
+                usuario.ci = dgvUsuarios.CurrentCell.OwningRow.Cells["ci"].Value.ToString();
+                usuario = unDu.buscarUsuario(usuario);
+                mskCi.Text = usuario.ci;
+                txtNombre.Text = usuario.nombre;
+                txtApellido.Text = usuario.apellido;
+                txtClave.Text = usuario.clave;
+            } else
+            {
+                modoEdicion(false);
+            }
+
+        }
+
+        private void frmGestionUsuarios_MouseClick(object sender, MouseEventArgs e)
+        {
+            dgvUsuarios.ClearSelection();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if ( txtNombre.Text != "" || txtApellido.Text != "" || txtClave.Text != "" )
+            {
+                dUsuario unU = new dUsuario();
+                eUsuario usuario = new eUsuario();
+                usuario.ci = mskCi.Text;
+                usuario.nombre = txtNombre.Text;
+                usuario.apellido = txtApellido.Text;
+                usuario.clave = txtClave.Text;
+
+                unU.modificarUsuario(usuario);
+                actualizarDgv();
+            } else
+            {
+                lblMensaje.Text = "No puede dejar campos vacíos";
+            }
+        }
+
+        private void actualizarDgv()
         {
             switch (cbxTipoUsuario.SelectedIndex)
             {
@@ -114,10 +208,12 @@ namespace Software_del_Pañol
                 case 1:     //Alumnos
                     dResponsable unRA = new dResponsable();
                     dgvUsuarios.DataSource = unRA.listarResponsableSegunTipo(false);
+                    dgvUsuarios.Columns.Remove("docente");
                     break;
                 case 2:     //Docentes
                     dResponsable unRD = new dResponsable();
                     dgvUsuarios.DataSource = unRD.listarResponsableSegunTipo(true);
+                    dgvUsuarios.Columns.Remove("docente");
                     break;
                 case 3:     //Asistentes Tecnicos
                     dAsisTec unAT = new dAsisTec();
@@ -125,6 +221,5 @@ namespace Software_del_Pañol
                     break;
             }
         }
-
     }
 }

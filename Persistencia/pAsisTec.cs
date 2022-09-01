@@ -18,7 +18,7 @@ namespace Persistencia
 
         public void bajaAsisTec(eAsisTec asisTec)
         {
-            string consultaSQL = "DELETE FROM asistente_tecnico WHERE ci='" + asisTec.ci + "';";
+            string consultaSQL = "DELETE asistente_tecnico, usuario FROM asistente_tecnico INNER JOIN usuario ON usuario.id_usuario=asistente_tecnico.id_asistente WHERE usuario.ci='" + asisTec.ci + "';";
             ejecutarSQL(consultaSQL);
         }
 

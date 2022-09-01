@@ -31,7 +31,7 @@ namespace Persistencia
 
         public void bajaUsuario(eUsuario usuario)
         {
-            string consultaSQL = "DELETE FROM usuario WHERE ci_usuario='" + usuario.ci + "';";
+            string consultaSQL = "DELETE FROM usuario WHERE ci='" + usuario.ci + "';";
             ejecutarSQL(consultaSQL);
         }
 
