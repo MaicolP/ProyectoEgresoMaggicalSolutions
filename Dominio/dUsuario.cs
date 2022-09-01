@@ -10,7 +10,7 @@ namespace Dominio
 {
     public class dUsuario
     {
-
+        
         public eUsuario login(string nombre, string clave)
         {
             pUsuario unU = new pUsuario();
