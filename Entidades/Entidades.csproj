@@ -44,6 +44,7 @@
     <Compile Include="eResponsable.cs" />
     <Compile Include="eEquipo.cs" />
     <Compile Include="eEspacio.cs" />
+    <Compile Include="eTipoDeEquipo.cs" />
     <Compile Include="eUsuario.cs" />
     <Compile Include="ePrestamo.cs" />
     <Compile Include="ePrestamoDir.cs" />

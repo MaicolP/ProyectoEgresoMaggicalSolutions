@@ -13,3 +13,8 @@ C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\bin\Debug\
 C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.dll
 C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.dll
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.pdb

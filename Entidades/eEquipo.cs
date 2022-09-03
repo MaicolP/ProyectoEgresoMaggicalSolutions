@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class eEquipo
+    public class eEquipo
     {
-        int id { get; set; }
-        string nom { get; set; }
-        string numSerie { get; set; }
-        bool asegurado { get; set; }
-        estado estado { get; set; }
-        string observaciones { get; set; }
-        DateTime fechaIngreso { get; set; }
-
-        //Tipo y subtipo????????????
-
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string nroSerie { get; set; }
+        public string precio { get; set; }
+        public bool asegurado { get; set; }
+        public estado estado { get; set; }
+        public string observaciones { get; set; }
+        public DateTime fechaIngreso { get; set; }
+        public eTipoDeEquipo tipo { get; set; }
     }
-
-    enum estado {Disponible,Reservado,Mantenimiento,Roto}
+    public enum estado {Disponible,Reservado,Mantenimiento,Roto}
 }

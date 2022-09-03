@@ -15,8 +15,6 @@ namespace Software_del_Pañol
 {
     public partial class frmLogin : Form
     {
-        public static eUsuario usuario;
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -36,6 +34,7 @@ namespace Software_del_Pañol
             } else
             {
                 dUsuario unU = new dUsuario();
+                eUsuario usuario = new eUsuario();
                 usuario = unU.login(txtUsuario.Text, txtClave.Text);
                 if (usuario == null)
                 {
@@ -49,9 +48,9 @@ namespace Software_del_Pañol
                     this.Hide();
 
                     frmPrincipal frm1 = new frmPrincipal();
-
                     frm1.Show();
 
+                    
                 }
             }
 

@@ -63,6 +63,7 @@
             this.Controls.Add(this.pnlTitulo);
             this.Name = "frmInicio";
             this.Text = "frmAltaUsuario";
+            this.Load += new System.EventHandler(this.frmInicio_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.ResumeLayout(false);
 

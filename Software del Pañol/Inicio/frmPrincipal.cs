@@ -29,7 +29,7 @@ namespace Software_del_Pañol
             cambiarFormHijo(new frmInicio());
         }
 
-        private void cambiarFormHijo(Form formHijo)
+        protected void cambiarFormHijo(Form formHijo)
         {
             if (frmHijoSeleccionado != null) frmHijoSeleccionado.Close();
             frmHijoSeleccionado = formHijo;
@@ -41,15 +41,6 @@ namespace Software_del_Pañol
             formHijo.BringToFront();
             formHijo.Show();
         }
-
-        #region Inicio
-
-        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cambiarFormHijo(new frmInicio());
-        }
-
-        #endregion
 
         #region Titulo
 
@@ -98,6 +89,15 @@ namespace Software_del_Pañol
 
         #endregion
 
+        #region Inicio
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmInicio());
+        }
+
+        #endregion
+
         #region Gestion Usuario
 
         private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,14 +109,9 @@ namespace Software_del_Pañol
 
         #region Gestion Equipo
 
-        private void agregarEquipoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gestionDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cambiarFormHijo(new frmAltaEquipo());
-        }
-
-        private void listaDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cambiarFormHijo(new frmListaEquipo());
+            cambiarFormHijo(new frmGestionDeEquipo());
         }
 
         #endregion

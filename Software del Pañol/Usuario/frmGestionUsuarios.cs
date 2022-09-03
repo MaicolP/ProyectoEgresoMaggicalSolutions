@@ -30,13 +30,18 @@ namespace Software_del_Pañol
         {
             if (mskCi.MaskFull != true || txtNombre.Text == "" || txtApellido.Text == "" || txtClave.Text == "")
             {
-                lblMensaje.Text = "Relle todos los campos porfavor";
-            } else if (mskCi.Text == txtNombre.Text || mskCi.Text == txtApellido.Text || txtNombre == txtApellido)
+                lblMensaje.Text = "Relle todos los campos por favor";
+            } else if (mskCi.Text == txtNombre.Text || mskCi.Text == txtApellido.Text || txtNombre.Text == txtApellido.Text ||
+                        txtClave.Text == txtApellido.Text || txtClave.Text == txtNombre.Text)
             {
                 lblMensaje.Text = "No pueden existir campos con el mismo nombre, excepto CI y Clave";
             } else if (rbDocente.Checked == false && rbAsisTec.Checked == false && rbAlumno.Checked == false)
             {
-                lblMensaje.Text = "Porfavor seleccione un tipo de usuario";
+                lblMensaje.Text = "Por favor seleccione un tipo de usuario";
+            }
+            else if (txtNombre.Text.Length > 15 || txtClave.Text.Length > 15 || txtApellido.Text.Length > 15 )
+            {
+                lblMensaje.Text = "Los campos Nombre, Apellido y clave no pueden tener más de 15 caracteres";
             } else
             {
                 eUsuario usuario = new eUsuario();
@@ -115,6 +120,7 @@ namespace Software_del_Pañol
                     unDAsis.bajaAsisTec(asisTec);
                 }
                 actualizarDgv();
+                lblMensaje.Text = "";
             }
         }
 
@@ -170,7 +176,6 @@ namespace Software_del_Pañol
             {
                 modoEdicion(false);
             }
-
         }
 
         private void frmGestionUsuarios_MouseClick(object sender, MouseEventArgs e)
@@ -180,7 +185,17 @@ namespace Software_del_Pañol
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if ( txtNombre.Text != "" || txtApellido.Text != "" || txtClave.Text != "" )
+            if ( txtNombre.Text == "" || txtApellido.Text == "" || txtClave.Text == "" )
+            {
+                lblMensaje.Text = "Rellene todos los campos por favor";
+            } else if (txtNombre.Text.Length > 15 || txtClave.Text.Length > 15 || txtApellido.Text.Length > 15)
+            {
+                lblMensaje.Text = "Los campos Nombre, Apellido y clave no pueden tener más de 15 caracteres";
+            } else if (mskCi.Text == txtNombre.Text || mskCi.Text == txtApellido.Text || txtNombre.Text == txtApellido.Text ||
+                        txtClave.Text == txtApellido.Text || txtClave.Text == txtNombre.Text)
+            {
+                lblMensaje.Text = "No pueden existir campos con el mismo nombre, excepto CI y Clave";
+            } else
             {
                 dUsuario unU = new dUsuario();
                 eUsuario usuario = new eUsuario();
@@ -191,9 +206,7 @@ namespace Software_del_Pañol
 
                 unU.modificarUsuario(usuario);
                 actualizarDgv();
-            } else
-            {
-                lblMensaje.Text = "No puede dejar campos vacíos";
+                lblMensaje.Text = "";
             }
         }
 

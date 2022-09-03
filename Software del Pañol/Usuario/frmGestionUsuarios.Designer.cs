@@ -50,6 +50,11 @@
             this.cbxTipoUsuario = new System.Windows.Forms.ComboBox();
             this.mskCi = new System.Windows.Forms.MaskedTextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -117,7 +122,7 @@
             this.lblCi.AutoSize = true;
             this.lblCi.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCi.ForeColor = System.Drawing.Color.Black;
-            this.lblCi.Location = new System.Drawing.Point(70, 114);
+            this.lblCi.Location = new System.Drawing.Point(1, 116);
             this.lblCi.Name = "lblCi";
             this.lblCi.Size = new System.Drawing.Size(34, 26);
             this.lblCi.TabIndex = 1;
@@ -129,7 +134,7 @@
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.ForeColor = System.Drawing.Color.Black;
-            this.lblNom.Location = new System.Drawing.Point(16, 167);
+            this.lblNom.Location = new System.Drawing.Point(1, 163);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(88, 26);
             this.lblNom.TabIndex = 9;
@@ -141,7 +146,7 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.Black;
-            this.lblApellido.Location = new System.Drawing.Point(16, 216);
+            this.lblApellido.Location = new System.Drawing.Point(1, 212);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(88, 26);
             this.lblApellido.TabIndex = 10;
@@ -153,7 +158,7 @@
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.ForeColor = System.Drawing.Color.Black;
-            this.lblClave.Location = new System.Drawing.Point(41, 264);
+            this.lblClave.Location = new System.Drawing.Point(1, 262);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(63, 26);
             this.lblClave.TabIndex = 11;
@@ -200,6 +205,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.ci,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,7 +238,7 @@
             this.rbAlumno.AutoSize = true;
             this.rbAlumno.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbAlumno.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAlumno.Location = new System.Drawing.Point(71, 318);
+            this.rbAlumno.Location = new System.Drawing.Point(0, 321);
             this.rbAlumno.Name = "rbAlumno";
             this.rbAlumno.Size = new System.Drawing.Size(88, 27);
             this.rbAlumno.TabIndex = 16;
@@ -241,7 +252,7 @@
             this.rbDocente.AutoSize = true;
             this.rbDocente.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbDocente.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDocente.Location = new System.Drawing.Point(67, 351);
+            this.rbDocente.Location = new System.Drawing.Point(0, 354);
             this.rbDocente.Name = "rbDocente";
             this.rbDocente.Size = new System.Drawing.Size(92, 27);
             this.rbDocente.TabIndex = 17;
@@ -255,7 +266,7 @@
             this.rbAsisTec.AutoSize = true;
             this.rbAsisTec.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbAsisTec.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAsisTec.Location = new System.Drawing.Point(0, 384);
+            this.rbAsisTec.Location = new System.Drawing.Point(0, 387);
             this.rbAsisTec.Name = "rbAsisTec";
             this.rbAsisTec.Size = new System.Drawing.Size(159, 27);
             this.rbAsisTec.TabIndex = 18;
@@ -330,6 +341,41 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // ci
+            // 
+            this.ci.DataPropertyName = "ci";
+            this.ci.HeaderText = "CI";
+            this.ci.Name = "ci";
+            this.ci.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "apellido";
+            this.Column3.HeaderText = "Apellido";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "clave";
+            this.Column4.HeaderText = "Clave";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // frmGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,5 +432,10 @@
         private System.Windows.Forms.ComboBox cbxTipoUsuario;
         private System.Windows.Forms.MaskedTextBox mskCi;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ci;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

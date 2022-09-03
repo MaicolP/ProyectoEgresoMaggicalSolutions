@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="clsPersistencia.cs" />
     <Compile Include="pAsisTec.cs" />
+    <Compile Include="pEquipo.cs" />
     <Compile Include="pResponsable.cs" />
+    <Compile Include="pTipoDeEquipo.cs" />
     <Compile Include="pUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Software_del_Pañol
 {
@@ -17,5 +18,8 @@ namespace Software_del_Pañol
             InitializeComponent();
         }
 
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
