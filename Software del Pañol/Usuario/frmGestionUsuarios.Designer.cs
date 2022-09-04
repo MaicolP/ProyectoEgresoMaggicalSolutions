@@ -42,6 +42,11 @@
             this.lblClave = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbAlumno = new System.Windows.Forms.RadioButton();
             this.rbDocente = new System.Windows.Forms.RadioButton();
             this.rbAsisTec = new System.Windows.Forms.RadioButton();
@@ -50,11 +55,6 @@
             this.cbxTipoUsuario = new System.Windows.Forms.ComboBox();
             this.mskCi = new System.Windows.Forms.MaskedTextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -85,36 +85,36 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.LightGray;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNombre.Location = new System.Drawing.Point(111, 163);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(231, 28);
+            this.txtNombre.Size = new System.Drawing.Size(231, 26);
             this.txtNombre.TabIndex = 6;
             // 
             // txtClave
             // 
             this.txtClave.BackColor = System.Drawing.Color.LightGray;
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtClave.Location = new System.Drawing.Point(111, 262);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(231, 28);
+            this.txtClave.Size = new System.Drawing.Size(231, 26);
             this.txtClave.TabIndex = 8;
             // 
             // txtApellido
             // 
             this.txtApellido.BackColor = System.Drawing.Color.LightGray;
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtApellido.Location = new System.Drawing.Point(111, 212);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(231, 28);
+            this.txtApellido.Size = new System.Drawing.Size(231, 26);
             this.txtApellido.TabIndex = 7;
             // 
             // lblCi
@@ -233,6 +233,41 @@
             this.dgvUsuarios.TabIndex = 14;
             this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // ci
+            // 
+            this.ci.DataPropertyName = "ci";
+            this.ci.HeaderText = "CI";
+            this.ci.Name = "ci";
+            this.ci.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "apellido";
+            this.Column3.HeaderText = "Apellido";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "clave";
+            this.Column4.HeaderText = "Clave";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // rbAlumno
             // 
             this.rbAlumno.AutoSize = true;
@@ -319,12 +354,12 @@
             this.mskCi.AllowPromptAsInput = false;
             this.mskCi.BackColor = System.Drawing.Color.LightGray;
             this.mskCi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mskCi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCi.HidePromptOnLeave = true;
             this.mskCi.Location = new System.Drawing.Point(111, 114);
             this.mskCi.Mask = "0000000";
             this.mskCi.Name = "mskCi";
-            this.mskCi.Size = new System.Drawing.Size(231, 28);
+            this.mskCi.Size = new System.Drawing.Size(231, 26);
             this.mskCi.TabIndex = 22;
             this.mskCi.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -340,41 +375,6 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // ci
-            // 
-            this.ci.DataPropertyName = "ci";
-            this.ci.HeaderText = "CI";
-            this.ci.Name = "ci";
-            this.ci.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nombre";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "apellido";
-            this.Column3.HeaderText = "Apellido";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "clave";
-            this.Column4.HeaderText = "Clave";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // frmGestionUsuarios
             // 

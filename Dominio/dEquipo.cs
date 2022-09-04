@@ -39,5 +39,17 @@ namespace Dominio
             pEquipo unE = new pEquipo();
             return unE.buscarEquipo(equipo);
         }
+
+        public List<eEquipo> listarEequipo(string tipo)
+        {
+            pEquipo unE = new pEquipo();
+            return unE.listarEquipo(tipo);
+        }
+
+        public List<eEquipo> listarEequipo(string tipo, string subtipo)
+        {
+            pEquipo unE = new pEquipo();
+            return unE.listarEquipo(tipo, subtipo);
+        }
     }
 }

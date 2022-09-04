@@ -25,7 +25,6 @@ namespace Software_del_Pañol
         private void frmGestionDeEquipo_Load(object sender, EventArgs e)
         {
             modoEdicion(false);
-            actualizarDgv();
             actualizarCbx();
         }
 
@@ -48,6 +47,7 @@ namespace Software_del_Pañol
                 btnEliminar.Hide();
                 btnModificar.Hide();
 
+                txtPrecio.Clear();
                 txtNombre.Clear();
                 txtNroSerie.Clear();
                 txtObservaciones.Clear();
@@ -55,40 +55,154 @@ namespace Software_del_Pañol
             }
         }
 
+        #region DataGridView
+
         private void actualizarDgv()
         {
             dEquipo unE = new dEquipo();
-            List<eEquipo> _equipos = unE.listarEquipo();
-            dgvEquipos.DataSource = _equipos;
+            List<eEquipo> _equipos = new List<eEquipo>();
+
+            if (cbxTipoList.Text == "Todos")
+            {
+                _equipos = unE.listarEquipo();
+                dgvEquipos.DataSource = _equipos;
+
+            }
+            else
+            {
+                if (cbxSubtipoList.Text == "Todos")
+                {
+                    _equipos = unE.listarEequipo(cbxTipoList.Text);
+                    dgvEquipos.DataSource = _equipos;
+                } else
+                {
+                    _equipos = unE.listarEequipo(cbxTipoList.Text, cbxSubtipoList.Text);
+                    dgvEquipos.DataSource = _equipos;
+                }
+            }
+
+            dgvEquipos.Columns["tipo"].Visible = false;
         }
+
+        private void dgvEquipos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEquipos.SelectedCells.Count != 0)
+            {
+                modoEdicion(true);
+                eEquipo equipo = new eEquipo();
+                equipo.id = Convert.ToInt32(dgvEquipos.CurrentCell.OwningRow.Cells["id_equipo"].Value);
+                dEquipo unE = new dEquipo();
+                equipo = unE.buscarEquipo(equipo);
+
+                txtNombre.Text = equipo.nombre;
+                txtNroSerie.Text = equipo.nroSerie;
+                txtObservaciones.Text = equipo.observaciones;
+                txtPrecio.Text = equipo.precio;
+                dtpFechaIngreso.Value = equipo.fechaIngreso.Date;
+                ckbAsegurado.Checked = equipo.asegurado;
+                cbxEstado.Text = equipo.estado;
+                cbxTipo.Text = equipo.tipo.nombre;
+                cbxSubtipo.Text = equipo.tipo.subtipo;
+            }
+            else
+            {
+                modoEdicion(false);
+            }
+        }
+
+        #endregion
+
+        #region ComboBox
 
         private void actualizarCbx()
         {
+            cbxEstado.DataSource = Enum.GetValues(typeof(estado));
+
             dTipoDeEquipo unT = new dTipoDeEquipo();
             _tipos = unT.listarTipoDeEquipo();
 
             foreach (eTipoDeEquipo tipo in _tipos)
             {
-                if (cbxTipo.Items.Contains(tipo.nombre) == false) cbxTipo.Items.Add(tipo.nombre);
+                if (cbxTipo.Items.Contains(tipo.nombre) == false)
+                {
+                    cbxTipo.Items.Add(tipo.nombre);
+                    cbxTipoList.Items.Add(tipo.nombre);
+                }
+            }
+            cbxTipoList.Items.Add("Todos");
+            cbxTipoList.SelectedItem = "Todos";
+        }
+
+        private void cbxTipo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbxTipo.Text != null)
+            {
+                cbxSubtipo.Items.Clear();
+                cbxSubtipo.Enabled = true;
+                foreach (eTipoDeEquipo tipo in _tipos)
+                {
+                    if (tipo.nombre == cbxTipo.Text)
+                    {
+                        cbxSubtipo.Items.Add(tipo.subtipo);
+                    }
+                }
             }
         }
+
+        private void cbxTipoList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbxTipoList.Text != "Todos")
+            {
+                cbxSubtipoList.Items.Clear();
+                cbxSubtipoList.Enabled = true;
+                foreach (eTipoDeEquipo tipo in _tipos)
+                {
+                    if (tipo.nombre == cbxTipoList.Text)
+                    {
+                        cbxSubtipoList.Items.Add(tipo.subtipo);
+                    }
+                }
+                cbxSubtipoList.Items.Add("Todos");
+                cbxSubtipoList.SelectedItem = "Todos";
+            }
+            else
+            {
+                cbxSubtipoList.Items.Clear();
+                cbxSubtipoList.Enabled = false;
+                actualizarDgv();
+            }
+        }
+
+        private void cbxSubtipoList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbxSubtipoList.Text != null)
+            {
+                actualizarDgv();
+            }
+        }
+
+        #endregion
+
+        #region Botones
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text == "" || txtNroSerie.Text == "" || dtpFechaIngreso.Value == null)
             {
                 lblMensaje.Text = "Rellene todos los campos por favor, los únicos opcionales son Observaciones y Precio";
-            } else if (cbxTipo.Text == "" || cbxSubtipo.Text == "")
+            }
+            else if (cbxTipo.Text == "" || cbxSubtipo.Text == "")
             {
                 lblMensaje.Text = "Por favor seleccione Tipo y Subtipo del equipo";
-            } else
+            }
+            else
             {
                 eEquipo equipo = new eEquipo();
                 equipo.nombre = txtNombre.Text;
                 equipo.nroSerie = txtNroSerie.Text;
                 equipo.precio = txtPrecio.Text;
                 equipo.observaciones = txtObservaciones.Text;
-                equipo.estado = estado.Disponible;
+                equipo.estado = cbxEstado.Text;
                 equipo.fechaIngreso = dtpFechaIngreso.Value;
                 equipo.asegurado = ckbAsegurado.Checked;
                 foreach (eTipoDeEquipo tipo in _tipos)       //Asignar el tipo elegido
@@ -110,48 +224,6 @@ namespace Software_del_Pañol
             }
         }
 
-        private void dgvEquipos_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvEquipos.SelectedCells.Count != 0)
-            {
-                modoEdicion(true);
-                eEquipo equipo = new eEquipo();
-                equipo.id = Convert.ToInt32(dgvEquipos.CurrentCell.OwningRow.Cells[1].Value);
-                dEquipo unE = new dEquipo();
-                equipo = unE.buscarEquipo(equipo);
-
-                txtNombre.Text = equipo.nombre;
-                txtNroSerie.Text = equipo.nroSerie;
-                txtObservaciones.Text = equipo.observaciones;
-                txtPrecio.Text = equipo.precio;
-                dtpFechaIngreso.Value = equipo.fechaIngreso.Date;
-                ckbAsegurado.Checked = equipo.asegurado;
-
-                cbxTipo.Text = equipo.tipo.nombre;
-                cbxSubtipo.Text = equipo.tipo.subtipo;
-                // !! Falta realizar Tipos !!
-
-            } else
-            {
-                modoEdicion(false);
-            }
-        }
-
-        private void cbxTipo_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cbxTipo.SelectedText != null)
-            {
-                cbxSubtipo.Items.Clear();
-                cbxSubtipo.Enabled = true;
-                foreach (eTipoDeEquipo tipo in _tipos)
-                {
-                    if (tipo.nombre == cbxTipo.Text)
-                    {
-                        cbxSubtipo.Items.Add(tipo.subtipo);
-                    }
-                }
-            }
-        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -168,5 +240,47 @@ namespace Software_del_Pañol
                 lblMensaje.Text = "";
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "" || txtNroSerie.Text == "" || dtpFechaIngreso.Value == null)
+            {
+                lblMensaje.Text = "Rellene todos los campos por favor, los únicos opcionales son Observaciones y Precio";
+            }
+            else if (cbxTipo.Text == "" || cbxSubtipo.Text == "")
+            {
+                lblMensaje.Text = "Por favor seleccione Tipo y Subtipo del equipo";
+            }
+            else
+            {
+                eEquipo equipo = new eEquipo();
+                equipo.id = Convert.ToInt32(dgvEquipos.CurrentRow.Cells["id_equipo"].Value);
+                equipo.nombre = txtNombre.Text;
+                equipo.nroSerie = txtNroSerie.Text;
+                equipo.precio = txtPrecio.Text;
+                equipo.observaciones = txtObservaciones.Text;
+                equipo.estado = cbxEstado.Text;
+                equipo.fechaIngreso = dtpFechaIngreso.Value;
+                equipo.asegurado = ckbAsegurado.Checked;
+
+                foreach (eTipoDeEquipo tipo in _tipos)       //Asignar el tipo elegido
+                {
+                    if (cbxTipo.Text == tipo.nombre && cbxSubtipo.Text == tipo.subtipo)
+                    {
+                        equipo.tipo = tipo;
+                        break;
+                    }
+                }
+
+                dEquipo unE = new dEquipo();
+                unE.modificarEquipo(equipo);
+                actualizarDgv();
+            }
+        }
+
+
+
+        #endregion
+
     }
 }

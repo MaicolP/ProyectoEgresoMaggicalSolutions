@@ -26,6 +26,103 @@ namespace Software_del_Pañol
             modoEdicion(false);
         }
 
+        private void frmGestionUsuarios_MouseClick(object sender, MouseEventArgs e)
+        {
+            dgvUsuarios.ClearSelection();
+        }
+
+        private void modoEdicion(bool aux)
+        {
+            if (aux == true)
+            {
+                btnAgregar.Hide();
+                btnEliminar.Show();
+                btnModificar.Show();
+                mskCi.Enabled = false;
+
+                rbAlumno.Enabled = false;
+                rbDocente.Enabled = false;
+                rbAsisTec.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Show();
+                mskCi.Enabled = true;
+                btnEliminar.Hide();
+                btnModificar.Hide();
+
+                mskCi.Clear();
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtClave.Clear();
+
+
+                rbAlumno.Enabled = true;
+                rbDocente.Enabled = true;
+                rbAsisTec.Enabled = true;
+            }
+        }
+
+        #region DataGridView
+
+        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedCells.Count != 0)
+            {
+                modoEdicion(true);
+                dUsuario unDu = new dUsuario();
+                eUsuario usuario = new eUsuario();
+                usuario.ci = dgvUsuarios.CurrentCell.OwningRow.Cells["ci"].Value.ToString();
+                usuario = unDu.buscarUsuario(usuario);
+                mskCi.Text = usuario.ci;
+                txtNombre.Text = usuario.nombre;
+                txtApellido.Text = usuario.apellido;
+                txtClave.Text = usuario.clave;
+            }
+            else
+            {
+                modoEdicion(false);
+            }
+        }
+
+        private void actualizarDgv()
+        {
+            switch (cbxTipoUsuario.SelectedIndex)
+            {
+                case 0:     //Todos
+                    dUsuario unU = new dUsuario();
+                    dgvUsuarios.DataSource = unU.listarUsuario();
+                    break;
+                case 1:     //Alumnos
+                    dResponsable unRA = new dResponsable();
+                    dgvUsuarios.DataSource = unRA.listarResponsableSegunTipo(false);
+                    dgvUsuarios.Columns.Remove("docente");
+                    break;
+                case 2:     //Docentes
+                    dResponsable unRD = new dResponsable();
+                    dgvUsuarios.DataSource = unRD.listarResponsableSegunTipo(true);
+                    dgvUsuarios.Columns.Remove("docente");
+                    break;
+                case 3:     //Asistentes Tecnicos
+                    dAsisTec unAT = new dAsisTec();
+                    dgvUsuarios.DataSource = unAT.listarAsisTec();
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region ComboBox
+
+        private void cbxTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            actualizarDgv();
+        }
+
+        #endregion
+
+        #region Botones
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (mskCi.MaskFull != true || txtNombre.Text == "" || txtApellido.Text == "" || txtClave.Text == "")
@@ -124,78 +221,22 @@ namespace Software_del_Pañol
             }
         }
 
-        private void cbxTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            actualizarDgv();
-        }
-
-        private void modoEdicion(bool aux)
-        {
-            if (aux == true)
-            {
-                btnAgregar.Hide();
-                btnEliminar.Show();
-                btnModificar.Show();
-                mskCi.Enabled = false;
-
-                rbAlumno.Enabled = false;
-                rbDocente.Enabled = false;
-                rbAsisTec.Enabled = false;
-            } else
-            {
-                btnAgregar.Show();
-                mskCi.Enabled = true;
-                btnEliminar.Hide();
-                btnModificar.Hide();
-
-                mskCi.Clear();
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtClave.Clear();
-
-                rbAlumno.Enabled = true;
-                rbDocente.Enabled = true;
-                rbAsisTec.Enabled = true;
-            }
-        }
-
-        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvUsuarios.SelectedCells.Count != 0)
-            {
-                modoEdicion(true);
-                dUsuario unDu = new dUsuario();
-                eUsuario usuario = new eUsuario();
-                usuario.ci = dgvUsuarios.CurrentCell.OwningRow.Cells["ci"].Value.ToString();
-                usuario = unDu.buscarUsuario(usuario);
-                mskCi.Text = usuario.ci;
-                txtNombre.Text = usuario.nombre;
-                txtApellido.Text = usuario.apellido;
-                txtClave.Text = usuario.clave;
-            } else
-            {
-                modoEdicion(false);
-            }
-        }
-
-        private void frmGestionUsuarios_MouseClick(object sender, MouseEventArgs e)
-        {
-            dgvUsuarios.ClearSelection();
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if ( txtNombre.Text == "" || txtApellido.Text == "" || txtClave.Text == "" )
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtClave.Text == "")
             {
                 lblMensaje.Text = "Rellene todos los campos por favor";
-            } else if (txtNombre.Text.Length > 15 || txtClave.Text.Length > 15 || txtApellido.Text.Length > 15)
+            }
+            else if (txtNombre.Text.Length > 15 || txtClave.Text.Length > 15 || txtApellido.Text.Length > 15)
             {
                 lblMensaje.Text = "Los campos Nombre, Apellido y clave no pueden tener más de 15 caracteres";
-            } else if (mskCi.Text == txtNombre.Text || mskCi.Text == txtApellido.Text || txtNombre.Text == txtApellido.Text ||
-                        txtClave.Text == txtApellido.Text || txtClave.Text == txtNombre.Text)
+            }
+            else if (mskCi.Text == txtNombre.Text || mskCi.Text == txtApellido.Text || txtNombre.Text == txtApellido.Text ||
+                      txtClave.Text == txtApellido.Text || txtClave.Text == txtNombre.Text)
             {
                 lblMensaje.Text = "No pueden existir campos con el mismo nombre, excepto CI y Clave";
-            } else
+            }
+            else
             {
                 dUsuario unU = new dUsuario();
                 eUsuario usuario = new eUsuario();
@@ -210,29 +251,7 @@ namespace Software_del_Pañol
             }
         }
 
-        private void actualizarDgv()
-        {
-            switch (cbxTipoUsuario.SelectedIndex)
-            {
-                case 0:     //Todos
-                    dUsuario unU = new dUsuario();
-                    dgvUsuarios.DataSource = unU.listarUsuario();
-                    break;
-                case 1:     //Alumnos
-                    dResponsable unRA = new dResponsable();
-                    dgvUsuarios.DataSource = unRA.listarResponsableSegunTipo(false);
-                    dgvUsuarios.Columns.Remove("docente");
-                    break;
-                case 2:     //Docentes
-                    dResponsable unRD = new dResponsable();
-                    dgvUsuarios.DataSource = unRD.listarResponsableSegunTipo(true);
-                    dgvUsuarios.Columns.Remove("docente");
-                    break;
-                case 3:     //Asistentes Tecnicos
-                    dAsisTec unAT = new dAsisTec();
-                    dgvUsuarios.DataSource = unAT.listarAsisTec();
-                    break;
-            }
-        }
+        #endregion
+
     }
 }
