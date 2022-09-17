@@ -141,6 +141,15 @@ namespace Software_del_Pañol
 
         #endregion
 
+        #region Gestion de espacios
+
+        private void gestionDeEspaciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
         #region Solicitar prestamo
 
         private void espacioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,5 +168,9 @@ namespace Software_del_Pañol
         }
 
         #endregion
+
+
+
+       
     }
 }
