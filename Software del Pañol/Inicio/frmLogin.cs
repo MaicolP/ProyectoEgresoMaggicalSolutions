@@ -26,12 +26,15 @@ namespace Software_del_Pañol
             InitializeComponent();
         }
 
+        #region Botones
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtClave.Text == "" || txtUsuario.Text == "")
             {
                 lblMensaje.Text = "Porfavor complete los campos";
-            } else
+            }
+            else
             {
                 dUsuario unU = new dUsuario();
                 eUsuario usuario = new eUsuario();
@@ -41,19 +44,21 @@ namespace Software_del_Pañol
                     lblMensaje.Text = "Usuario o contraseña incorrecta";
                     txtClave.Clear();
                     txtUsuario.Clear();
-                } else
+                }
+                else
                 {
                     txtClave.Clear();
                     txtUsuario.Clear();
                     this.Hide();
-
-                    frmPrincipal frm1 = new frmPrincipal();
+                    frmPrincipal frm1 = new frmPrincipal(usuario);
                     frm1.Show();
-
-                    
                 }
             }
+        }
 
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -66,6 +71,8 @@ namespace Software_del_Pañol
             this.WindowState = FormWindowState.Minimized;
         }
 
+        #endregion
+
         private void pnlMenu_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -76,11 +83,6 @@ namespace Software_del_Pañol
         private void txtUsuarioClave_TextChanged(object sender, EventArgs e)
         {
             if (txtUsuario.Text != "" && txtClave.Text != "") lblMensaje.Text = "";
-        }
-
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void lblFecha_Paint(object sender, PaintEventArgs e)

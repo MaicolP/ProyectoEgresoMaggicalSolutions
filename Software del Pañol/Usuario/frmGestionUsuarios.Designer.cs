@@ -357,7 +357,7 @@
             this.mskCi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCi.HidePromptOnLeave = true;
             this.mskCi.Location = new System.Drawing.Point(111, 114);
-            this.mskCi.Mask = "0000000";
+            this.mskCi.Mask = "00000000";
             this.mskCi.Name = "mskCi";
             this.mskCi.Size = new System.Drawing.Size(231, 26);
             this.mskCi.TabIndex = 22;

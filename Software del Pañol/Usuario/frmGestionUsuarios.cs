@@ -56,7 +56,6 @@ namespace Software_del_Pañol
                 txtApellido.Clear();
                 txtClave.Clear();
 
-
                 rbAlumno.Enabled = true;
                 rbDocente.Enabled = true;
                 rbAsisTec.Enabled = true;

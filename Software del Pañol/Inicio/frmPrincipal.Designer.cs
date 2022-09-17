@@ -57,6 +57,10 @@
             this.prestamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosUrgentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarioDeReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.espacioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitulo.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -284,8 +288,10 @@
             this.gestionDeLibrosToolStripMenuItem,
             this.prestamosConReservaToolStripMenuItem,
             this.prestamosUrgentesToolStripMenuItem,
-            this.calendarioDeReservasToolStripMenuItem});
+            this.calendarioDeReservasToolStripMenuItem,
+            this.solicitarPrestamoToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Margin = new System.Windows.Forms.Padding(5);
             this.msMenu.Name = "msMenu";
             this.msMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.msMenu.Size = new System.Drawing.Size(224, 450);
@@ -385,6 +391,44 @@
             this.calendarioDeReservasToolStripMenuItem.Text = "Calendario de reservas";
             this.calendarioDeReservasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // solicitarPrestamoToolStripMenuItem
+            // 
+            this.solicitarPrestamoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.equiposToolStripMenuItem,
+            this.espacioToolStripMenuItem,
+            this.libroToolStripMenuItem});
+            this.solicitarPrestamoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solicitarPrestamoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.solicitarPrestamoToolStripMenuItem.Name = "solicitarPrestamoToolStripMenuItem";
+            this.solicitarPrestamoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
+            this.solicitarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 39);
+            this.solicitarPrestamoToolStripMenuItem.Text = "Solicitar préstamo";
+            this.solicitarPrestamoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // equiposToolStripMenuItem
+            // 
+            this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.equiposToolStripMenuItem.Text = "Equipos";
+            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
+            // 
+            // espacioToolStripMenuItem
+            // 
+            this.espacioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.espacioToolStripMenuItem.Name = "espacioToolStripMenuItem";
+            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.espacioToolStripMenuItem.Text = "Espacios";
+            this.espacioToolStripMenuItem.Click += new System.EventHandler(this.espacioToolStripMenuItem_Click);
+            // 
+            // libroToolStripMenuItem
+            // 
+            this.libroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.libroToolStripMenuItem.Text = "Libros";
+            this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +443,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -447,5 +492,9 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeEspaciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem librosFísicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem librosVirtualesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitarPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem espacioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem libroToolStripMenuItem;
     }
 }

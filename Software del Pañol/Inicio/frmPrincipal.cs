@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Dominio;
 using System.Runtime.InteropServices;
 
 namespace Software_del_Pañol
@@ -16,6 +17,7 @@ namespace Software_del_Pañol
     {
 
         private Form frmHijoSeleccionado = null;
+        public eUsuario usuarioActual { get; set; }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -23,15 +25,36 @@ namespace Software_del_Pañol
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public frmPrincipal()
+        public frmPrincipal(eUsuario usuario)
         {
             InitializeComponent();
-            cambiarFormHijo(new frmInicio());
+            usuarioActual = usuario;
         }
 
-        protected void cambiarFormHijo(Form formHijo)
+        #region Form
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmInicio());
+
+            eResponsable responsable = new eResponsable();
+            responsable.ci = usuarioActual.ci;
+            dResponsable unR = new dResponsable();
+
+            if (unR.buscarResponsable(responsable) != null)
+            {
+                gestionDeEquiposToolStripMenuItem.Visible = false;
+                gestionDeLibrosToolStripMenuItem.Visible = false;
+                gestionDeEspaciosToolStripMenuItem.Visible = false;
+                gestionDeUsuariosToolStripMenuItem.Visible = false;
+            }
+
+        }
+
+        private void cambiarFormHijo(Form formHijo)
         {
             if (frmHijoSeleccionado != null) frmHijoSeleccionado.Close();
+
             frmHijoSeleccionado = formHijo;
             formHijo.TopLevel = false;
             formHijo.FormBorderStyle = FormBorderStyle.None;
@@ -41,6 +64,8 @@ namespace Software_del_Pañol
             formHijo.BringToFront();
             formHijo.Show();
         }
+
+        #endregion
 
         #region Titulo
 
@@ -112,6 +137,25 @@ namespace Software_del_Pañol
         private void gestionDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cambiarFormHijo(new frmGestionDeEquipo());
+        }
+
+        #endregion
+
+        #region Solicitar prestamo
+
+        private void espacioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void libroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
