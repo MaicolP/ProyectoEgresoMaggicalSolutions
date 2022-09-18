@@ -8,8 +8,10 @@ namespace Entidades
 {
     public class eEspacio
     {
-        int id { get; set; }
-        string nom { get; set; }
-        bool disponible { get; set; }
+        public int id { get; set; }
+        public string nom { get; set; }
+        public bool disponible { get; set; }
+
+  
     }
 }

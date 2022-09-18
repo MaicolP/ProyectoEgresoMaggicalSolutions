@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="dAsisTec.cs" />
     <Compile Include="dEquipo.cs" />
+    <Compile Include="dEspacio.cs" />
     <Compile Include="dResponsable.cs" />
     <Compile Include="dUsuario.cs" />
     <Compile Include="dTipoDeEquipo.cs" />
