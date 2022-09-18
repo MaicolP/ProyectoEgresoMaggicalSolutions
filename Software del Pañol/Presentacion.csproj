@@ -52,6 +52,12 @@
     <Compile Include="Equipo\frmGestionDeEquipo.Designer.cs">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Espacios\frmGestiónDeEspacios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Espacios\frmGestiónDeEspacios.Designer.cs">
+      <DependentUpon>frmGestiónDeEspacios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Equipo\frmGestionDeEquipo.resx">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Espacios\frmGestiónDeEspacios.resx">
+      <DependentUpon>frmGestiónDeEspacios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>

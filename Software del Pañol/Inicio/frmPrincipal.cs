@@ -145,7 +145,7 @@ namespace Software_del_Pañol
 
         private void gestionDeEspaciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cambiarFormHijo(new fr
         }
 
         #endregion

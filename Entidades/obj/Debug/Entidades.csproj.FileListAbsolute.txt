@@ -18,3 +18,8 @@ C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Enti
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.pdb
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.pdb
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.dll
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.pdb
