@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Dominio;
 using System.Runtime.InteropServices;
+using Software_del_Pañol.Espacios;
 
 namespace Software_del_Pañol
 {
@@ -145,7 +146,7 @@ namespace Software_del_Pañol
 
         private void gestionDeEspaciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cambiarFormHijo(new fr
+            cambiarFormHijo(new frmGestionDeEspacios());
         }
 
         #endregion

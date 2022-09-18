@@ -19,6 +19,32 @@ namespace Software_del_Pañol.Espacios
             InitializeComponent();
         }
 
-  
+        private void frmGestionDeEspacios_Load(object sender, EventArgs e)
+        {
+            modoEdicion(false);
+        }
+
+        private void frmGestionDeEspacios_Click(object sender, EventArgs e)
+        {
+            dgvEspacios.ClearSelection();
+        }
+
+        private void modoEdicion(bool aux)
+        {
+            if (aux == true)
+            {
+                btnAgregar.Hide();
+                btnEliminar.Show();
+                btnModificar.Show();
+            }
+            else
+            {
+                btnAgregar.Show();
+                btnEliminar.Hide();
+                btnModificar.Hide();
+   
+                txtNombre.Clear();
+            }
+        }
     }
 }
