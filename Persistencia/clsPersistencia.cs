@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Persistencia
 {
@@ -14,10 +15,17 @@ namespace Persistencia
 
         public void AbrirConexion()
         {
-            miConexion = "server=localhost; uid=root ; password= ; database=bd_audiovisual;"; 
-                                                                                               
-            con = new MySqlConnection(miConexion); 
-            con.Open();
+            try
+            {
+                miConexion = "server=localhost; uid=root ; password= ; database=bd_audiovisual;";
+
+                con = new MySqlConnection(miConexion);
+                con.Open();
+            }
+            catch
+            {
+                MessageBox.Show("No se ha podido conectar con la base de datos", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 
@@ -43,11 +51,10 @@ namespace Persistencia
 
             MySqlCommand comando = new MySqlCommand(consultaSQL, con);
 
-            resultado = comando.ExecuteReader(); 
+            resultado = comando.ExecuteReader();
 
             return resultado; 
-
-            CerrarConexion(); 
+            // CerrarConexion(); 
         }
 
     }

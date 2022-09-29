@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class eReserva
+    public class eReserva
     {
-        int id { get; set; }
-        int numMesa { get; set; }
+        public int id { get; set; }
+        public int numMesa { get; set; }
         ePrestamoCR prestamoCR { get; set; }
-
     }
 }

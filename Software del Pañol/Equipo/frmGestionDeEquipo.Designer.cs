@@ -38,14 +38,6 @@
             this.lblNroSerie = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
-            this.id_equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.ckbAsegurado = new System.Windows.Forms.CheckBox();
@@ -68,6 +60,15 @@
             this.cbxTipoList = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.id_equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
@@ -178,7 +179,7 @@
             this.Column2,
             this.Column4,
             this.Column9,
-            this.Column3,
+            this.estado,
             this.Column5,
             this.Column8});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -202,72 +203,6 @@
             this.dgvEquipos.Size = new System.Drawing.Size(500, 449);
             this.dgvEquipos.TabIndex = 29;
             this.dgvEquipos.SelectionChanged += new System.EventHandler(this.dgvEquipos_SelectionChanged);
-            // 
-            // id_equipo
-            // 
-            this.id_equipo.DataPropertyName = "id";
-            this.id_equipo.HeaderText = "Id";
-            this.id_equipo.Name = "id_equipo";
-            this.id_equipo.ReadOnly = true;
-            this.id_equipo.Width = 45;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 89;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nroSerie";
-            this.Column2.HeaderText = "Nro Serie";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 97;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "fechaIngreso";
-            this.Column4.HeaderText = "Fecha Ingreso";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 127;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "precio";
-            this.Column9.HeaderText = "Precio";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "estado";
-            this.Column3.HeaderText = "Estado";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 77;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "observaciones";
-            this.Column5.HeaderText = "Observaciones";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 132;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "asegurado";
-            this.Column8.FalseValue = "";
-            this.Column8.HeaderText = "Asegurado";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.TrueValue = "";
-            this.Column8.Width = 87;
             // 
             // btnEliminar
             // 
@@ -533,6 +468,72 @@
             this.label7.Text = "Tipo:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // id_equipo
+            // 
+            this.id_equipo.DataPropertyName = "id";
+            this.id_equipo.HeaderText = "Id";
+            this.id_equipo.Name = "id_equipo";
+            this.id_equipo.ReadOnly = true;
+            this.id_equipo.Width = 45;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 89;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nroSerie";
+            this.Column2.HeaderText = "Nro Serie";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 97;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "fechaIngreso";
+            this.Column4.HeaderText = "Fecha Ingreso";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 127;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "precio";
+            this.Column9.HeaderText = "Precio";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 75;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 77;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "observaciones";
+            this.Column5.HeaderText = "Observaciones";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 132;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "asegurado";
+            this.Column8.FalseValue = "";
+            this.Column8.HeaderText = "Asegurado";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.TrueValue = "";
+            this.Column8.Width = 87;
+            // 
             // frmGestionDeEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,12 +610,13 @@
         private System.Windows.Forms.ComboBox cbxTipoList;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_equipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
     }
