@@ -81,3 +81,4 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Deb
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\MySql.Data.dll
