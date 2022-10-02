@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class ePrestamoEspacio : ePrestamoCR
+    public class ePrestamoEspacio : ePrestamoCR
     {
-        eEspacio espacio { get; set; }
+        public eEspacio espacio { get; set; }
     }
 }

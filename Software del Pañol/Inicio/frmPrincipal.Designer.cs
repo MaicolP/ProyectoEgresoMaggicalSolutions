@@ -411,7 +411,7 @@
             // 
             this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.equiposToolStripMenuItem.Text = "Equipos";
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
@@ -419,7 +419,7 @@
             // 
             this.espacioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.espacioToolStripMenuItem.Name = "espacioToolStripMenuItem";
-            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.espacioToolStripMenuItem.Text = "Espacios";
             this.espacioToolStripMenuItem.Click += new System.EventHandler(this.espacioToolStripMenuItem_Click);
             // 
@@ -427,7 +427,7 @@
             // 
             this.libroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
-            this.libroToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.libroToolStripMenuItem.Text = "Libros";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
             // 
