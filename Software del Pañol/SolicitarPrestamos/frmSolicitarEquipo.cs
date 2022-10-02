@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Dominio;
-using Software_del_Pañol.SolicitarPrestamos;
 
 namespace Software_del_Pañol
 {
@@ -17,6 +16,7 @@ namespace Software_del_Pañol
     {
 
         public List<eEquipo> _equipos = new List<eEquipo>();
+        public List<eEquipo> _equiposSel = new List<eEquipo>();
 
         public frmSolicitarEquipo()
         {
@@ -45,9 +45,7 @@ namespace Software_del_Pañol
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEquipos frmEq = new frmSeleccionarEquipos();
-            AddOwnedForm(frmEq);
-            frmEq.Show();
+
         }
 
         #endregion
