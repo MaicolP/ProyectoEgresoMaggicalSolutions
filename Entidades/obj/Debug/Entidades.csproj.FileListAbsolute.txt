@@ -15,7 +15,6 @@ C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\
 C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.pdb
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll
@@ -23,3 +22,5 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.dll
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll.CodeAnalysisLog.xml
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Entidades\bin\Debug\Entidades.dll.lastcodeanalysissucceeded

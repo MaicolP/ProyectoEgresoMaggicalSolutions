@@ -117,3 +117,7 @@ C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Soft
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Properties.Resources.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmSolicitarEquipo.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\bin\Debug\Software del Pañol.exe.CodeAnalysisLog.xml
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\bin\Debug\Software del Pañol.exe.lastcodeanalysissucceeded
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Espacios.frmGestionDeEspacios.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmGestionDeLibrosFisico.resources
