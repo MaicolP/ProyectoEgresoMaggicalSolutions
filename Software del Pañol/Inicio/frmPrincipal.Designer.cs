@@ -357,6 +357,7 @@
             this.librosFísicosToolStripMenuItem.Name = "librosFísicosToolStripMenuItem";
             this.librosFísicosToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.librosFísicosToolStripMenuItem.Text = "Libros Físicos";
+            this.librosFísicosToolStripMenuItem.Click += new System.EventHandler(this.librosFísicosToolStripMenuItem_Click);
             // 
             // librosVirtualesToolStripMenuItem
             // 

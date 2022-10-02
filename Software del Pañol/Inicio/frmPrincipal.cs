@@ -168,10 +168,17 @@ namespace Software_del_Pañol
 
         }
 
+
+
+
         #endregion
 
+        #region Gestion Libros
 
-
-       
+        private void librosFísicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmGestionDeLibrosFisico());
+        }
+        #endregion
     }
 }

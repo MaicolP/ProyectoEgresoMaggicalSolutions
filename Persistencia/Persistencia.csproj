@@ -45,6 +45,7 @@
     <Compile Include="pAsisTec.cs" />
     <Compile Include="pEquipo.cs" />
     <Compile Include="pEspacio.cs" />
+    <Compile Include="pLibro.cs" />
     <Compile Include="pResponsable.cs" />
     <Compile Include="pTipoDeEquipo.cs" />
     <Compile Include="pUsuario.cs" />

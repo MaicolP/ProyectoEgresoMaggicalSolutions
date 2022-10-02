@@ -52,7 +52,6 @@ C:\Users\Administrador\Source\Repos\MaicolP\SofwareDelPanol\Persistencia\obj\Deb
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Persistencia.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Persistencia.pdb
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Entidades.dll
-C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\MySql.Data.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Google.Protobuf.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\ZstdNet.dll
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\K4os.Compression.LZ4.Streams.dll

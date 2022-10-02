@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class eLibro
+    public class eLibro
     {
-        int id { get; set; }
-        string titulo { get; set; }
-        string autor { get; set; }
-        bool disponible { get; set; }
+        public int id { get; set; }
+        public string titulo { get; set; }
+        public string autor { get; set; }
+        public bool disponible { get; set; }
     }
 }
