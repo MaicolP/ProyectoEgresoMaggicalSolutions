@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    abstract class ePrestamo
+    public class ePrestamo
     {
-        int id { get; set; }
-        DateTime retiro { get; set; }
-        DateTime devolucion { get; set; }     
+        public int id { get; set; }
+        public DateTime fecha_retiro { get; set; }
+        public DateTime fecha_devolucion { get; set; }
+        public DateTime fecha_solicitado { get; set; }
+        public int duracion { get; set; }
+        public eUsuario responsable { get; set; }
+        public eAsisTec asisTec { get; set; }
     }
 }

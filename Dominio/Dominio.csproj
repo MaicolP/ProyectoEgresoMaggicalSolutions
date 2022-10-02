@@ -44,6 +44,9 @@
     <Compile Include="dEquipo.cs" />
     <Compile Include="dEspacio.cs" />
     <Compile Include="dLibro.cs" />
+    <Compile Include="dPrestamo.cs" />
+    <Compile Include="dPrestamoCR.cs" />
+    <Compile Include="dPrestamoEquipo.cs" />
     <Compile Include="dResponsable.cs" />
     <Compile Include="dUsuario.cs" />
     <Compile Include="dTipoDeEquipo.cs" />

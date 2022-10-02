@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    abstract class ePrestamoCR : ePrestamo
+    public class ePrestamoCR : ePrestamo
     {
-        int prioridad { get; set; }
-        string ejercicio { get; set; }
-        string curso { get; set; }
+        public int prioridad { get; set; }
+        public string ejercicio { get; set; }
+        public string curso { get; set; }
     }
 }

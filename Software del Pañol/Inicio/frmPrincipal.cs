@@ -160,7 +160,7 @@ namespace Software_del_Pañol
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cambiarFormHijo(new frmSolicitarEquipo());
         }
 
         private void libroToolStripMenuItem_Click(object sender, EventArgs e)

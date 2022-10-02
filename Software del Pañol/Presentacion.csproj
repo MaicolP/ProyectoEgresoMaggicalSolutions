@@ -75,6 +75,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SolicitarPrestamos\frmSolicitarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolicitarPrestamos\frmSolicitarEquipo.Designer.cs">
+      <DependentUpon>frmSolicitarEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\frmGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarEquipo.resx">
+      <DependentUpon>frmSolicitarEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Libros\frmGestionDeLibrosFisico.resx">
       <DependentUpon>frmGestionDeLibrosFisico.cs</DependentUpon>
