@@ -16,7 +16,7 @@ namespace Software_del_Pañol
     public partial class frmPrincipal : Form
     {
 
-        private Form frmHijoSeleccionado = null;
+        public Form frmHijoSeleccionado = null;
         public eUsuario usuarioActual { get; set; }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,7 +35,7 @@ namespace Software_del_Pañol
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            cambiarFormHijo(new frmInicio());
+            cambiarFormHijo(new frmInicio(usuarioActual));
 
             eResponsable responsable = new eResponsable();
             responsable.ci = usuarioActual.ci;
@@ -118,7 +118,7 @@ namespace Software_del_Pañol
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cambiarFormHijo(new frmInicio());
+            cambiarFormHijo(new frmInicio(usuarioActual));
         }
 
         #endregion
@@ -150,7 +150,7 @@ namespace Software_del_Pañol
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cambiarFormHijo(new frmSolicitarEquipo());
+            cambiarFormHijo(new frmSolicitarEquipo(usuarioActual));
         }
 
         private void libroToolStripMenuItem_Click(object sender, EventArgs e)

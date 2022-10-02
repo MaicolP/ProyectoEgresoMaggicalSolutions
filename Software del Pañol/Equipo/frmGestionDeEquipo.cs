@@ -72,11 +72,11 @@ namespace Software_del_Pañol
             {
                 if (cbxSubtipoList.Text == "Todos")
                 {
-                    _equipos = unE.listarEequipo(cbxTipoList.Text);
+                    _equipos = unE.listarEquipo(cbxTipoList.Text);
                     dgvEquipos.DataSource = _equipos;
                 } else
                 {
-                    _equipos = unE.listarEequipo(cbxTipoList.Text, cbxSubtipoList.Text);
+                    _equipos = unE.listarEquipo(cbxTipoList.Text, cbxSubtipoList.Text);
                     dgvEquipos.DataSource = _equipos;
                 }
             }

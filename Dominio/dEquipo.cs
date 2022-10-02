@@ -40,13 +40,13 @@ namespace Dominio
             return unE.buscarEquipo(equipo);
         }
 
-        public List<eEquipo> listarEequipo(string tipo)
+        public List<eEquipo> listarEquipo(string tipo)
         {
             pEquipo unE = new pEquipo();
             return unE.listarEquipo(tipo);
         }
 
-        public List<eEquipo> listarEequipo(string tipo, string subtipo)
+        public List<eEquipo> listarEquipo(string tipo, string subtipo)
         {
             pEquipo unE = new pEquipo();
             return unE.listarEquipo(tipo, subtipo);
