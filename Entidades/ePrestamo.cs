@@ -15,5 +15,7 @@ namespace Entidades
         public int duracion { get; set; }
         public eUsuario responsable { get; set; }
         public eAsisTec asisTec { get; set; }
+        public string estadoP { get; set; }
     }
+    public enum estadoP { Pendiente, EnCurso, Finalizado }
 }

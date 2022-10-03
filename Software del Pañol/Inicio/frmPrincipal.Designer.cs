@@ -176,6 +176,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCont.Location = new System.Drawing.Point(249, 36);
+            this.pnlCont.MaximumSize = new System.Drawing.Size(901, 614);
+            this.pnlCont.MinimumSize = new System.Drawing.Size(901, 614);
             this.pnlCont.Name = "pnlCont";
             this.pnlCont.Size = new System.Drawing.Size(901, 614);
             this.pnlCont.TabIndex = 15;

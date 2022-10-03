@@ -40,7 +40,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1082, 60);
+            this.pnlTitulo.Size = new System.Drawing.Size(885, 60);
             this.pnlTitulo.TabIndex = 0;
             // 
             // lblTitulo
@@ -50,7 +50,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(1082, 60);
+            this.lblTitulo.Size = new System.Drawing.Size(885, 60);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Bienvenido Administrador";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 575);
+            this.ClientSize = new System.Drawing.Size(885, 575);
             this.Controls.Add(this.pnlTitulo);
             this.Name = "frmInicio";
             this.Text = "frmAltaUsuario";

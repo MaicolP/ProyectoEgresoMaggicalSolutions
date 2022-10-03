@@ -13,13 +13,17 @@ namespace Software_del_Pañol
 {
     public partial class frmInicio : Form
     {
-        public frmInicio()
+        public eUsuario usuarioActual { get; set; }
+
+        public frmInicio(eUsuario usuarioActual)
         {
             InitializeComponent();
+            this.usuarioActual = usuarioActual;
         }
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
+            lblTitulo.Text = "Bienvenido " +usuarioActual.nombre;
         }
     }
 }
