@@ -61,6 +61,9 @@
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.confirmarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equipoCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.espacioCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitulo.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -289,7 +292,8 @@
             this.prestamosConReservaToolStripMenuItem,
             this.prestamosUrgentesToolStripMenuItem,
             this.calendarioDeReservasToolStripMenuItem,
-            this.solicitarPrestamoToolStripMenuItem});
+            this.solicitarPrestamoToolStripMenuItem,
+            this.confirmarPrestamoToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Margin = new System.Windows.Forms.Padding(5);
             this.msMenu.Name = "msMenu";
@@ -411,7 +415,7 @@
             // 
             this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.equiposToolStripMenuItem.Text = "Equipos";
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
@@ -419,7 +423,7 @@
             // 
             this.espacioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.espacioToolStripMenuItem.Name = "espacioToolStripMenuItem";
-            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.espacioToolStripMenuItem.Text = "Espacios";
             this.espacioToolStripMenuItem.Click += new System.EventHandler(this.espacioToolStripMenuItem_Click);
             // 
@@ -427,9 +431,35 @@
             // 
             this.libroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
-            this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.libroToolStripMenuItem.Text = "Libros";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
+            // 
+            // confirmarPrestamoToolStripMenuItem
+            // 
+            this.confirmarPrestamoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.equipoCToolStripMenuItem1,
+            this.espacioCToolStripMenuItem});
+            this.confirmarPrestamoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.confirmarPrestamoToolStripMenuItem.Name = "confirmarPrestamoToolStripMenuItem";
+            this.confirmarPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 29);
+            this.confirmarPrestamoToolStripMenuItem.Text = "Confirmar prestamo";
+            this.confirmarPrestamoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // equipoCToolStripMenuItem1
+            // 
+            this.equipoCToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipoCToolStripMenuItem1.Name = "equipoCToolStripMenuItem1";
+            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.equipoCToolStripMenuItem1.Text = "Equipo";
+            // 
+            // espacioCToolStripMenuItem
+            // 
+            this.espacioCToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.espacioCToolStripMenuItem.Name = "espacioCToolStripMenuItem";
+            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.espacioCToolStripMenuItem.Text = "Espacio";
+            this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -498,5 +528,8 @@
         private System.Windows.Forms.ToolStripMenuItem equiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem espacioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem confirmarPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equipoCToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem espacioCToolStripMenuItem;
     }
 }

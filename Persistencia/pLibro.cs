@@ -15,7 +15,7 @@ namespace Persistencia
             public void altaLibro(eLibro libro)
             {
 
-                String consultaSQL = "INSERT INTO libro (titulo, autor, disponible) VALUES('" + libro.titulo + "','" + libro.autor + "','" + libro.disponible + "');";
+                String consultaSQL = "INSERT INTO libro (titulo, autor, disponible) VALUES('" + libro.titulo + "','" + libro.autor + "'," + libro.disponible.ToString() + ");";
 
                 ejecutarSQL(consultaSQL);
 
@@ -42,7 +42,7 @@ namespace Persistencia
 
             public void modificarLibro(eLibro libro)
             {
-                String consultaSQL = "UPDATE libro SET titulo='" + libro.titulo + "', autor='" + libro.autor + "', disponible='" + libro.disponible + "' WHERE id_libro = '" + libro.id + "';";
+                String consultaSQL = "UPDATE libro SET titulo='" + libro.titulo + "', autor='" + libro.autor + "', disponible=" + libro.disponible.ToString() + " WHERE id_libro = '" + libro.id + "';";
                 ejecutarSQL(consultaSQL);
             }
 

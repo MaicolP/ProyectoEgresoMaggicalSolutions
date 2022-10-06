@@ -8,6 +8,6 @@ namespace Entidades
 {
     public class ePrestamoEspacio : ePrestamoCR
     {
-        public eEspacio espacio { get; set; }
+        public eEspacio espacio = new eEspacio();
     }
 }

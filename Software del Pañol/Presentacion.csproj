@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamoEspacio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamo.Designer.cs">
+      <DependentUpon>frmConfirmarPrestamoEspacio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipo\frmGestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfirmacionPrestamo\frmConfirmarPrestamoEspacio.resx">
+      <DependentUpon>frmConfirmarPrestamoEspacio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Equipo\frmGestionDeEquipo.resx">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SolicitarEspacio\frmSolicitarEspacio.resx">
       <DependentUpon>frmSolicitarEspacio.cs</DependentUpon>
@@ -130,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio\frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,7 +178,13 @@
     <None Include="Resources\iconCandado.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\png-transparent-arrow-computer-icons-slider-arrow-angle-logo-slider.png" />
     <None Include="Resources\logo.png" />
+    <None Include="Resources\106810.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\Fondo.png" />
+    <None Include="Resources\Fondo1.png" />
+    <None Include="Resources\Fondo11.png" />
     <Content Include="Resources\logoApp.png" />
     <None Include="Resources\unknown1.png" />
     <None Include="Resources\unknown.png" />

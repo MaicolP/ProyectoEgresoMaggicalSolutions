@@ -83,7 +83,7 @@
             // 
             this.dtpRetiro.CalendarForeColor = System.Drawing.Color.Black;
             this.dtpRetiro.CalendarMonthBackground = System.Drawing.Color.DarkGray;
-            this.dtpRetiro.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpRetiro.CustomFormat = "dd/MM/yyyy HH:mm";
             this.dtpRetiro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpRetiro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpRetiro.Location = new System.Drawing.Point(491, 100);
@@ -96,7 +96,7 @@
             // 
             this.dtpDevolucion.CalendarForeColor = System.Drawing.Color.Black;
             this.dtpDevolucion.CalendarMonthBackground = System.Drawing.Color.DarkGray;
-            this.dtpDevolucion.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpDevolucion.CustomFormat = "dd/MM/yyyy HH:mm";
             this.dtpDevolucion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDevolucion.Location = new System.Drawing.Point(491, 141);

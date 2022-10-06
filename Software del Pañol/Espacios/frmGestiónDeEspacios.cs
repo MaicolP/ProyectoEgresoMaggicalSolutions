@@ -77,11 +77,11 @@ namespace Software_del_Pañol.Espacios
             {
                 eEspacio espacio = new eEspacio();
                 espacio.nom = txtNombre.Text;
-                if (rbDisponible.Checked == true)
+                if (rbDisponible.Checked)
                 {
                     espacio.disponible = true;
                 }
-                else if (rbNoDisponible.Checked == false)
+                else if (rbNoDisponible.Checked)
                 {
                     espacio.disponible = false;
                 }

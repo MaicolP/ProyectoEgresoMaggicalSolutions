@@ -13,7 +13,7 @@ namespace Entidades
         public DateTime fecha_devolucion { get; set; }
         public DateTime fecha_solicitado { get; set; }
         public int duracion { get; set; }
-        public eUsuario responsable { get; set; }
+        public eUsuario responsable = new eUsuario();
         public eAsisTec asisTec { get; set; }
         public String estadoP { get; set; }
     }

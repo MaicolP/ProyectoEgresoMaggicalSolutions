@@ -37,6 +37,11 @@ namespace Software_del_Pañol.PrestamoEspacios
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Por favor complete todos los campos";
             }
+            else if (validarfecha() == false)
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Asegurese que la fecha sea 1 día mayor que la fecha actual";
+            }
             else
             {
                 ePrestamoEspacio prestamo = new ePrestamoEspacio();
@@ -50,7 +55,7 @@ namespace Software_del_Pañol.PrestamoEspacios
                 prestamo.espacio = (eEspacio)cbxEspacio.SelectedValue;
                 prestamo.estadoP = estadoP.Pendiente.ToString();
 
-                dPrestamo unPr = new dPrestamo();
+                dPrestamoEspacio unPr = new dPrestamoEspacio();
                 unPr.altaPrestamoEspacio(prestamo);
 
                 lblMensaje.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -72,6 +77,17 @@ namespace Software_del_Pañol.PrestamoEspacios
             cbxEspacio.DataSource = unE.listarEspacios();
         }
 
-  
+        private bool validarfecha()
+        {
+            bool aux = false;
+            TimeSpan difDia = dtpRetiro.Value - DateTime.Now;
+            TimeSpan difReserva = dtpDevolucion.Value - dtpRetiro.Value;
+            if (difDia.Days >= 1 && difReserva.TotalHours > 0)
+            {
+                aux = true;
+            }
+            return aux;
+        }
+
     }
 }
