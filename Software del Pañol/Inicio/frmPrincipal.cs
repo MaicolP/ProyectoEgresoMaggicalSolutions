@@ -165,7 +165,7 @@ namespace Software_del_Pañol
 
         private void libroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cambiarFormHijo(new frmSolicitarLibro(usuarioActual));
         }
 
 

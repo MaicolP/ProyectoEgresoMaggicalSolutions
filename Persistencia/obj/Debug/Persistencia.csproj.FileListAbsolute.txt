@@ -82,5 +82,3 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Deb
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Persistencia\obj\Debug\Persistencia.pdb
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\MySql.Data.dll
-C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Persistencia.dll.CodeAnalysisLog.xml
-C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Persistencia\bin\Debug\Persistencia.dll.lastcodeanalysissucceeded

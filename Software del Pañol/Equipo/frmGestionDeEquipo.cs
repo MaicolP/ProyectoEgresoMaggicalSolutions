@@ -116,7 +116,7 @@ namespace Software_del_Pañol
 
         private void actualizarCbx()
         {
-            cbxEstado.DataSource = Enum.GetValues(typeof(estado));
+            cbxEstado.DataSource = Enum.GetValues(typeof(estadoEq));
 
             dTipoDeEquipo unT = new dTipoDeEquipo();
             _tipos = unT.listarTipoDeEquipo();

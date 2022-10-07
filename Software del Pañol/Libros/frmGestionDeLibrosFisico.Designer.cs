@@ -73,7 +73,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(885, 60);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Gestion de Libros";
+            this.lblTitulo.Text = "Gestión de Libros";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtTitulo

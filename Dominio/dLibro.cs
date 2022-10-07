@@ -22,6 +22,12 @@ namespace Dominio
             return unL.listarLibro();
         }
 
+        public List<eLibro> listarLibroDisp(bool disp)
+        {
+            pLibro unL = new pLibro();
+            return unL.listarLibroDisp(disp);
+        }
+
         public eLibro buscarLibro(eLibro libro)
         {
             pLibro unL = new pLibro();

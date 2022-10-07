@@ -92,10 +92,7 @@ namespace Software_del_Pañol
 
                 actualizarDgv();
 
-                txtTitulo.Clear();
-                txtAutor.Clear();
-                rbDisponible.Checked = false;
-                rbNoDisponible.Checked = false;
+                modoEdicion(false);
 
             }
         }

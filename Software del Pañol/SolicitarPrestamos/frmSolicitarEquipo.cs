@@ -66,6 +66,22 @@ namespace Software_del_Pañol
             }
         }
 
+        private void actualizarCbx()
+        {
+            dTipoDeEquipo unT = new dTipoDeEquipo();
+            _tipos = unT.listarTipoDeEquipo();
+
+            foreach (eTipoDeEquipo tipo in _tipos)
+            {
+                if (cbxTipoList.Items.Contains(tipo.nombre) == false)
+                {
+                    cbxTipoList.Items.Add(tipo.nombre);
+                }
+            }
+            cbxTipoList.Items.Add("Todos");
+            cbxTipoList.SelectedItem = "Todos";
+        }
+
         #endregion
 
         #region DataGridView
@@ -94,9 +110,10 @@ namespace Software_del_Pañol
 
             for (int i = 0; i < _equipos.Count; i++)
             {
-                if (_equipos[i].estado != "Disponible")
+                if (_equipos[i].estado != estadoEq.Disponible.ToString())
                 {
                     _equipos.RemoveAt(i);
+                    i--;
                 }
             }
 
@@ -110,25 +127,8 @@ namespace Software_del_Pañol
                     }
                 }
             }
-
             dgvEquipos.DataSource = _equipos;
 
-        }
-
-        private void actualizarCbx()
-        {
-            dTipoDeEquipo unT = new dTipoDeEquipo();
-            _tipos = unT.listarTipoDeEquipo();
-
-            foreach (eTipoDeEquipo tipo in _tipos)
-            {
-                if (cbxTipoList.Items.Contains(tipo.nombre) == false)
-                {
-                    cbxTipoList.Items.Add(tipo.nombre);
-                }
-            }
-            cbxTipoList.Items.Add("Todos");
-            cbxTipoList.SelectedItem = "Todos";
         }
 
         #endregion
@@ -176,8 +176,6 @@ namespace Software_del_Pañol
                 actualizarDgv();
             }
         }
-
-        #endregion
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
@@ -229,6 +227,9 @@ namespace Software_del_Pañol
             }
 
         }
+
+        #endregion
+
 
         private bool validarfecha()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    abstract class ePrestamoDir : ePrestamo
+    public class ePrestamoDir : ePrestamo
     {
     }
 }

@@ -18,5 +18,5 @@ namespace Entidades
         public DateTime fechaIngreso { get; set; }
         public eTipoDeEquipo tipo { get; set; }
     }
-    public enum estado {Disponible,Reservado,Mantenimiento,Roto}
+    public enum estadoEq {Disponible,Reservado,Mantenimiento,Roto}
 }

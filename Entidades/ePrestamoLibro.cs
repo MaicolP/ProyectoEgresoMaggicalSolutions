@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class ePrestamoLibro : ePrestamoDir
+    public class ePrestamoLibro : ePrestamoDir
     {
-        List<eLibro> _libros = new List<eLibro>();
+        public List<eLibro> _libros = new List<eLibro>();
     }
 }
