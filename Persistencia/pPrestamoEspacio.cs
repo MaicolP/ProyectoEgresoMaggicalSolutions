@@ -34,7 +34,7 @@ namespace Persistencia
 
         public void modificarPrestamoEspacio(ePrestamoEspacio prestamoActual)
         {
-            String consultaSQL = "UPDATE prestamo SET fecha_retiro = '" + prestamoActual.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamoActual.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamoActual.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', estado = '" + estadoP.EnCurso + "' WHERE id_prestamo = '" + prestamoActual.id + "';";
+            String consultaSQL = "UPDATE prestamo SET fecha_retiro = '" + prestamoActual.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamoActual.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamoActual.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', estado = '" + prestamoActual.estadoP + "' WHERE id_prestamo = '" + prestamoActual.id + "';";
             ejecutarSQL(consultaSQL);
             String consultaSQL2 = "UPDATE prestamo_con_reserva SET curso = '" + prestamoActual.curso + "', ejercicio = '" + prestamoActual.ejercicio + "' WHERE id_prestamo = '" + prestamoActual.id + "';";
             ejecutarSQL(consultaSQL2);
@@ -45,7 +45,19 @@ namespace Persistencia
         public List<ePrestamoEspacio> listarPrestamoEspacio()
         {
             List<ePrestamoEspacio> _prestamoEspacios = new List<ePrestamoEspacio>();
-            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario INNER JOIN espacio ON prestamo_espacios.id_espacio = espacio.id_espacio WHERE prestamo.estado = 'Pendiente' ORDER BY prestamo_espacios.id_prestamo;";
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario INNER JOIN espacio ON prestamo_espacios.id_espacio = espacio.id_espacio ORDER BY prestamo_espacios.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEspacios.Add(recrearPE(resultado));
+            }
+            return _prestamoEspacios;
+        }
+
+        public List<ePrestamoEspacio> listarPrestamoEspacio(estadoP estado)
+        {
+            List<ePrestamoEspacio> _prestamoEspacios = new List<ePrestamoEspacio>();
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario INNER JOIN espacio ON prestamo_espacios.id_espacio = espacio.id_espacio WHERE prestamo.estado='" + estado.ToString() + "' ORDER BY prestamo_espacios.id_prestamo;";
             MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
             while (resultado.Read())
             {

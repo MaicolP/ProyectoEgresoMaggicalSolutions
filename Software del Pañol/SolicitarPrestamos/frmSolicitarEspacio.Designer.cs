@@ -179,7 +179,7 @@
             this.btnSolicitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(124)))), ((int)(((byte)(234)))));
             this.btnSolicitar.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSolicitar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSolicitar.Location = new System.Drawing.Point(316, 394);
+            this.btnSolicitar.Location = new System.Drawing.Point(316, 489);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(252, 56);
             this.btnSolicitar.TabIndex = 107;
@@ -191,7 +191,7 @@
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(313, 329);
+            this.lblMensaje.Location = new System.Drawing.Point(313, 439);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(255, 36);
             this.lblMensaje.TabIndex = 108;

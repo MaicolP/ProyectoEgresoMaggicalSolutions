@@ -33,5 +33,11 @@ namespace Dominio
             pPrestamoEspacio unP = new pPrestamoEspacio();
             unP.bajaPrestamoEspacio(prestamo);
         }
+
+        public List<ePrestamoEspacio> listarPrestamoEspacio(estadoP estado)
+        {
+            pPrestamoEspacio unP = new pPrestamoEspacio();
+            return unP.listarPrestamoEspacio(estado);
+        }
     }
 }

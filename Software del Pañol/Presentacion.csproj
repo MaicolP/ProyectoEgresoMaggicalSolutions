@@ -76,10 +76,10 @@
     <Compile Include="Libros\frmGestionDeLibrosFisico.Designer.cs">
       <DependentUpon>frmGestionDeLibrosFisico.cs</DependentUpon>
     </Compile>
-    <Compile Include="SolicitarEspacio\frmSolicitarEspacio.cs">
+    <Compile Include="SolicitarPrestamos\frmSolicitarEspacio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SolicitarEspacio\frmSolicitarEspacio.Designer.cs">
+    <Compile Include="SolicitarPrestamos\frmSolicitarEspacio.Designer.cs">
       <DependentUpon>frmSolicitarEspacio.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -128,7 +128,7 @@
     <EmbeddedResource Include="Inicio\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SolicitarEspacio\frmSolicitarEspacio.resx">
+    <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarEspacio.resx">
       <DependentUpon>frmSolicitarEspacio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarEquipo.resx">
@@ -189,6 +189,7 @@
     <None Include="Resources\unknown1.png" />
     <None Include="Resources\unknown.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
