@@ -97,6 +97,7 @@ namespace Software_del_Pañol
                 if (_equipos[i].estado != "Disponible")
                 {
                     _equipos.RemoveAt(i);
+                    i--;
                 }
             }
 
@@ -211,9 +212,9 @@ namespace Software_del_Pañol
                 dPrestamoEquipo unP = new dPrestamoEquipo();
                 unP.altaPrestamoEquipo(prestamo);
 
-                actualizarDgv();
                 dgvEquiposSel.DataSource = null;
                 _equiposSel.Clear();
+                actualizarDgv();
 
                 txtApellidoDocente.Clear();
                 txtNombreDocente.Clear();

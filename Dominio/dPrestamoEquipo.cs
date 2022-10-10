@@ -34,5 +34,10 @@ namespace Dominio
             return unPE.listarPrestamoEquipo();
         }
 
+        public List<ePrestamoEquipo> listarPrestamoEquipo(estadoP estado)
+        {
+            pPrestamoEquipo unPE = new pPrestamoEquipo();
+            return unPE.listarPrestamoEquipo(estado);
+        }
     }
 }

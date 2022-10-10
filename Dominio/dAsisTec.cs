@@ -27,5 +27,11 @@ namespace Dominio
             pAsisTec unP = new pAsisTec();
             return unP.listarAsisTec();
         }
+
+        public eAsisTec buscarAsisTec(eAsisTec asisTec)
+        {
+            pAsisTec unP = new pAsisTec();
+            return unP.buscarAsisTec(asisTec);
+        }
     }
 }

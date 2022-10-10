@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Dominio;
 using System.Runtime.InteropServices;
+using Software_del_Pañol.ConfirmacionPrestamo;
 
 namespace Software_del_Pañol
 {
@@ -159,5 +160,16 @@ namespace Software_del_Pañol
         }
 
         #endregion
+
+        private void equipoCToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dAsisTec unAT = new dAsisTec();
+            eAsisTec asisTec = new eAsisTec();
+
+            asisTec.id = usuarioActual.id;
+            asisTec = unAT.buscarAsisTec(asisTec);
+
+            if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEquipos(asisTec));
+        }
     }
 }

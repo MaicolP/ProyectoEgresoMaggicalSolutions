@@ -54,7 +54,6 @@ namespace Persistencia
             resultado = comando.ExecuteReader();
 
             return resultado; 
-            // CerrarConexion(); 
         }
 
     }
