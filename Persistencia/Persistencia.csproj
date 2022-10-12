@@ -51,6 +51,7 @@
     <Compile Include="pEspacio.cs" />
     <Compile Include="pLibro.cs" />
     <Compile Include="pPrestamoLibro.cs" />
+    <Compile Include="pPrestamoEspacio.cs" />
     <Compile Include="pResponsable.cs" />
     <Compile Include="pTipoDeEquipo.cs" />
     <Compile Include="pUsuario.cs" />

@@ -11,6 +11,8 @@ using Entidades;
 using Dominio;
 using System.Runtime.InteropServices;
 using Software_del_Pañol.Espacios;
+using Software_del_Pañol.PrestamoEspacios;
+using Software_del_Pañol.ConfirmacionPrestamo;
 
 namespace Software_del_Pañol
 {
@@ -19,6 +21,7 @@ namespace Software_del_Pañol
 
         public Form frmHijoSeleccionado = null;
         public eUsuario usuarioActual { get; set; }
+        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -155,7 +158,7 @@ namespace Software_del_Pañol
 
         private void espacioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cambiarFormHijo(new frmSolicitarEspacio(usuarioActual));
         }
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,6 +182,23 @@ namespace Software_del_Pañol
         {
             cambiarFormHijo(new frmGestionDeLibrosFisico());
         }
+
         #endregion
+
+        private void espacioCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dAsisTec unAT = new dAsisTec();
+            eAsisTec asisTec = new eAsisTec();
+
+            asisTec.id = usuarioActual.id;
+            asisTec = unAT.buscarAsisTec(asisTec);
+
+            if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEspacio(asisTec));
+            
+    
+            
+            
+        }
+
     }
 }

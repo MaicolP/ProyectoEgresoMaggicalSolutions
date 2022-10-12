@@ -78,11 +78,11 @@ namespace Software_del_Pañol
                 libro.titulo = txtTitulo.Text;
                 libro.autor = txtAutor.Text;
 
-                if (rbDisponible.Checked == true)
+                if (rbDisponible.Checked)
                 {
                     libro.disponible = true;
                 }
-                else if (rbNoDisponible.Checked == false)
+                else if (rbNoDisponible.Checked)
                 {
                     libro.disponible = false;
                 }
@@ -130,11 +130,11 @@ namespace Software_del_Pañol
                 libro.id = Convert.ToInt32(dgvLibros.CurrentCell.OwningRow.Cells["id_libro"].Value);
                 libro.titulo = txtTitulo.Text;
                 libro.autor = txtAutor.Text;
-                if (rbDisponible.Checked == true)
+                if (rbDisponible.Checked)
                 {
                     libro.disponible = true;
                 }
-                else if (rbNoDisponible.Checked == false)
+                else if (rbNoDisponible.Checked)
                 {
                     libro.disponible = false;
                 }
