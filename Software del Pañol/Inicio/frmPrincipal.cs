@@ -21,7 +21,6 @@ namespace Software_del_Pañol
 
         public Form frmHijoSeleccionado = null;
         public eUsuario usuarioActual { get; set; }
-        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -184,6 +183,17 @@ namespace Software_del_Pañol
         }
 
         #endregion
+
+        private void equipoCToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dAsisTec unAT = new dAsisTec();
+            eAsisTec asisTec = new eAsisTec();
+
+            asisTec.id = usuarioActual.id;
+            asisTec = unAT.buscarAsisTec(asisTec);
+
+            if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEquipos(asisTec));
+        }
 
         private void espacioCToolStripMenuItem_Click(object sender, EventArgs e)
         {

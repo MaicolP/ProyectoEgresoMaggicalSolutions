@@ -52,6 +52,12 @@
     <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamo.Designer.cs">
       <DependentUpon>frmConfirmarPrestamoEspacio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamoEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamoEquipos.Designer.cs">
+      <DependentUpon>frmConfirmarPrestamoEquipos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipo\frmGestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfirmacionPrestamo\frmConfirmarPrestamoEquipos.resx">
+      <DependentUpon>frmConfirmarPrestamoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfirmacionPrestamo\frmConfirmarPrestamoEspacio.resx">
       <DependentUpon>frmConfirmarPrestamoEspacio.cs</DependentUpon>
     </EmbeddedResource>

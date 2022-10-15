@@ -209,9 +209,9 @@ namespace Software_del_Pañol
                 dPrestamoEquipo unP = new dPrestamoEquipo();
                 unP.altaPrestamoEquipo(prestamo);
 
-                actualizarDgv();
                 dgvEquiposSel.DataSource = null;
                 _equiposSel.Clear();
+                actualizarDgv();
 
                 txtApellidoDocente.Clear();
                 txtNombreDocente.Clear();

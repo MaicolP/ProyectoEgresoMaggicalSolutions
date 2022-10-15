@@ -178,6 +178,7 @@
             this.pnlCont.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCont.AutoScroll = true;
             this.pnlCont.Location = new System.Drawing.Point(249, 36);
             this.pnlCont.MaximumSize = new System.Drawing.Size(901, 614);
             this.pnlCont.MinimumSize = new System.Drawing.Size(901, 614);
@@ -452,16 +453,16 @@
             // 
             this.equipoCToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.equipoCToolStripMenuItem1.Name = "equipoCToolStripMenuItem1";
-            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.equipoCToolStripMenuItem1.Text = "Equipo";
+            this.equipoCToolStripMenuItem1.Click += new System.EventHandler(this.equipoCToolStripMenuItem1_Click);
             // 
             // espacioCToolStripMenuItem
             // 
             this.espacioCToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.espacioCToolStripMenuItem.Name = "espacioCToolStripMenuItem";
-            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.espacioCToolStripMenuItem.Text = "Espacio";
-            this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

@@ -49,7 +49,7 @@ namespace Persistencia
 
         public eAsisTec buscarAsisTec(eAsisTec asisTec)
         {
-            string consultaSQL = "SELECT * FROM asistente_tecnico INNER JOIN usuario ON usuario.id_usuario=asistente_tecnico.id_asistente WHERE asistente_tecnico.id_asistente='" + asisTec.id+ "';";
+            string consultaSQL = "SELECT * FROM asistente_tecnico INNER JOIN usuario ON usuario.id_usuario=asistente_tecnico.id_asistente WHERE asistente_tecnico.id_asistente='" + asisTec.id + "';";
             MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
             asisTec = null;
             while (resultado.Read())
