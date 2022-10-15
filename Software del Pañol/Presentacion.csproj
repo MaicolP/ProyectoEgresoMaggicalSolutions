@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Equipo\DGVPrinter.cs" />
     <Compile Include="Equipo\frmGestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
