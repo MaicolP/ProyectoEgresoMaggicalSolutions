@@ -184,6 +184,20 @@ namespace Software_del_Pañol
 
         #endregion
 
+        #region Confirmar prestamo
+
+        private void espacioCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dAsisTec unAT = new dAsisTec();
+            eAsisTec asisTec = new eAsisTec();
+
+            asisTec.id = usuarioActual.id;
+            asisTec = unAT.buscarAsisTec(asisTec);
+
+            if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEspacio(asisTec));              
+            
+        }
+
         private void equipoCToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             dAsisTec unAT = new dAsisTec();
@@ -195,20 +209,7 @@ namespace Software_del_Pañol
             if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEquipos(asisTec));
         }
 
-        private void espacioCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            dAsisTec unAT = new dAsisTec();
-            eAsisTec asisTec = new eAsisTec();
-
-            asisTec.id = usuarioActual.id;
-            asisTec = unAT.buscarAsisTec(asisTec);
-
-            if (asisTec != null) cambiarFormHijo(new frmConfirmarPrestamoEspacio(asisTec));
-            
-    
-            
-            
-        }
+        #endregion
 
     }
 }

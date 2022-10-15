@@ -463,6 +463,7 @@
             this.espacioCToolStripMenuItem.Name = "espacioCToolStripMenuItem";
             this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.espacioCToolStripMenuItem.Text = "Espacio";
+            this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

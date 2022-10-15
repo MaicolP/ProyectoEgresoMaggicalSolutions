@@ -193,16 +193,9 @@
     <None Include="Resources\iconCandado.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\png-transparent-arrow-computer-icons-slider-arrow-angle-logo-slider.png" />
     <None Include="Resources\logo.png" />
-    <None Include="Resources\106810.png" />
-    <None Include="Resources\image.png" />
-    <None Include="Resources\Fondo.png" />
     <None Include="Resources\Fondo1.png" />
     <None Include="Resources\Fondo11.png" />
-    <Content Include="Resources\logoApp.png" />
-    <None Include="Resources\unknown1.png" />
-    <None Include="Resources\unknown.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
