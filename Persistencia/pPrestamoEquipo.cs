@@ -27,7 +27,7 @@ namespace Persistencia
             {
                 consultaSQL1 = "INSERT INTO peq_eq VALUES((SELECT MAX(id_prestamo) FROM prestamo), '" + eq.id +"');";
                 ejecutarSQL(consultaSQL1);
-                eq.estado = estado.Reservado.ToString();
+                eq.estado = estadoEq.Reservado.ToString();
                 unE.modificarEquipo(eq);
             }
 
