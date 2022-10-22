@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Dominio;
-using DGVPrinterHelper;
 using System.Drawing.Printing;
 
 namespace Software_del_Pañol

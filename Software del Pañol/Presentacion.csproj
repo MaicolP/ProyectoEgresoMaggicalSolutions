@@ -58,6 +58,7 @@
     <Compile Include="ConfirmacionPrestamo\frmConfirmarPrestamoEquipos.Designer.cs">
       <DependentUpon>frmConfirmarPrestamoEquipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Equipo\frmGestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
