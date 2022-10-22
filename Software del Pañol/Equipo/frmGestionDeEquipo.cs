@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Dominio;
+using DGVPrinterHelper;
+using System.Drawing.Printing;
 
 namespace Software_del_Pañol
 {
@@ -80,7 +82,7 @@ namespace Software_del_Pañol
                     dgvEquipos.DataSource = _equipos;
                 }
             }
-
+           
             dgvEquipos.Columns["tipo"].Visible = false;
         }
 
@@ -281,5 +283,22 @@ namespace Software_del_Pañol
 
 
         #endregion
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+          
+
+            DGVPrinter printer = new DGVPrinter();
+
+                printer.Title = "Lista de equipos";
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "PañolAudiovisual";//Footer
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvEquipos);
+     
+        }
     }
 }
