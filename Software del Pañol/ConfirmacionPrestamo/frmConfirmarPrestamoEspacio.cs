@@ -100,6 +100,9 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                     siguientePrestamo();
                     activarCampos(false);
                 }
+
+                dReserva reserva = new dReserva();
+                reserva.altaReserva(prestamoActual);
             }
         }
 

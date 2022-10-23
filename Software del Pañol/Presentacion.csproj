@@ -71,6 +71,36 @@
     <Compile Include="Espacios\frmGestiónDeEspacios.Designer.cs">
       <DependentUpon>frmGestiónDeEspacios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionDePrestamos\frmEquiposPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmEquiposPrestamo.Designer.cs">
+      <DependentUpon>frmEquiposPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmGestionDePrestamosConReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmGestionDePrestamosConReserva.Designer.cs">
+      <DependentUpon>frmGestionDePrestamosConReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarEquiposPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarEquiposPrestamo.Designer.cs">
+      <DependentUpon>frmModificarEquiposPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarPrestamoEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarPrestamoEquipos.Designer.cs">
+      <DependentUpon>frmModificarPrestamoEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarPrestamoEspacios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDePrestamos\frmModificarPrestamoEspacios.Designer.cs">
+      <DependentUpon>frmModificarPrestamoEspacios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +168,21 @@
     <EmbeddedResource Include="Espacios\frmGestiónDeEspacios.resx">
       <DependentUpon>frmGestiónDeEspacios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionDePrestamos\frmEquiposPrestamo.resx">
+      <DependentUpon>frmEquiposPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDePrestamos\frmGestionDePrestamosConReserva.resx">
+      <DependentUpon>frmGestionDePrestamosConReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDePrestamos\frmModificarEquiposPrestamo.resx">
+      <DependentUpon>frmModificarEquiposPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDePrestamos\frmModificarPrestamoEquipos.resx">
+      <DependentUpon>frmModificarPrestamoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDePrestamos\frmModificarPrestamoEspacios.resx">
+      <DependentUpon>frmModificarPrestamoEspacios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,7 +243,12 @@
     <None Include="Resources\Fondo1.png" />
     <None Include="Resources\Fondo11.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\eliminarr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modificar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

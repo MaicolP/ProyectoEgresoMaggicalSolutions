@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using Software_del_Pañol.Espacios;
 using Software_del_Pañol.PrestamoEspacios;
 using Software_del_Pañol.ConfirmacionPrestamo;
+using Software_del_Pañol.GestionDePrestamos;
 
 namespace Software_del_Pañol
 {
@@ -211,5 +212,12 @@ namespace Software_del_Pañol
 
         #endregion
 
+        #region Gestion De Prestamos
+        private void gestiónDePréstamosConReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmGestionDePrestamosConReserva());
+        }
+
+        #endregion
     }
 }

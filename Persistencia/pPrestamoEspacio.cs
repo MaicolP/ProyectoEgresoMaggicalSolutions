@@ -66,6 +66,30 @@ namespace Persistencia
             return _prestamoEspacios;
         }
 
+        public List<ePrestamoEspacio> listarPrestamoEspacioxId(int iDPrestamo)
+        {
+            List<ePrestamoEspacio> _prestamoEspacios = new List<ePrestamoEspacio>();
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario INNER JOIN espacio ON prestamo_espacios.id_espacio = espacio.id_espacio WHERE prestamo_espacios.id_prestamo = " + iDPrestamo + ";";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEspacios.Add(recrearPE(resultado));
+            }
+            return _prestamoEspacios;
+        }
+
+        public List<ePrestamoEspacio> listarPrestamoEspacioNoPendiente()
+        {
+            List<ePrestamoEspacio> _prestamoEspacios = new List<ePrestamoEspacio>();
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario INNER JOIN espacio ON prestamo_espacios.id_espacio = espacio.id_espacio WHERE prestamo.estado !='" + estadoP.Pendiente + "' ORDER BY prestamo_espacios.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEspacios.Add(recrearPE(resultado));
+            }
+            return _prestamoEspacios;
+        }
+
         private ePrestamoEspacio recrearPE(MySqlDataReader resultado)
         {
             pUsuario unPU = new pUsuario();
@@ -81,6 +105,7 @@ namespace Persistencia
             prestamoEspacio.fecha_solicitado = new DateTime(fechaSolicitado.Year, fechaSolicitado.Month, fechaSolicitado.Day, fechaSolicitado.Hour, fechaSolicitado.Minute, fechaSolicitado.Second);
             prestamoEspacio.responsable.ci = resultado.GetString("ci");
             prestamoEspacio.responsable = unPU.buscarUsuario(prestamoEspacio.responsable);
+            prestamoEspacio.estadoP = resultado.GetString("estado");
             prestamoEspacio.curso = resultado.GetString("curso");
             prestamoEspacio.ejercicio = resultado.GetString("ejercicio");
             prestamoEspacio.espacio.id = resultado.GetInt32("id_espacio");

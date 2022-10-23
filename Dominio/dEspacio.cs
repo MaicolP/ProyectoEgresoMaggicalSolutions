@@ -39,5 +39,11 @@ namespace Dominio
             pEspacio unE = new pEspacio();
             unE.modificarEspacio(espacio);
         }
+
+        public List<eEspacio> listarEspaciosDisponibles()
+        {
+            pEspacio unE = new pEspacio();
+            return unE.listarEspaciosDisponibles();
+        }
     }
 }

@@ -88,6 +88,30 @@ namespace Persistencia
             return _prestamoEquipo;
         }
 
+        public List<ePrestamoEquipo> listarPrestamoEquipoxId(int idPrestamo)
+        {
+            List<ePrestamoEquipo> _prestamoEquipo = new List<ePrestamoEquipo>();
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo_equipos.id_prestamo = " + idPrestamo + ";";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEquipo.Add(recrearPE(resultado));
+            }
+            return _prestamoEquipo;
+        }
+
+        public List<ePrestamoEquipo> listarPrestamoEquipoNoPendiente()
+        {
+            List<ePrestamoEquipo> _prestamoEquipo = new List<ePrestamoEquipo>();
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.estado !='" + estadoP.Pendiente + "'ORDER  BY prestamo_equipos.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEquipo.Add(recrearPE(resultado));
+            }
+            return _prestamoEquipo;
+        }
+
         private ePrestamoEquipo recrearPE(MySqlDataReader resultado)
         {
             pUsuario unPU = new pUsuario();
@@ -102,6 +126,7 @@ namespace Persistencia
             prestamo.fecha_solicitado = new DateTime(fechaSolicitado.Year, fechaSolicitado.Month, fechaSolicitado.Day, fechaSolicitado.Hour, fechaSolicitado.Minute, fechaSolicitado.Second);
             prestamo.responsable.ci = resultado.GetString("ci");
             prestamo.responsable = unPU.buscarUsuario(prestamo.responsable);
+            prestamo.estadoP = resultado.GetString("estado");
             prestamo.curso = resultado.GetString("curso");
             prestamo.ejercicio = resultado.GetString("ejercicio");
             prestamo.locaciones = resultado.GetString("locaciones");
