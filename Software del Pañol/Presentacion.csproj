@@ -59,6 +59,12 @@
       <DependentUpon>frmConfirmarPrestamoEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="Equipo\frmAgregarRotura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipo\frmAgregarRotura.Designer.cs">
+      <DependentUpon>frmAgregarRotura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipo\frmGestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmacionPrestamo\frmConfirmarPrestamoEspacio.resx">
       <DependentUpon>frmConfirmarPrestamoEspacio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipo\frmAgregarRotura.resx">
+      <DependentUpon>frmAgregarRotura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipo\frmGestionDeEquipo.resx">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>

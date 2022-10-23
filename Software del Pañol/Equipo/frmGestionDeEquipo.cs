@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Dominio;
 using System.Drawing.Printing;
+using Software_del_Pañol.Equipo;
 
 namespace Software_del_Pañol
 {
@@ -41,12 +42,14 @@ namespace Software_del_Pañol
                 btnAgregar.Hide();
                 btnEliminar.Show();
                 btnModificar.Show();
+                btnAgregarRotura.Show();
             }
             else
             {
                 btnAgregar.Show();
                 btnEliminar.Hide();
                 btnModificar.Hide();
+                btnAgregarRotura.Hide();
 
                 txtPrecio.Clear();
                 txtNombre.Clear();
@@ -309,7 +312,12 @@ namespace Software_del_Pañol
 
         private void btnAgregarRotura_Click(object sender, EventArgs e)
         {
-
+            eEquipo equipo = new eEquipo();
+            equipo.id = Convert.ToInt32(dgvEquipos.CurrentCell.OwningRow.Cells["id_equipo"].Value);
+            dEquipo unDE = new dEquipo();
+            equipo = unDE.buscarEquipo(equipo);
+            frmAgregarRotura frm = new frmAgregarRotura(equipo);
+            frm.Show();
         }
     }
 }
