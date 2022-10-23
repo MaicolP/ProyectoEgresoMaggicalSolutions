@@ -10,10 +10,10 @@ namespace Dominio
 {
     public class dReserva
     {
-        public void altaReserva(ePrestamoCR prestamoActual)
+        public void altaReserva(eReserva reserva)
         {
-            pReserva reserva = new pReserva();
-            reserva.altaReserva(prestamoActual);
+            pReserva unPR = new pReserva();
+            unPR.altaReserva(reserva);
         }
 
         public void bajaReserva(int idPrestamoCR)

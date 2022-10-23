@@ -162,4 +162,3 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEquipos.resources
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEspacios.resources
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmEquiposPrestamo.resources
-C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarEquiposPrestamo.resources

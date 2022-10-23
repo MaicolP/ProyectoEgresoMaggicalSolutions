@@ -26,7 +26,7 @@ namespace Software_del_Pañol.GestionDePrestamos
             _prestamosEq = prestamoEq.listarPrestamoEquipoxId(IDPrestamo);
             foreach (ePrestamoEquipo prestamoEQ in _prestamosEq)
             {
-                dgvPrestamoEq.Rows.Add(prestamoEQ.id, prestamoEQ.fecha_retiro, prestamoEQ.fecha_devolucion, prestamoEQ.fecha_solicitado, prestamoEQ.duracion, prestamoEQ.responsable.id, prestamoEQ.estadoP, prestamoEQ.ejercicio, prestamoEQ.curso, prestamoEQ.prioridad, prestamoEQ.nomDocente, prestamoEQ.apeDocente, prestamoEQ.transporte, prestamoEQ.locaciones, prestamoEQ.equipoRodaje, "Modificar lista de equipos");
+                dgvPrestamoEq.Rows.Add(prestamoEQ.id, prestamoEQ.fecha_retiro, prestamoEQ.fecha_devolucion, prestamoEQ.fecha_solicitado, prestamoEQ.duracion, prestamoEQ.responsable.id, prestamoEQ.estadoP, prestamoEQ.ejercicio, prestamoEQ.curso, prestamoEQ.prioridad, prestamoEQ.nomDocente, prestamoEQ.apeDocente, prestamoEQ.transporte, prestamoEQ.locaciones, prestamoEQ.equipoRodaje);
             }
 
         }
@@ -54,16 +54,6 @@ namespace Software_del_Pañol.GestionDePrestamos
             prestamo.modificarPrestamoEquipo(unPEQ);
 
             this.Close();
-
-        }
-
-        private void dgvPrestamoEq_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvPrestamoEq.Columns[e.ColumnIndex].Name == "Equipos")
-            {
-                frmModificarEquiposPrestamo m1 = new frmModificarEquiposPrestamo(prestamo.id);
-                m1.Show();
-            }
         }
     }
 }

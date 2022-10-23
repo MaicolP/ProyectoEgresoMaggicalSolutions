@@ -43,7 +43,7 @@ namespace Software_del_Pañol.GestionDePrestamos
             actualizarDgv();
         }
 
-        private void actualizarDgv()
+        public void actualizarDgv()
         {
             dPrestamoEquipo unPEQ = new dPrestamoEquipo();
             dPrestamoEspacio unPES = new dPrestamoEspacio();
@@ -140,22 +140,16 @@ namespace Software_del_Pañol.GestionDePrestamos
                     unPEQ.bajaPrestamoEquipo(pEquipo);
                     unR.bajaReserva(pEquipo.id);
                     actualizarDgv();
-
                 }
-
             }
-            actualizarDgv();
-
             if (dgvPrestamoEquipos.Columns[e.ColumnIndex].Name == "Modificar")
             {
-                    frmModificarPrestamoEquipos m1 = new frmModificarPrestamoEquipos(Convert.ToInt32(dgvPrestamoEquipos.CurrentCell.OwningRow.Cells["ID"].Value));
-                    m1.Show();
-                
+                    frmModificarPrestamoEquipos m1 = new frmModificarPrestamoEquipos(Convert.ToInt32(dgvPrestamoEquipos.CurrentRow.Cells["ID"].Value));
+                    m1.Show();       
             }
-
             if (dgvPrestamoEquipos.Columns[e.ColumnIndex].Name == "EquiposAsociados")
             {
-                frmEquiposPrestamo m1 = new frmEquiposPrestamo(Convert.ToInt32(dgvPrestamoEquipos.CurrentCell.OwningRow.Cells["ID"].Value));
+                frmEquiposPrestamo m1 = new frmEquiposPrestamo(Convert.ToInt32(dgvPrestamoEquipos.CurrentRow.Cells["ID"].Value));
                 m1.Show();
             }
         }
@@ -166,7 +160,7 @@ namespace Software_del_Pañol.GestionDePrestamos
             {
                 eReserva reserva = new eReserva();
                 ePrestamoEspacio pEspacio = new ePrestamoEspacio();
-                pEspacio.id = Convert.ToInt32(dgvPrestamoEspacios.CurrentCell.OwningRow.Cells["IDPES"].Value);
+                pEspacio.id = Convert.ToInt32(dgvPrestamoEspacios.CurrentRow.Cells["IDPES"].Value);
                 DialogResult result = MessageBox.Show("Está seguro que desea eliminar el préstamo " + pEspacio.id +
                                " ?", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.OK)
@@ -178,18 +172,11 @@ namespace Software_del_Pañol.GestionDePrestamos
                     actualizarDgv();
                 }
             }
-            actualizarDgv();
-
             if (dgvPrestamoEspacios.Columns[e.ColumnIndex].Name == "ModificarEs")
             {
-                    frmModificarPrestamoEspacios m1 = new frmModificarPrestamoEspacios(Convert.ToInt32(dgvPrestamoEspacios.CurrentCell.OwningRow.Cells["IDPES"].Value));
+                    frmModificarPrestamoEspacios m1 = new frmModificarPrestamoEspacios(Convert.ToInt32(dgvPrestamoEspacios.CurrentRow.Cells["IDPES"].Value));
                     m1.Show();
             }
-        }
-
-        private void dgvPrestamoEspacios_MouseHover(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

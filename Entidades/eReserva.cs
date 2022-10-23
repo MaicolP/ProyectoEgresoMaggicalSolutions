@@ -10,6 +10,6 @@ namespace Entidades
     {
         public int id { get; set; }
         public int numMesa { get; set; }
-        ePrestamoCR prestamoCR { get; set; }
+        public ePrestamoCR prestamoCR { get; set; }
     }
 }

@@ -9,9 +9,9 @@ namespace Persistencia
 {
     public class pReserva : clsPersistencia
     {
-        public void altaReserva(ePrestamoCR prestamoActual)
+        public void altaReserva(eReserva reserva)
         {
-            String consultaSQL = "INSERT INTO reserva (id_prestamo, nro_mesa) VALUES('" + prestamoActual.id + "' , '0' );";
+            String consultaSQL = "INSERT INTO reserva (id_prestamo, nro_mesa) VALUES('" + reserva.prestamoCR.id + "' , '" + reserva.numMesa + "' );";
             ejecutarSQL(consultaSQL);
         }
 

@@ -568,7 +568,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 512);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(392, 298);
             this.dgvEquiposSel.TabIndex = 176;
             // 
             // id_equipoSel
@@ -699,7 +699,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(383, 512);
+            this.dgvEquipos.Size = new System.Drawing.Size(400, 298);
             this.dgvEquipos.TabIndex = 175;
             // 
             // id_equipo

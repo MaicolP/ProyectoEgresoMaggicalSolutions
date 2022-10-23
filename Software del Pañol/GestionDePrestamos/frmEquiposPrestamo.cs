@@ -27,16 +27,9 @@ namespace Software_del_Pañol.GestionDePrestamos
 
             lblTitulo.Text = "Equipos asociados al préstamo N°:" + idPrestamo;
 
-            /* for (int i=0; i<= _prestamosEq.Count; i++)
-             {
-
-             }*/
-
         }
         private void frmEquiposPrestamo_Load(object sender, EventArgs e)
         {
-
-
             foreach(eEquipo unEq in _equipos)
             {
                 dgvEquipos.Rows.Add(unEq.id,unEq.nombre,unEq.nroSerie,unEq.fechaIngreso,unEq.precio,unEq.estado,unEq.observaciones,unEq.asegurado);

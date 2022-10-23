@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,12 +83,6 @@
     </Compile>
     <Compile Include="GestionDePrestamos\frmGestionDePrestamosConReserva.Designer.cs">
       <DependentUpon>frmGestionDePrestamosConReserva.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GestionDePrestamos\frmModificarEquiposPrestamo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionDePrestamos\frmModificarEquiposPrestamo.Designer.cs">
-      <DependentUpon>frmModificarEquiposPrestamo.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionDePrestamos\frmModificarPrestamoEquipos.cs">
       <SubType>Form</SubType>
@@ -173,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDePrestamos\frmGestionDePrestamosConReserva.resx">
       <DependentUpon>frmGestionDePrestamosConReserva.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionDePrestamos\frmModificarEquiposPrestamo.resx">
-      <DependentUpon>frmModificarEquiposPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDePrestamos\frmModificarPrestamoEquipos.resx">
       <DependentUpon>frmModificarPrestamoEquipos.cs</DependentUpon>

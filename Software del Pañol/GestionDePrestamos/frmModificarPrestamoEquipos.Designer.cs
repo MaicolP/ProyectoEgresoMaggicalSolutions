@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificarPrestamoEquipos));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.dgvPrestamoEq = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +39,7 @@
             this.FechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaSolicitada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ejercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +49,6 @@
             this.Transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Locaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EquipoRodaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Equipos = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEq)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +100,7 @@
             this.FechaDevolucion,
             this.FechaSolicitada,
             this.Duracion,
-            this.IDUsuario,
+            this.Responsable,
             this.Estado,
             this.Ejercicio,
             this.Curso,
@@ -109,8 +109,7 @@
             this.ApellidoDocente,
             this.Transporte,
             this.Locaciones,
-            this.EquipoRodaje,
-            this.Equipos});
+            this.EquipoRodaje});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +129,6 @@
             this.dgvPrestamoEq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPrestamoEq.Size = new System.Drawing.Size(551, 92);
             this.dgvPrestamoEq.TabIndex = 150;
-            this.dgvPrestamoEq.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoEq_CellContentClick);
             // 
             // ID
             // 
@@ -169,13 +167,13 @@
             this.Duracion.Name = "Duracion";
             this.Duracion.Width = 95;
             // 
-            // IDUsuario
+            // Responsable
             // 
-            this.IDUsuario.DataPropertyName = "eUsuario.ci";
-            this.IDUsuario.HeaderText = "Responsable";
-            this.IDUsuario.Name = "IDUsuario";
-            this.IDUsuario.ReadOnly = true;
-            this.IDUsuario.Width = 117;
+            this.Responsable.DataPropertyName = "eUsuario.ci";
+            this.Responsable.HeaderText = "Responsable";
+            this.Responsable.Name = "Responsable";
+            this.Responsable.ReadOnly = true;
+            this.Responsable.Width = 117;
             // 
             // Estado
             // 
@@ -240,15 +238,6 @@
             this.EquipoRodaje.Name = "EquipoRodaje";
             this.EquipoRodaje.Width = 131;
             // 
-            // Equipos
-            // 
-            this.Equipos.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.Equipos.HeaderText = "Equipos Asociados";
-            this.Equipos.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.Equipos.Name = "Equipos";
-            this.Equipos.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.Equipos.Width = 139;
-            // 
             // frmModificarPrestamoEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,9 +248,9 @@
             this.Controls.Add(this.dgvPrestamoEq);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmModificarPrestamoEquipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModificarPrestamoEquipos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEq)).EndInit();
             this.ResumeLayout(false);
 
@@ -276,7 +265,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDevolucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaSolicitada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ejercicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
@@ -286,6 +275,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Transporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Locaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn EquipoRodaje;
-        private System.Windows.Forms.DataGridViewLinkColumn Equipos;
     }
 }

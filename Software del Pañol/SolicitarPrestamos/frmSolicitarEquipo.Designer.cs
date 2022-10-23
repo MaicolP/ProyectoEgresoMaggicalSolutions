@@ -222,7 +222,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 357);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 298);
             this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
@@ -353,7 +353,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(383, 357);
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 298);
             this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
@@ -697,7 +697,7 @@
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(301, 843);
+            this.lblMensaje.Location = new System.Drawing.Point(301, 829);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(255, 36);
             this.lblMensaje.TabIndex = 79;
