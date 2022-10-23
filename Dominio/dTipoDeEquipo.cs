@@ -33,5 +33,11 @@ namespace Dominio
             pTipoDeEquipo unT = new pTipoDeEquipo();
             return unT.listarTipoDeEquipo();
         }
+
+        public eTipoDeEquipo buscarTipo(int id)
+        {
+            pTipoDeEquipo unT = new pTipoDeEquipo();
+            return unT.buscarTipoDeEquipo(id);
+        }
     }
 }

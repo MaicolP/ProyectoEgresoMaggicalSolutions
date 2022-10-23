@@ -282,33 +282,23 @@ namespace Software_del_Pañol
             }
         }
 
-
-
-        #endregion
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-          
+
 
             DGVPrinter printer = new DGVPrinter();
 
-                printer.Title = "Lista de equipos";
-                printer.PageNumbers = true;
-                printer.PageNumberInHeader = false;
-                printer.PorportionalColumns = true;
-                printer.HeaderCellAlignment = StringAlignment.Near;
-                printer.Footer = "PañolAudiovisual";//Footer
-                printer.FooterSpacing = 15;
-                printer.PrintDataGridView(dgvEquipos);
-     
+            printer.Title = "Lista de equipos";
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "PañolAudiovisual";//Footer
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(dgvEquipos);
+
         }
 
-        private void linkRoturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmPrincipal aux = (frmPrincipal)ActiveForm;
-            aux.abrirGestionRoturas();
-            Close();
-        }
 
         private void btnAgregarRotura_Click(object sender, EventArgs e)
         {
@@ -319,5 +309,26 @@ namespace Software_del_Pañol
             frmAgregarRotura frm = new frmAgregarRotura(equipo);
             frm.Show();
         }
+
+        #endregion
+
+        #region LinkLabel
+
+        private void linkRoturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPrincipal aux = (frmPrincipal)ActiveForm;
+            aux.abrirGestionRoturas();
+            Close();
+        }
+
+
+        private void linkTipoDeEquipo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPrincipal aux = (frmPrincipal)ActiveForm;
+            aux.abrirTiposDeEquipo();
+            Close();
+        }
+
+        #endregion
     }
 }
