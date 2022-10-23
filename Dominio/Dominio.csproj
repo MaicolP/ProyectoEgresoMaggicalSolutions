@@ -50,6 +50,7 @@
     <Compile Include="dPrestamoLibro.cs" />
     <Compile Include="dPrestamoEspacio.cs" />
     <Compile Include="dResponsable.cs" />
+    <Compile Include="dRotura.cs" />
     <Compile Include="dUsuario.cs" />
     <Compile Include="dTipoDeEquipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -299,5 +299,17 @@ namespace Software_del_Pañol
                 printer.PrintDataGridView(dgvEquipos);
      
         }
+
+        private void linkRoturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPrincipal aux = (frmPrincipal)ActiveForm;
+            aux.abrirGestionRoturas();
+            Close();
+        }
+
+        private void btnAgregarRotura_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

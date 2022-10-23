@@ -53,6 +53,7 @@
     <Compile Include="pPrestamoLibro.cs" />
     <Compile Include="pPrestamoEspacio.cs" />
     <Compile Include="pResponsable.cs" />
+    <Compile Include="pRotura.cs" />
     <Compile Include="pTipoDeEquipo.cs" />
     <Compile Include="pUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

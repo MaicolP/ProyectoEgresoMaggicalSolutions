@@ -142,6 +142,11 @@ namespace Software_del_Pañol
             cambiarFormHijo(new frmGestionDeEquipo());
         }
 
+        public void abrirGestionRoturas()
+        {
+            cambiarFormHijo(new frmGestionRoturas());
+        }
+
         #endregion
 
         #region Gestion de espacios

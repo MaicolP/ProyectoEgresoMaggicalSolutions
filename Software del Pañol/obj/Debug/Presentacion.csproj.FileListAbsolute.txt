@@ -155,3 +155,4 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmPrincipal.resources
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Properties.Resources.resources
 C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmGestionRoturas.resources

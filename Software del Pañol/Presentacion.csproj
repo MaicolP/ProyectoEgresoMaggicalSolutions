@@ -65,6 +65,12 @@
     <Compile Include="Equipo\frmGestionDeEquipo.Designer.cs">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipo\frmGestionRoturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipo\frmGestionRoturas.Designer.cs">
+      <DependentUpon>frmGestionRoturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Espacios\frmGestiónDeEspacios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipo\frmGestionDeEquipo.resx">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipo\frmGestionRoturas.resx">
+      <DependentUpon>frmGestionRoturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Espacios\frmGestiónDeEspacios.resx">
       <DependentUpon>frmGestiónDeEspacios.cs</DependentUpon>
