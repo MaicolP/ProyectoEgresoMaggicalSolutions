@@ -440,7 +440,7 @@
             this.linkRoturas.ForeColor = System.Drawing.SystemColors.ControlText;
             this.linkRoturas.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkRoturas.LinkColor = System.Drawing.Color.Blue;
-            this.linkRoturas.Location = new System.Drawing.Point(6, 65);
+            this.linkRoturas.Location = new System.Drawing.Point(3, 63);
             this.linkRoturas.Name = "linkRoturas";
             this.linkRoturas.Size = new System.Drawing.Size(50, 15);
             this.linkRoturas.TabIndex = 45;
@@ -575,7 +575,7 @@
             this.linkTipoDeEquipo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.linkTipoDeEquipo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkTipoDeEquipo.LinkColor = System.Drawing.Color.Blue;
-            this.linkTipoDeEquipo.Location = new System.Drawing.Point(6, 83);
+            this.linkTipoDeEquipo.Location = new System.Drawing.Point(3, 78);
             this.linkTipoDeEquipo.Name = "linkTipoDeEquipo";
             this.linkTipoDeEquipo.Size = new System.Drawing.Size(95, 15);
             this.linkTipoDeEquipo.TabIndex = 56;

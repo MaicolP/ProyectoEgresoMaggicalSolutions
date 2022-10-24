@@ -39,5 +39,11 @@ namespace Dominio
             pPrestamoEspacio unP = new pPrestamoEspacio();
             return unP.listarPrestamoEspacio(estado);
         }
+
+        public List<ePrestamoEspacio> listarPESinDevolver()
+        {
+            pPrestamoEspacio unP = new pPrestamoEspacio();
+            return unP.listarPESinDevolver();
+        }
     }
 }

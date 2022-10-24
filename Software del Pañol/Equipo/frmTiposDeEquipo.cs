@@ -133,5 +133,12 @@ namespace Software_del_Pañol
         {
             dgvTipos.ClearSelection();
         }
+
+        private void linkRoturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPrincipal aux = (frmPrincipal)ActiveForm;
+            aux.abrirGestionEquipos();
+            Close();
+        }
     }
 }

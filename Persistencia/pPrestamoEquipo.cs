@@ -122,5 +122,17 @@ namespace Persistencia
 
             return prestamo;
         }
+
+        public List<ePrestamoEquipo> listarPESinDevolver()
+        {
+            List<ePrestamoEquipo> _prestamoEquipo = new List<ePrestamoEquipo>();
+            string consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.fecha_devolucion < now() AND prestamo.estado='EnCurso' ORDER BY prestamo_equipos.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEquipo.Add(recrearPE(resultado));
+            }
+            return _prestamoEquipo;
+        }
     }
 }

@@ -147,6 +147,11 @@ namespace Software_del_Pañol
             cambiarFormHijo(new frmGestionRoturas());
         }
 
+        public void abrirGestionEquipos()
+        {
+            cambiarFormHijo(new frmGestionDeEquipo());
+        }
+
         public void abrirTiposDeEquipo()
         {
             cambiarFormHijo(new frmTiposDeEquipo());

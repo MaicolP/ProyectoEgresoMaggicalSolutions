@@ -47,6 +47,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.linkRoturas = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             this.dgvTipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTipos.BackgroundColor = System.Drawing.Color.White;
             this.dgvTipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -179,7 +180,7 @@
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.ForeColor = System.Drawing.Color.Black;
-            this.lblNom.Location = new System.Drawing.Point(30, 102);
+            this.lblNom.Location = new System.Drawing.Point(12, 102);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(88, 26);
             this.lblNom.TabIndex = 64;
@@ -192,7 +193,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNombre.Location = new System.Drawing.Point(178, 102);
+            this.txtNombre.Location = new System.Drawing.Point(160, 102);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(217, 26);
@@ -203,7 +204,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 148);
+            this.label1.Location = new System.Drawing.Point(12, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 26);
             this.label1.TabIndex = 66;
@@ -216,7 +217,7 @@
             this.txtSubtipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSubtipo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtipo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSubtipo.Location = new System.Drawing.Point(178, 148);
+            this.txtSubtipo.Location = new System.Drawing.Point(160, 148);
             this.txtSubtipo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubtipo.Name = "txtSubtipo";
             this.txtSubtipo.Size = new System.Drawing.Size(217, 26);
@@ -261,12 +262,29 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // linkRoturas
+            // 
+            this.linkRoturas.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.linkRoturas.AutoSize = true;
+            this.linkRoturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkRoturas.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.linkRoturas.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkRoturas.LinkColor = System.Drawing.Color.Blue;
+            this.linkRoturas.Location = new System.Drawing.Point(3, 63);
+            this.linkRoturas.Name = "linkRoturas";
+            this.linkRoturas.Size = new System.Drawing.Size(40, 15);
+            this.linkRoturas.TabIndex = 70;
+            this.linkRoturas.TabStop = true;
+            this.linkRoturas.Text = "Volver";
+            this.linkRoturas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRoturas_LinkClicked);
+            // 
             // frmTiposDeEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(885, 575);
+            this.Controls.Add(this.linkRoturas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -304,5 +322,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.LinkLabel linkRoturas;
     }
 }
