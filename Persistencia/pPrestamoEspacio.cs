@@ -92,6 +92,7 @@ namespace Persistencia
             MySqlDateTime fechaSolicitado = resultado.GetMySqlDateTime("fecha_solicitada");
             prestamoEspacio.fecha_solicitado = new DateTime(fechaSolicitado.Year, fechaSolicitado.Month, fechaSolicitado.Day, fechaSolicitado.Hour, fechaSolicitado.Minute, fechaSolicitado.Second);
             prestamoEspacio.responsable.ci = resultado.GetString("ci");
+            prestamoEspacio.estadoP = resultado.GetString("estado");
             prestamoEspacio.responsable = unPU.buscarUsuario(prestamoEspacio.responsable);
             prestamoEspacio.curso = resultado.GetString("curso");
             prestamoEspacio.ejercicio = resultado.GetString("ejercicio");

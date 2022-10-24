@@ -103,6 +103,7 @@ namespace Persistencia
             prestamo.responsable.ci = resultado.GetString("ci");
             prestamo.responsable = unPU.buscarUsuario(prestamo.responsable);
             prestamo.curso = resultado.GetString("curso");
+            prestamo.estadoP = resultado.GetString("estado");
             prestamo.ejercicio = resultado.GetString("ejercicio");
             prestamo.locaciones = resultado.GetString("locaciones");
             prestamo.transporte = resultado.GetString("transporte");

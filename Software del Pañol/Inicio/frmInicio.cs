@@ -40,19 +40,15 @@ namespace Software_del_Pañol
             dPrestamoLibro unPL = new dPrestamoLibro();
             notiPLibro(unPL.listarPLSinDevolver());
 
-            //// ----TERMINAR ESTO----
-
-            //dPrestamoUrgente unPU = new dPrestamoUrgente();
-            //notiPUrgente(unPL.listarPUSinDevolver());
-
-            //// --------------------
+            dPrestamoUrgente unPU = new dPrestamoUrgente();
+            notiPUrgente(unPU.listarPUSinDevolver());
         }
 
         private void notiPEquipo(List<ePrestamoEquipo> _prestamos)
         {
             foreach(var p in _prestamos)
             {
-                notificacion noti = new notificacion("El plazo de devolución del prestamo de equipo " + p.id + " realizado por " + p.responsable.nombre  + " " + p.responsable.apellido + " ha finalizado!", tipoNoti.EQUIPO);
+                notificacion noti = new notificacion("El plazo de devolución del prestamo de equipo " + p.id + " realizado por " + p.responsable.nombre  + " " + p.responsable.apellido + " ha finalizado!");
                 this.fpnlContenido.Controls.Add(noti);
                 noti.prestamo = p;
             }
@@ -62,7 +58,7 @@ namespace Software_del_Pañol
         {
             foreach (var p in _prestamos)
             {
-                notificacion noti = new notificacion("El plazo de devolución del prestamo de espacio " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!", tipoNoti.ESPACIO);
+                notificacion noti = new notificacion("El plazo de devolución del prestamo de espacio " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!");
                 this.fpnlContenido.Controls.Add(noti);
                 noti.prestamo = p;
             }
@@ -72,21 +68,21 @@ namespace Software_del_Pañol
         {
             foreach (var p in _prestamos)
             {
-                notificacion noti = new notificacion("El plazo de devolución del prestamo de libro " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!", tipoNoti.LIBRO);
+                notificacion noti = new notificacion("El plazo de devolución del prestamo de libro " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!");
                 this.fpnlContenido.Controls.Add(noti);
                 noti.prestamo = p;
             }
         }
 
-        //private void notiPUrgente(List<ePrestamoUrgente> _prestamos)
-        //{
-        //    foreach (var p in _prestamos)
-        //    {
-        //        notificacion noti = new notificacion("El plazo de devolución del prestamo urgente " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!", tipoNoti.URGENTE);
-        //        this.fpnlContenido.Controls.Add(noti);
-        //        noti.prestamo = p;
-        //    }
-        //}
+        private void notiPUrgente(List<ePrestamoUrgente> _prestamos)
+        {
+            foreach (var p in _prestamos)
+            {
+                notificacion noti = new notificacion("El plazo de devolución del prestamo urgente " + p.id + " realizado por " + p.responsable.nombre + " " + p.responsable.apellido + " ha finalizado!");
+                this.fpnlContenido.Controls.Add(noti);
+                noti.prestamo = p;
+            }
+        }
     }
 
     class notificacion : Panel // PANEL DE NOTIFICACIÓNES
@@ -98,7 +94,7 @@ namespace Software_del_Pañol
         Button btnFinalizar = new Button();
         public ePrestamo prestamo = new ePrestamo();
 
-        public notificacion(string texto, tipoNoti tipo)
+        public notificacion(string texto)
         {
             // 
             // pbxFlecha
@@ -167,6 +163,4 @@ namespace Software_del_Pañol
             this.Dispose();
         }
     }
-
-    enum tipoNoti {EQUIPO,ESPACIO,LIBRO,URGENTE,OTRO}
 }

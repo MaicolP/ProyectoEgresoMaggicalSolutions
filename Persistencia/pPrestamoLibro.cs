@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 
 namespace Persistencia
 {
@@ -18,15 +20,15 @@ namespace Persistencia
             string consultaSQL3 = "INSERT INTO prestamo_libros(id_prestamo) VALUES((SELECT MAX(id_prestamo) FROM prestamo))";
             ejecutarSQL(consultaSQL3);
 
-            pLibro unL = new pLibro();
+            //pLibro unL = new pLibro();
 
-            foreach (eLibro l in prestamo._libros)
-            {
-                consultaSQL1 = "INSERT INTO pl_l VALUES((SELECT MAX(id_prestamo) FROM prestamo), '" + l.id + "');";
-                ejecutarSQL(consultaSQL1);
-                l.disponible = false;
-                unL.modificarLibro(l);
-            }
+            //foreach (eLibro l in prestamo._libros)
+            //{
+            //    consultaSQL1 = "INSERT INTO pl_l VALUES((SELECT MAX(id_prestamo) FROM prestamo), '" + l.id + "');";
+            //    ejecutarSQL(consultaSQL1);
+            //    l.disponible = false;
+            //    unL.modificarLibro(l);
+            //}
         }
 
         public void bajaPrestamoLibro(ePrestamoLibro prestamo)
@@ -41,18 +43,68 @@ namespace Persistencia
 
         public List<ePrestamoLibro> listarPrestamoLibro()
         {
-            List<ePrestamoLibro> _prestamoLibro = new List<ePrestamoLibro>();
+            List<ePrestamoLibro> _prestamos = new List<ePrestamoLibro>();
+            string consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_directo ON prestamo.id_prestamo = prestamo_directo.id_prestamo INNER JOIN prestamo_libros ON prestamo.id_prestamo = prestamo_libros.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario ORDER BY prestamo_libros.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamos.Add(recrearP(resultado));
+            }
+            return _prestamos;
+        }
 
-
-            return _prestamoLibro;
+        public List<ePrestamoLibro> listarPrestamoLibro(estadoP estado)
+        {
+            List<ePrestamoLibro> _prestamos = new List<ePrestamoLibro>();
+            string consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_directo ON prestamo.id_prestamo = prestamo_directo.id_prestamo INNER JOIN prestamo_libros ON prestamo.id_prestamo = prestamo_libros.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.estado='" + estado.ToString() + "' ORDER BY prestamo_libros.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamos.Add(recrearP(resultado));
+            }
+            return _prestamos;
         }
 
         public List<ePrestamoLibro> listarPLSinDevolver()
         {
-            List<ePrestamoLibro> _prestamoLibro = new List<ePrestamoLibro>();
+            List<ePrestamoLibro> _prestamos = new List<ePrestamoLibro>();
 
+            string consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_directo ON prestamo.id_prestamo = prestamo_directo.id_prestamo INNER JOIN prestamo_libros ON prestamo.id_prestamo = prestamo_libros.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.fecha_devolucion < now() AND prestamo.estado='EnCurso' ORDER BY prestamo_libros.id_prestamo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamos.Add(recrearP(resultado));
+            }
+            return _prestamos;
+        }
 
-            return _prestamoLibro;
+        private ePrestamoLibro recrearP(MySqlDataReader resultado)
+        {
+            pUsuario unPU = new pUsuario();
+            ePrestamoLibro prestamo = new ePrestamoLibro();
+
+            prestamo.id = resultado.GetInt32("id_prestamo");
+            MySqlDateTime fechaRetiro = resultado.GetMySqlDateTime("fecha_retiro");
+            prestamo.fecha_retiro = new DateTime(fechaRetiro.Year, fechaRetiro.Month, fechaRetiro.Day, fechaRetiro.Hour, fechaRetiro.Minute, fechaRetiro.Second);
+            MySqlDateTime fechaDevolucion = resultado.GetMySqlDateTime("fecha_devolucion");
+            prestamo.fecha_devolucion = new DateTime(fechaDevolucion.Year, fechaDevolucion.Month, fechaDevolucion.Day, fechaDevolucion.Hour, fechaDevolucion.Minute, fechaDevolucion.Second);
+            MySqlDateTime fechaSolicitado = resultado.GetMySqlDateTime("fecha_solicitada");
+            prestamo.fecha_solicitado = new DateTime(fechaSolicitado.Year, fechaSolicitado.Month, fechaSolicitado.Day, fechaSolicitado.Hour, fechaSolicitado.Minute, fechaSolicitado.Second);
+            prestamo.responsable.ci = resultado.GetString("ci");
+            prestamo.responsable = unPU.buscarUsuario(prestamo.responsable);
+            prestamo.estadoP = resultado.GetString("estado");
+
+            string consultaSQL = "SELECT * FROM pl_l INNER JOIN libro ON pl_l.id_libro = libro.id_libro WHERE pl_l.id_prestamo = '" + prestamo.id + "'";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            pLibro unPE = new pLibro();
+            eLibro auxLibro = new eLibro();
+            while (fila.Read())
+            {
+                auxLibro.id = fila.GetInt32("id_libro");
+                prestamo._libros.Add(unPE.buscarLibro(auxLibro));
+            }
+
+            return prestamo;
         }
     }
 }
