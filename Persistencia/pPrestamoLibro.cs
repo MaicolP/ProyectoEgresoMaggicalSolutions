@@ -46,5 +46,13 @@ namespace Persistencia
 
             return _prestamoLibro;
         }
+
+        public List<ePrestamoLibro> listarPLSinDevolver()
+        {
+            List<ePrestamoLibro> _prestamoLibro = new List<ePrestamoLibro>();
+
+
+            return _prestamoLibro;
+        }
     }
 }

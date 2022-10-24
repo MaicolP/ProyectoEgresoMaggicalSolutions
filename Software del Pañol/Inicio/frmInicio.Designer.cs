@@ -35,17 +35,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNom = new System.Windows.Forms.Label();
-            this.pbxFlecha = new System.Windows.Forms.PictureBox();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.pbxLinea = new System.Windows.Forms.PictureBox();
             this.pnlNoti = new System.Windows.Forms.Panel();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.pbxLinea = new System.Windows.Forms.PictureBox();
+            this.lblMensaje = new System.Windows.Forms.Label();
+            this.pbxFlecha = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.fpnlContenido.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFlecha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLinea)).BeginInit();
             this.pnlNoti.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLinea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFlecha)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -112,15 +113,39 @@
             this.lblNom.Text = "Notificaciones";
             this.lblNom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pbxFlecha
+            // pnlNoti
             // 
-            this.pbxFlecha.Image = ((System.Drawing.Image)(resources.GetObject("pbxFlecha.Image")));
-            this.pbxFlecha.Location = new System.Drawing.Point(13, 10);
-            this.pbxFlecha.Name = "pbxFlecha";
-            this.pbxFlecha.Size = new System.Drawing.Size(102, 37);
-            this.pbxFlecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxFlecha.TabIndex = 1;
-            this.pbxFlecha.TabStop = false;
+            this.pnlNoti.Controls.Add(this.btnFinalizar);
+            this.pnlNoti.Controls.Add(this.pbxLinea);
+            this.pnlNoti.Controls.Add(this.lblMensaje);
+            this.pnlNoti.Controls.Add(this.pbxFlecha);
+            this.pnlNoti.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNoti.Location = new System.Drawing.Point(3, 62);
+            this.pnlNoti.Name = "pnlNoti";
+            this.pnlNoti.Size = new System.Drawing.Size(882, 54);
+            this.pnlNoti.TabIndex = 0;
+            this.pnlNoti.Visible = false;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.Red;
+            this.btnFinalizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.Location = new System.Drawing.Point(809, 20);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(70, 27);
+            this.btnFinalizar.TabIndex = 56;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            // 
+            // pbxLinea
+            // 
+            this.pbxLinea.BackColor = System.Drawing.Color.Silver;
+            this.pbxLinea.Location = new System.Drawing.Point(164, 49);
+            this.pbxLinea.Name = "pbxLinea";
+            this.pbxLinea.Size = new System.Drawing.Size(560, 2);
+            this.pbxLinea.TabIndex = 16;
+            this.pbxLinea.TabStop = false;
             // 
             // lblMensaje
             // 
@@ -132,26 +157,15 @@
             this.lblMensaje.TabIndex = 12;
             this.lblMensaje.Text = "Tienes 3 prestamos por confirmar";
             // 
-            // pbxLinea
+            // pbxFlecha
             // 
-            this.pbxLinea.BackColor = System.Drawing.Color.Silver;
-            this.pbxLinea.Location = new System.Drawing.Point(164, 49);
-            this.pbxLinea.Name = "pbxLinea";
-            this.pbxLinea.Size = new System.Drawing.Size(560, 2);
-            this.pbxLinea.TabIndex = 16;
-            this.pbxLinea.TabStop = false;
-            // 
-            // pnlNoti
-            // 
-            this.pnlNoti.Controls.Add(this.pbxLinea);
-            this.pnlNoti.Controls.Add(this.lblMensaje);
-            this.pnlNoti.Controls.Add(this.pbxFlecha);
-            this.pnlNoti.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNoti.Location = new System.Drawing.Point(3, 62);
-            this.pnlNoti.Name = "pnlNoti";
-            this.pnlNoti.Size = new System.Drawing.Size(882, 54);
-            this.pnlNoti.TabIndex = 0;
-            this.pnlNoti.Visible = false;
+            this.pbxFlecha.Image = ((System.Drawing.Image)(resources.GetObject("pbxFlecha.Image")));
+            this.pbxFlecha.Location = new System.Drawing.Point(13, 10);
+            this.pbxFlecha.Name = "pbxFlecha";
+            this.pbxFlecha.Size = new System.Drawing.Size(102, 37);
+            this.pbxFlecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxFlecha.TabIndex = 1;
+            this.pbxFlecha.TabStop = false;
             // 
             // frmInicio
             // 
@@ -169,9 +183,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFlecha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLinea)).EndInit();
             this.pnlNoti.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLinea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFlecha)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +202,6 @@
         private System.Windows.Forms.PictureBox pbxLinea;
         private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.PictureBox pbxFlecha;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

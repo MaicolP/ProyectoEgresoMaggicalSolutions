@@ -10,6 +10,10 @@ namespace Dominio
 {
     public class dPrestamo
     {
-       
+       public void finalizarPrestamo(ePrestamo prestamo)
+        {
+            pPrestamo pP = new pPrestamo();
+            pP.finalizarPrestamo(prestamo);
+        }
     }
 }
