@@ -14,6 +14,7 @@ using Software_del_Pañol.Espacios;
 using Software_del_Pañol.PrestamoEspacios;
 using Software_del_Pañol.ConfirmacionPrestamo;
 using Software_del_Pañol.GestionDePrestamos;
+using Software_del_Pañol.Calendario;
 
 namespace Software_del_Pañol
 {
@@ -236,5 +237,10 @@ namespace Software_del_Pañol
         }
 
         #endregion
+
+        private void calendarioDeReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmCalendario());
+        }
     }
 }

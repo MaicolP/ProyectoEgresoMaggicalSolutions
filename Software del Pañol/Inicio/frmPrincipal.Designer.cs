@@ -400,6 +400,7 @@
             this.calendarioDeReservasToolStripMenuItem.Size = new System.Drawing.Size(211, 39);
             this.calendarioDeReservasToolStripMenuItem.Text = "Calendario de reservas";
             this.calendarioDeReservasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.calendarioDeReservasToolStripMenuItem.Click += new System.EventHandler(this.calendarioDeReservasToolStripMenuItem_Click);
             // 
             // solicitarPrestamoToolStripMenuItem
             // 
@@ -420,7 +421,7 @@
             // 
             this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.equiposToolStripMenuItem.Text = "Equipos";
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
@@ -428,7 +429,7 @@
             // 
             this.espacioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.espacioToolStripMenuItem.Name = "espacioToolStripMenuItem";
-            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.espacioToolStripMenuItem.Text = "Espacios";
             this.espacioToolStripMenuItem.Click += new System.EventHandler(this.espacioToolStripMenuItem_Click);
             // 
@@ -436,7 +437,7 @@
             // 
             this.libroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
-            this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.libroToolStripMenuItem.Text = "Libros";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
             // 
@@ -444,7 +445,7 @@
             // 
             this.urgenteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.urgenteToolStripMenuItem.Name = "urgenteToolStripMenuItem";
-            this.urgenteToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.urgenteToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.urgenteToolStripMenuItem.Text = "Urgente";
             this.urgenteToolStripMenuItem.Click += new System.EventHandler(this.urgenteToolStripMenuItem_Click);
             // 
@@ -463,7 +464,7 @@
             // 
             this.equipoCToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.equipoCToolStripMenuItem1.Name = "equipoCToolStripMenuItem1";
-            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
             this.equipoCToolStripMenuItem1.Text = "Equipo";
             this.equipoCToolStripMenuItem1.Click += new System.EventHandler(this.equipoCToolStripMenuItem1_Click);
             // 
@@ -471,7 +472,7 @@
             // 
             this.espacioCToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.espacioCToolStripMenuItem.Name = "espacioCToolStripMenuItem";
-            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
             this.espacioCToolStripMenuItem.Text = "Espacio";
             this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
             // 
