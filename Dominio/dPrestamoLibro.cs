@@ -39,5 +39,11 @@ namespace Dominio
             pPrestamoLibro unPE = new pPrestamoLibro();
             return unPE.listarPLSinDevolver();
         }
+
+        public List<ePrestamoLibro> listarPrestamoLibro(estadoP estado)
+        {
+            pPrestamoLibro unPE = new pPrestamoLibro();
+            return unPE.listarPrestamoLibro(estado);
+        }
     }
 }
