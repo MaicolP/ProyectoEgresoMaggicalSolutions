@@ -158,3 +158,9 @@ C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmGestionRoturas.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Equipo.frmAgregarRotura.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmTiposDeEquipo.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\bin\Debug\Software del Pañol.exe.CodeAnalysisLog.xml
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\bin\Debug\Software del Pañol.exe.lastcodeanalysissucceeded
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmEquiposPrestamo.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmGestionDePrestamosConReserva.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEquipos.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEspacios.resources
