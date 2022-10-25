@@ -11,7 +11,6 @@ namespace Persistencia
 {
     public class pPrestamoEquipo : clsPersistencia
     {
-
         public void altaPrestamoEquipo(ePrestamoEquipo prestamo)
         {
             string consultaSQL1 = "INSERT INTO prestamo(fecha_retiro, fecha_devolucion, fecha_solicitada, id_usuario, estado) VALUES('" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.responsable.id + "', '" + prestamo.estadoP +"');";
@@ -30,7 +29,6 @@ namespace Persistencia
                 eq.estado = estadoEq.Reservado.ToString();
                 unE.modificarEquipo(eq);
             }
-
         }
 
         public void bajaPrestamoEquipo(ePrestamoEquipo prestamo)

@@ -185,8 +185,10 @@ namespace Software_del_Pañol
             cambiarFormHijo(new frmSolicitarLibro(usuarioActual));
         }
 
-
-
+        private void urgenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmSolicitarPrestamoUrgente(usuarioActual));
+        }
 
         #endregion
 

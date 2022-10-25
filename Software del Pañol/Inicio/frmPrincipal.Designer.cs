@@ -64,6 +64,7 @@
             this.confirmarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urgenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitulo.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -405,7 +406,8 @@
             this.solicitarPrestamoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.equiposToolStripMenuItem,
             this.espacioToolStripMenuItem,
-            this.libroToolStripMenuItem});
+            this.libroToolStripMenuItem,
+            this.urgenteToolStripMenuItem});
             this.solicitarPrestamoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solicitarPrestamoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.solicitarPrestamoToolStripMenuItem.Name = "solicitarPrestamoToolStripMenuItem";
@@ -418,7 +420,7 @@
             // 
             this.equiposToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.equiposToolStripMenuItem.Text = "Equipos";
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
@@ -426,7 +428,7 @@
             // 
             this.espacioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.espacioToolStripMenuItem.Name = "espacioToolStripMenuItem";
-            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.espacioToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.espacioToolStripMenuItem.Text = "Espacios";
             this.espacioToolStripMenuItem.Click += new System.EventHandler(this.espacioToolStripMenuItem_Click);
             // 
@@ -434,7 +436,7 @@
             // 
             this.libroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
-            this.libroToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.libroToolStripMenuItem.Text = "Libros";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
             // 
@@ -464,6 +466,14 @@
             this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
             this.espacioCToolStripMenuItem.Text = "Espacio";
             this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
+            // 
+            // urgenteToolStripMenuItem
+            // 
+            this.urgenteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.urgenteToolStripMenuItem.Name = "urgenteToolStripMenuItem";
+            this.urgenteToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.urgenteToolStripMenuItem.Text = "Urgente";
+            this.urgenteToolStripMenuItem.Click += new System.EventHandler(this.urgenteToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -535,5 +545,6 @@
         private System.Windows.Forms.ToolStripMenuItem confirmarPrestamoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equipoCToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem espacioCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem urgenteToolStripMenuItem;
     }
 }
