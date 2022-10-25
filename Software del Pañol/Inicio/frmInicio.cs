@@ -58,13 +58,6 @@ namespace Software_del_Pañol
                 notificacion noti = new notificacion("Tiene " + auxCant + " prestamos de espacio sin confirmar", tipoNoti.MENSAJE);
                 fpnlContenido.Controls.Add(noti);
             }
-
-            auxCant = unPL.listarPrestamoLibro(estadoP.Pendiente).Count;
-            if (auxCant != 0)
-            {
-                notificacion noti = new notificacion("Tiene " + auxCant + " prestamos de espacio sin confirmar", tipoNoti.MENSAJE);
-                fpnlContenido.Controls.Add(noti);
-            }
         }
 
         private void notiPEquipo(List<ePrestamoEquipo> _prestamos)
