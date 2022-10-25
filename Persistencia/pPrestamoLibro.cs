@@ -33,7 +33,12 @@ namespace Persistencia
 
         public void bajaPrestamoLibro(ePrestamoLibro prestamo)
         {
-
+            string consultaSQL1 = "DELETE FROM prestamo_libros WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL1);
+            string consultaSQL2 = "DELETE FROM prestamo_con_reserva WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL2);
+            string consultaSQL3 = "DELETE FROM prestamo WHERE id_prestamo = '" + prestamo.id+ "';";
+            ejecutarSQL(consultaSQL3);
         }
 
         public void modificarPrestamoLibro(ePrestamoLibro prestamo)

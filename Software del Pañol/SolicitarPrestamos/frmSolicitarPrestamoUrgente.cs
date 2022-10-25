@@ -245,8 +245,8 @@ namespace Software_del_Pañol
                 usuario = unU.buscarUsuario(usuario);
                 if(usuario != null)
                 {
-                    txtApellidoDocente.Text = usuario.nombre;
-                    txtNombreDocente.Text = usuario.apellido;
+                    txtApellidoDocente.Text = usuario.apellido;
+                    txtNombreDocente.Text = usuario.nombre;
                 }
                 else
                 {

@@ -76,7 +76,7 @@ namespace Software_del_Pañol
                 prestamo.fecha_solicitado = DateTime.Now;
                 prestamo._libros = _librosSel;
                 prestamo.responsable = usuarioActual;
-                prestamo.estadoP = estadoP.Pendiente.ToString();
+                prestamo.estadoP = estadoP.EnCurso.ToString();
 
                 dPrestamoLibro unP = new dPrestamoLibro();
                 unP.altaPrestamoLibro(prestamo);
