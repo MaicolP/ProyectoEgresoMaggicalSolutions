@@ -36,12 +36,13 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             // dgvEquipos y cbx
             dgvEquipos.AutoGenerateColumns = false;
             dgvEquiposSel.AutoGenerateColumns = false;
+            activarCampos(false);
             actualizarCbx();
 
             // Prestamos
             btnAnterior.Enabled = false;
             dPrestamoEquipo unPE = new dPrestamoEquipo();
-            _prestamos = unPE.listarPrestamoEquipo(estadoP.Pendiente);
+            _prestamos = unPE.listarPrestamoEquipoPendiente();
 
             if (_prestamos.Any())
             {
@@ -199,8 +200,14 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             prestamoActual.fecha_solicitado = dtpSolicitado.Value;
             prestamoActual.fecha_retiro = dtpRetiro.Value;
             prestamoActual.fecha_devolucion = dtpDevolucion.Value;
-            prestamoActual.curso = txtCurso.Text;
-            prestamoActual.ejercicio = txtEjercicio.Text;
+            prestamoActual.curso = cbxCurso.Text;
+            prestamoActual.ejercicio = cbxEjercicio.Text;
+            if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 3;
+            else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 2;
+            else
+            {
+                prestamoActual.prioridad = 1;
+            }
             prestamoActual.equipoRodaje = txtEquipoRodaje.Text;
             prestamoActual.locaciones = txtLocaciones.Text;
             prestamoActual.nomDocente = txtNombreDocente.Text;
@@ -210,7 +217,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             prestamoActual._equipos = _equiposSel;
 
             prestamo.modificarPrestamoEquipo(prestamoActual);
-            _prestamos = prestamo.listarPrestamoEquipo(estadoP.Pendiente);
+            _prestamos = prestamo.listarPrestamoEquipoPendiente();
 
             lblMensaje.Text = "Solicitud confirmada correctamente";
 
@@ -364,8 +371,8 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             dtpRetiro.Enabled = estado;
             dtpDevolucion.Enabled = estado;
             dtpSolicitado.Enabled = estado;
-            txtCurso.Enabled = estado;
-            txtEjercicio.Enabled = estado;
+            cbxCurso.Enabled = estado;
+            cbxEjercicio.Enabled = estado;
             txtEquipoRodaje.Enabled = estado;
             txtLocaciones.Enabled = estado;
             txtTransporte.Enabled = estado;
@@ -379,13 +386,14 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
         private void vaciarCampos()
         {
+            lblPrioridad.Text = "";
             txtNombreResponsable.Text = "";
             txtApellidoResponsable.Text = "";
             dtpRetiro.Value = DateTime.Now;
             dtpDevolucion.Value = DateTime.Now;
             dtpSolicitado.Value = DateTime.Now;
-            txtCurso.Text = "";
-            txtEjercicio.Text = "";
+            cbxCurso.Text = "";
+            cbxEjercicio.Text = "";
             txtEquipoRodaje.Text = "";
             txtTransporte.Text = "";
             txtLocaciones.Text = "";
@@ -398,13 +406,17 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
         public void mostrarPrestamoActual()
         {
             lblPrestamoActual.Text = "Prestamo N°" + prestamoActual.id;
+            lblPrioridad.Text = "Prioridad : " + prestamoActual.prioridad;
+            if (lblPrioridad.Text == "Prioridad : 1") lblPrioridad.ForeColor = Color.Green;
+            else if (lblPrioridad.Text == "Prioridad : 2") lblPrioridad.ForeColor = Color.Gold;
+            else if (lblPrioridad.Text == "Prioridad : 3") lblPrioridad.ForeColor = Color.Red;
             txtNombreResponsable.Text = prestamoActual.responsable.nombre;
             txtApellidoResponsable.Text = prestamoActual.responsable.apellido;
             dtpSolicitado.Value = prestamoActual.fecha_solicitado;
             dtpRetiro.Value = prestamoActual.fecha_retiro;
             dtpDevolucion.Value = prestamoActual.fecha_devolucion;
-            txtCurso.Text = prestamoActual.curso;
-            txtEjercicio.Text = prestamoActual.ejercicio;
+            cbxCurso.Text = prestamoActual.curso;
+            cbxEjercicio.Text = prestamoActual.ejercicio;
             txtEquipoRodaje.Text = prestamoActual.equipoRodaje;
             txtLocaciones.Text = prestamoActual.locaciones;
             txtNombreDocente.Text = prestamoActual.nomDocente;

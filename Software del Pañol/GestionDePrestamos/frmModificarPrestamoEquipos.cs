@@ -51,7 +51,7 @@ namespace Software_del_Pañol.GestionDePrestamos
             unPEQ.equipoRodaje = dgvPrestamoEq.CurrentCell.OwningRow.Cells["EquipoRodaje"].Value.ToString();
 
             dPrestamoEquipo prestamo = new dPrestamoEquipo();
-            prestamo.modificarPrestamoEquipo(unPEQ);
+            prestamo.modificarPrestamoEquipo(unPEQ);           
 
             this.Close();
         }

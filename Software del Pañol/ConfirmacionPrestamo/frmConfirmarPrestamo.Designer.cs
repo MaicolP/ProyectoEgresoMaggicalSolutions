@@ -31,9 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxEspacio = new System.Windows.Forms.ComboBox();
             this.lblEspacio = new System.Windows.Forms.Label();
-            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.lblEjercicio = new System.Windows.Forms.Label();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.dtpDevolucion = new System.Windows.Forms.DateTimePicker();
             this.dtpRetiro = new System.Windows.Forms.DateTimePicker();
             this.lblCurso = new System.Windows.Forms.Label();
@@ -50,8 +48,11 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.lblPrioridad = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
+            this.cbxEjercicio = new System.Windows.Forms.ComboBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -89,19 +90,6 @@
             this.lblEspacio.Text = "Espacio:";
             this.lblEspacio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtEjercicio
-            // 
-            this.txtEjercicio.BackColor = System.Drawing.Color.LightGray;
-            this.txtEjercicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEjercicio.Enabled = false;
-            this.txtEjercicio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEjercicio.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEjercicio.Location = new System.Drawing.Point(480, 381);
-            this.txtEjercicio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEjercicio.Name = "txtEjercicio";
-            this.txtEjercicio.Size = new System.Drawing.Size(179, 26);
-            this.txtEjercicio.TabIndex = 114;
-            // 
             // lblEjercicio
             // 
             this.lblEjercicio.AutoSize = true;
@@ -113,19 +101,6 @@
             this.lblEjercicio.TabIndex = 113;
             this.lblEjercicio.Text = "Ejercicio:";
             this.lblEjercicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.BackColor = System.Drawing.Color.LightGray;
-            this.txtCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCurso.Enabled = false;
-            this.txtCurso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCurso.Location = new System.Drawing.Point(480, 337);
-            this.txtCurso.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(179, 26);
-            this.txtCurso.TabIndex = 112;
             // 
             // dtpDevolucion
             // 
@@ -327,6 +302,16 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // lblPrioridad
+            // 
+            this.lblPrioridad.AutoSize = true;
+            this.lblPrioridad.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridad.Location = new System.Drawing.Point(764, 72);
+            this.lblPrioridad.Name = "lblPrioridad";
+            this.lblPrioridad.Size = new System.Drawing.Size(82, 21);
+            this.lblPrioridad.TabIndex = 179;
+            this.lblPrioridad.Text = "Prioridad:";
+            // 
             // btnSiguiente
             // 
             this.btnSiguiente.BackColor = System.Drawing.Color.White;
@@ -350,11 +335,45 @@
             this.btnAnterior.UseVisualStyleBackColor = false;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
+            // cbxEjercicio
+            // 
+            this.cbxEjercicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEjercicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEjercicio.FormattingEnabled = true;
+            this.cbxEjercicio.Items.AddRange(new object[] {
+            "Práctica",
+            "Rodaje"});
+            this.cbxEjercicio.Location = new System.Drawing.Point(480, 384);
+            this.cbxEjercicio.Name = "cbxEjercicio";
+            this.cbxEjercicio.Size = new System.Drawing.Size(179, 25);
+            this.cbxEjercicio.TabIndex = 180;
+            // 
+            // cbxCurso
+            // 
+            this.cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCurso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero Bachillerato",
+            "Segundo Bachillerato",
+            "Tercero Bachillerato",
+            "Primero Tecnicatura",
+            "Segundo Tecnicatura",
+            "Fines"});
+            this.cbxCurso.Location = new System.Drawing.Point(480, 338);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(179, 25);
+            this.cbxCurso.TabIndex = 181;
+            // 
             // frmConfirmarPrestamoEspacio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(885, 601);
+            this.Controls.Add(this.cbxCurso);
+            this.Controls.Add(this.cbxEjercicio);
+            this.Controls.Add(this.lblPrioridad);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblMensaje);
@@ -370,9 +389,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxEspacio);
             this.Controls.Add(this.lblEspacio);
-            this.Controls.Add(this.txtEjercicio);
             this.Controls.Add(this.lblEjercicio);
-            this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.dtpDevolucion);
             this.Controls.Add(this.dtpRetiro);
             this.Controls.Add(this.lblCurso);
@@ -392,9 +409,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxEspacio;
         private System.Windows.Forms.Label lblEspacio;
-        private System.Windows.Forms.TextBox txtEjercicio;
         private System.Windows.Forms.Label lblEjercicio;
-        private System.Windows.Forms.TextBox txtCurso;
         private System.Windows.Forms.DateTimePicker dtpDevolucion;
         private System.Windows.Forms.DateTimePicker dtpRetiro;
         private System.Windows.Forms.Label lblCurso;
@@ -413,5 +428,8 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Label lblPrioridad;
+        private System.Windows.Forms.ComboBox cbxEjercicio;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

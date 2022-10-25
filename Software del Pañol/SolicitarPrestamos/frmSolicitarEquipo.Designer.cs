@@ -67,7 +67,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtLocaciones = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTransporte = new System.Windows.Forms.TextBox();
             this.txtEquipoRodaje = new System.Windows.Forms.TextBox();
@@ -75,7 +74,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpRetiro = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -85,6 +83,8 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.txtApellidoDocente = new System.Windows.Forms.TextBox();
             this.txtNombreDocente = new System.Windows.Forms.TextBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
+            this.cbxEjercicio = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSel)).BeginInit();
@@ -116,6 +116,8 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.cbxEjercicio);
+            this.panel1.Controls.Add(this.cbxCurso);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.dgvEquiposSel);
             this.panel1.Controls.Add(this.dgvEquipos);
@@ -128,7 +130,6 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtLocaciones);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtEjercicio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTransporte);
             this.panel1.Controls.Add(this.txtEquipoRodaje);
@@ -136,7 +137,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpRetiro);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtCurso);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -222,7 +222,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 298);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 350);
             this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
@@ -353,7 +353,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(383, 298);
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 350);
             this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
@@ -535,24 +535,12 @@
             this.label5.Text = "Curso:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtEjercicio
-            // 
-            this.txtEjercicio.BackColor = System.Drawing.Color.LightGray;
-            this.txtEjercicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEjercicio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEjercicio.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEjercicio.Location = new System.Drawing.Point(476, 195);
-            this.txtEjercicio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEjercicio.Name = "txtEjercicio";
-            this.txtEjercicio.Size = new System.Drawing.Size(217, 26);
-            this.txtEjercicio.TabIndex = 92;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(188, 195);
+            this.label4.Location = new System.Drawing.Point(188, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 26);
             this.label4.TabIndex = 91;
@@ -577,7 +565,7 @@
             this.txtEquipoRodaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEquipoRodaje.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEquipoRodaje.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEquipoRodaje.Location = new System.Drawing.Point(476, 127);
+            this.txtEquipoRodaje.Location = new System.Drawing.Point(476, 195);
             this.txtEquipoRodaje.Margin = new System.Windows.Forms.Padding(4);
             this.txtEquipoRodaje.Name = "txtEquipoRodaje";
             this.txtEquipoRodaje.Size = new System.Drawing.Size(217, 26);
@@ -600,7 +588,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(188, 127);
+            this.label2.Location = new System.Drawing.Point(188, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 26);
             this.label2.TabIndex = 87;
@@ -631,18 +619,6 @@
             this.label1.TabIndex = 85;
             this.label1.Text = "Locaciones:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.BackColor = System.Drawing.Color.LightGray;
-            this.txtCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCurso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCurso.Location = new System.Drawing.Point(476, 93);
-            this.txtCurso.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(217, 26);
-            this.txtCurso.TabIndex = 84;
             // 
             // label8
             // 
@@ -752,6 +728,36 @@
             this.txtNombreDocente.Size = new System.Drawing.Size(217, 26);
             this.txtNombreDocente.TabIndex = 75;
             // 
+            // cbxCurso
+            // 
+            this.cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCurso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero Bachillerato",
+            "Segundo Bachillerato",
+            "Tercero Bachillerato",
+            "Primero Tecnicatura",
+            "Segundo Tecnicatura",
+            "Fines"});
+            this.cbxCurso.Location = new System.Drawing.Point(476, 92);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(217, 25);
+            this.cbxCurso.TabIndex = 110;
+            // 
+            // cbxEjercicio
+            // 
+            this.cbxEjercicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEjercicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEjercicio.FormattingEnabled = true;
+            this.cbxEjercicio.Items.AddRange(new object[] {
+            "Práctica",
+            "Rodaje"});
+            this.cbxEjercicio.Location = new System.Drawing.Point(476, 127);
+            this.cbxEjercicio.Name = "cbxEjercicio";
+            this.cbxEjercicio.Size = new System.Drawing.Size(217, 25);
+            this.cbxEjercicio.TabIndex = 111;
+            // 
             // frmSolicitarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,7 +787,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtLocaciones;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEjercicio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTransporte;
         private System.Windows.Forms.TextBox txtEquipoRodaje;
@@ -789,7 +794,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpRetiro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCurso;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -825,5 +829,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ComboBox cbxEjercicio;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

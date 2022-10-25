@@ -16,7 +16,7 @@ namespace Persistencia
         {
             string consultaSQL1 = "INSERT INTO prestamo(fecha_retiro, fecha_devolucion, fecha_solicitada, id_usuario, estado) VALUES('" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.responsable.id + "', '" + prestamo.estadoP +"');";
             ejecutarSQL(consultaSQL1);
-            string consultaSQL2 = "INSERT INTO prestamo_con_reserva(id_prestamo, curso, ejercicio) VALUES((SELECT MAX(id_prestamo) FROM prestamo),'" + prestamo.curso + "','" + prestamo.ejercicio + "')";
+            string consultaSQL2 = "INSERT INTO prestamo_con_reserva(id_prestamo, curso, ejercicio, prioridad) VALUES((SELECT MAX(id_prestamo) FROM prestamo),'" + prestamo.curso + "','" + prestamo.ejercicio + "','"+ prestamo.prioridad +"')";
             ejecutarSQL(consultaSQL2);
             string consultaSQL3 = "INSERT INTO prestamo_equipos VALUES((SELECT MAX(id_prestamo) FROM prestamo_con_reserva),'" + prestamo.nomDocente + "','" + prestamo.apeDocente +"','" + prestamo.locaciones +"','" + prestamo.transporte +"','" + prestamo.equipoRodaje +"');";
             ejecutarSQL(consultaSQL3);
@@ -64,10 +64,10 @@ namespace Persistencia
             }
         }
 
-        public List<ePrestamoEquipo> listarPrestamoEquipo()
+        public List<ePrestamoEquipo> listarPrestamoEquipoPendiente()
         {
             List<ePrestamoEquipo> _prestamoEquipo = new List<ePrestamoEquipo>();
-            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario ORDER BY prestamo_equipos.id_prestamo;";
+            String consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.estado = '" + estadoP.Pendiente + "'ORDER BY prestamo_con_reserva.prioridad DESC;";
             MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
             while (resultado.Read())
             {
@@ -129,6 +129,7 @@ namespace Persistencia
             prestamo.estadoP = resultado.GetString("estado");
             prestamo.curso = resultado.GetString("curso");
             prestamo.ejercicio = resultado.GetString("ejercicio");
+            prestamo.prioridad = resultado.GetInt32("prioridad");
             prestamo.locaciones = resultado.GetString("locaciones");
             prestamo.transporte = resultado.GetString("transporte");
             prestamo.nomDocente = resultado.GetString("nombre_docente");
