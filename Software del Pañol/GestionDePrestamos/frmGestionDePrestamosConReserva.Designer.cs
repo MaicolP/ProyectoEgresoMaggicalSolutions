@@ -35,8 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamoEquipos = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDevolución = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,11 +55,7 @@
             this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.cbxTipoPrestamo = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvPrestamoEspacios = new System.Windows.Forms.DataGridView();
-            this.EliminarEs = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ModificarEs = new System.Windows.Forms.DataGridViewImageColumn();
             this.IDPES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +67,18 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EliminarEs = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ModificarEs = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEspacios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPrestamoEquipos
@@ -146,24 +150,6 @@
             this.dgvPrestamoEquipos.Size = new System.Drawing.Size(867, 449);
             this.dgvPrestamoEquipos.TabIndex = 59;
             this.dgvPrestamoEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoEquipos_CellClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.Width = 5;
-            // 
-            // Modificar
-            // 
-            this.Modificar.HeaderText = "";
-            this.Modificar.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Modificar.Width = 5;
             // 
             // ID
             // 
@@ -288,7 +274,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(648, 72);
+            this.lblEstado.Location = new System.Drawing.Point(606, 72);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(75, 26);
             this.lblEstado.TabIndex = 58;
@@ -304,7 +290,7 @@
             "Todos",
             "En Curso",
             "Finalizado"});
-            this.cbxEstado.Location = new System.Drawing.Point(740, 72);
+            this.cbxEstado.Location = new System.Drawing.Point(698, 72);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(133, 25);
             this.cbxEstado.TabIndex = 57;
@@ -334,24 +320,6 @@
             this.lblTitulo.TabIndex = 55;
             this.lblTitulo.Text = "Gestión de Préstamos con reserva";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 5;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.Width = 5;
             // 
             // dgvPrestamoEspacios
             // 
@@ -417,24 +385,6 @@
             this.dgvPrestamoEspacios.Size = new System.Drawing.Size(867, 449);
             this.dgvPrestamoEspacios.TabIndex = 60;
             this.dgvPrestamoEspacios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoEspacios_CellClick);
-            // 
-            // EliminarEs
-            // 
-            this.EliminarEs.HeaderText = "";
-            this.EliminarEs.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.EliminarEs.Name = "EliminarEs";
-            this.EliminarEs.ReadOnly = true;
-            this.EliminarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EliminarEs.Width = 5;
-            // 
-            // ModificarEs
-            // 
-            this.ModificarEs.HeaderText = "";
-            this.ModificarEs.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.ModificarEs.Name = "ModificarEs";
-            this.ModificarEs.ReadOnly = true;
-            this.ModificarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ModificarEs.Width = 5;
             // 
             // IDPES
             // 
@@ -513,12 +463,96 @@
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Width = 83;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 5;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 5;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.Width = 5;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn4.Width = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Software_del_Pañol.Properties.Resources.refresh1;
+            this.pictureBox1.InitialImage = global::Software_del_Pañol.Properties.Resources.refresh;
+            this.pictureBox1.Location = new System.Drawing.Point(841, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // EliminarEs
+            // 
+            this.EliminarEs.HeaderText = "";
+            this.EliminarEs.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.EliminarEs.Name = "EliminarEs";
+            this.EliminarEs.ReadOnly = true;
+            this.EliminarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EliminarEs.Width = 5;
+            // 
+            // ModificarEs
+            // 
+            this.ModificarEs.HeaderText = "";
+            this.ModificarEs.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.ModificarEs.Name = "ModificarEs";
+            this.ModificarEs.ReadOnly = true;
+            this.ModificarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ModificarEs.Width = 5;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.Width = 5;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "";
+            this.Modificar.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Modificar.Width = 5;
+            // 
             // frmGestionDePrestamosConReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(885, 575);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvPrestamoEspacios);
             this.Controls.Add(this.dgvPrestamoEquipos);
             this.Controls.Add(this.lblEstado);
@@ -530,6 +564,7 @@
             this.Load += new System.EventHandler(this.frmGestionDePrestamosConReserva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEspacios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +611,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

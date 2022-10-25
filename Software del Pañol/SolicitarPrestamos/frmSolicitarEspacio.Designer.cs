@@ -34,13 +34,13 @@
             this.dtpRetiro = new System.Windows.Forms.DateTimePicker();
             this.dtpDevolucion = new System.Windows.Forms.DateTimePicker();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.lblEjercicio = new System.Windows.Forms.Label();
-            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.lblEspacio = new System.Windows.Forms.Label();
             this.cbxEspacio = new System.Windows.Forms.ComboBox();
             this.btnSolicitar = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
+            this.cbxEjercicio = new System.Windows.Forms.ComboBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblFechaR
@@ -116,18 +116,6 @@
             this.lblTitulo.Text = "Formulario de solicitud de espacios";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtCurso
-            // 
-            this.txtCurso.BackColor = System.Drawing.Color.LightGray;
-            this.txtCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCurso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCurso.Location = new System.Drawing.Point(491, 185);
-            this.txtCurso.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(179, 26);
-            this.txtCurso.TabIndex = 98;
-            // 
             // lblEjercicio
             // 
             this.lblEjercicio.AutoSize = true;
@@ -139,18 +127,6 @@
             this.lblEjercicio.TabIndex = 103;
             this.lblEjercicio.Text = "Ejercicio:";
             this.lblEjercicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtEjercicio
-            // 
-            this.txtEjercicio.BackColor = System.Drawing.Color.LightGray;
-            this.txtEjercicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEjercicio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEjercicio.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEjercicio.Location = new System.Drawing.Point(491, 229);
-            this.txtEjercicio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEjercicio.Name = "txtEjercicio";
-            this.txtEjercicio.Size = new System.Drawing.Size(179, 26);
-            this.txtEjercicio.TabIndex = 104;
             // 
             // lblEspacio
             // 
@@ -171,7 +147,7 @@
             this.cbxEspacio.FormattingEnabled = true;
             this.cbxEspacio.Location = new System.Drawing.Point(491, 272);
             this.cbxEspacio.Name = "cbxEspacio";
-            this.cbxEspacio.Size = new System.Drawing.Size(179, 25);
+            this.cbxEspacio.Size = new System.Drawing.Size(217, 25);
             this.cbxEspacio.TabIndex = 106;
             // 
             // btnSolicitar
@@ -197,18 +173,48 @@
             this.lblMensaje.TabIndex = 108;
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cbxEjercicio
+            // 
+            this.cbxEjercicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEjercicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEjercicio.FormattingEnabled = true;
+            this.cbxEjercicio.Items.AddRange(new object[] {
+            "Práctica",
+            "Rodaje"});
+            this.cbxEjercicio.Location = new System.Drawing.Point(491, 232);
+            this.cbxEjercicio.Name = "cbxEjercicio";
+            this.cbxEjercicio.Size = new System.Drawing.Size(217, 25);
+            this.cbxEjercicio.TabIndex = 112;
+            // 
+            // cbxCurso
+            // 
+            this.cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCurso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero Bachillerato",
+            "Segundo Bachillerato",
+            "Tercero Bachillerato",
+            "Primero Tecnicatura",
+            "Segundo Tecnicatura",
+            "Fines"});
+            this.cbxCurso.Location = new System.Drawing.Point(491, 186);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(217, 25);
+            this.cbxCurso.TabIndex = 113;
+            // 
             // frmSolicitarEspacio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 557);
+            this.Controls.Add(this.cbxCurso);
+            this.Controls.Add(this.cbxEjercicio);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnSolicitar);
             this.Controls.Add(this.cbxEspacio);
             this.Controls.Add(this.lblEspacio);
-            this.Controls.Add(this.txtEjercicio);
             this.Controls.Add(this.lblEjercicio);
-            this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.dtpDevolucion);
             this.Controls.Add(this.dtpRetiro);
             this.Controls.Add(this.lblCurso);
@@ -231,12 +237,12 @@
         private System.Windows.Forms.DateTimePicker dtpRetiro;
         private System.Windows.Forms.DateTimePicker dtpDevolucion;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox txtCurso;
         private System.Windows.Forms.Label lblEjercicio;
-        private System.Windows.Forms.TextBox txtEjercicio;
         private System.Windows.Forms.Label lblEspacio;
         private System.Windows.Forms.ComboBox cbxEspacio;
         private System.Windows.Forms.Button btnSolicitar;
         private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.ComboBox cbxEjercicio;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

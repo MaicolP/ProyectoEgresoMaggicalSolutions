@@ -179,7 +179,7 @@ namespace Software_del_Pañol
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-            if (txtCurso.Text == "" || txtEquipoRodaje.Text == "" || txtTransporte.Text == "" || txtEjercicio.Text == "" || txtLocaciones.Text == "" || txtNombreDocente.Text == "" || txtApellidoDocente.Text == "")
+            if (cbxCurso.Text == "" || txtEquipoRodaje.Text == "" || txtTransporte.Text == "" || cbxEjercicio.Text == "" || txtLocaciones.Text == "" || txtNombreDocente.Text == "" || txtApellidoDocente.Text == "")
             {
                 lblMensaje.ForeColor = Color.Red;
                 lblMensaje.Text = "Complete todos los campos";
@@ -198,14 +198,19 @@ namespace Software_del_Pañol
                 prestamo.apeDocente = txtApellidoDocente.Text;
                 prestamo.nomDocente = txtNombreDocente.Text;
                 prestamo.locaciones = txtLocaciones.Text;
-                prestamo.curso = txtCurso.Text;
+                prestamo.curso = cbxCurso.Text;
                 prestamo.transporte = txtTransporte.Text;
                 prestamo.equipoRodaje = txtEquipoRodaje.Text;
-                prestamo.ejercicio = txtEjercicio.Text;
+                prestamo.ejercicio = cbxEjercicio.Text;
                 prestamo._equipos = _equiposSel;
                 prestamo.responsable = usuarioActual;
                 prestamo.estadoP = estadoP.Pendiente.ToString();
-
+                if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamo.prioridad = 3;
+                else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamo.prioridad = 2;
+                else
+                {
+                    prestamo.prioridad = 1;
+                }
                 dPrestamoEquipo unP = new dPrestamoEquipo();
                 unP.altaPrestamoEquipo(prestamo);
 
@@ -215,10 +220,10 @@ namespace Software_del_Pañol
 
                 txtApellidoDocente.Clear();
                 txtNombreDocente.Clear();
-                txtCurso.Clear();
+                cbxCurso.Text="";
                 txtEquipoRodaje.Clear();
                 txtTransporte.Clear();
-                txtEjercicio.Clear();
+                cbxEjercicio.Text="";
                 txtLocaciones.Clear();
 
                 lblMensaje.ForeColor = Color.CornflowerBlue;

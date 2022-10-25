@@ -66,7 +66,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtLocaciones = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTransporte = new System.Windows.Forms.TextBox();
             this.txtEquipoRodaje = new System.Windows.Forms.TextBox();
@@ -74,7 +73,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpRetiro = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,6 +82,8 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.txtApellidoDocente = new System.Windows.Forms.TextBox();
             this.txtNombreDocente = new System.Windows.Forms.TextBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
+            this.cbxEjercicio = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -110,6 +110,45 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Formulario de solicitud de equipos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.cbxEjercicio);
+            this.panel1.Controls.Add(this.cbxCurso);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.dgvEquiposSel);
+            this.panel1.Controls.Add(this.dgvEquipos);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.cbxSubtipoList);
+            this.panel1.Controls.Add(this.cbxTipoList);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.btnAgregarEquipo);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.txtLocaciones);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtTransporte);
+            this.panel1.Controls.Add(this.txtEquipoRodaje);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dtpRetiro);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dtpDevolucion);
+            this.panel1.Controls.Add(this.lblMensaje);
+            this.panel1.Controls.Add(this.btnSolicitar);
+            this.panel1.Controls.Add(this.lblNom);
+            this.panel1.Controls.Add(this.txtApellidoDocente);
+            this.panel1.Controls.Add(this.txtNombreDocente);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(885, 689);
+            this.panel1.TabIndex = 1;
             // 
             // btnEliminar
             // 
@@ -180,8 +219,8 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(400, 259);
-            this.dgvEquiposSel.TabIndex = 136;
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 350);
+            this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
             // 
@@ -311,8 +350,8 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(400, 259);
-            this.dgvEquipos.TabIndex = 135;
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 350);
+            this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
             // 
@@ -498,17 +537,18 @@
             this.txtEjercicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEjercicio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEjercicio.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEjercicio.Location = new System.Drawing.Point(471, 253);
+            this.txtEjercicio.Location = new System.Drawing.Point(476, 195);
             this.txtEjercicio.Margin = new System.Windows.Forms.Padding(4);
             this.txtEjercicio.Name = "txtEjercicio";
             this.txtEjercicio.Size = new System.Drawing.Size(217, 26);
-            this.txtEjercicio.TabIndex = 125;
+            this.txtEjercicio.TabIndex = 92;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(188, 127);
             this.label4.Location = new System.Drawing.Point(183, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 26);
@@ -595,11 +635,11 @@
             this.txtCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCurso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCurso.Location = new System.Drawing.Point(471, 151);
+            this.txtCurso.Location = new System.Drawing.Point(476, 93);
             this.txtCurso.Margin = new System.Windows.Forms.Padding(4);
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.Size = new System.Drawing.Size(217, 26);
-            this.txtCurso.TabIndex = 117;
+            this.txtCurso.TabIndex = 84;
             // 
             // label8
             // 
@@ -708,6 +748,36 @@
             this.txtNombreDocente.Size = new System.Drawing.Size(217, 26);
             this.txtNombreDocente.TabIndex = 108;
             // 
+            // cbxCurso
+            // 
+            this.cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCurso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero Bachillerato",
+            "Segundo Bachillerato",
+            "Tercero Bachillerato",
+            "Primero Tecnicatura",
+            "Segundo Tecnicatura",
+            "Fines"});
+            this.cbxCurso.Location = new System.Drawing.Point(476, 92);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(217, 25);
+            this.cbxCurso.TabIndex = 110;
+            // 
+            // cbxEjercicio
+            // 
+            this.cbxEjercicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEjercicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEjercicio.FormattingEnabled = true;
+            this.cbxEjercicio.Items.AddRange(new object[] {
+            "Práctica",
+            "Rodaje"});
+            this.cbxEjercicio.Location = new System.Drawing.Point(476, 127);
+            this.cbxEjercicio.Name = "cbxEjercicio";
+            this.cbxEjercicio.Size = new System.Drawing.Size(217, 25);
+            this.cbxEjercicio.TabIndex = 111;
+            // 
             // frmSolicitarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,17 +831,32 @@
 
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dgvEquiposSel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipoSel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAgregarEquipo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtLocaciones;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTransporte;
+        private System.Windows.Forms.TextBox txtEquipoRodaje;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpRetiro;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpDevolucion;
+        private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.Button btnSolicitar;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.TextBox txtApellidoDocente;
+        private System.Windows.Forms.TextBox txtNombreDocente;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbxSubtipoList;
+        private System.Windows.Forms.ComboBox cbxTipoList;
         private System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_equipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -782,32 +867,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cbxSubtipoList;
-        private System.Windows.Forms.ComboBox cbxTipoList;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnAgregarEquipo;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtLocaciones;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEjercicio;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTransporte;
-        private System.Windows.Forms.TextBox txtEquipoRodaje;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpRetiro;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCurso;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpDevolucion;
-        private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Button btnSolicitar;
-        private System.Windows.Forms.Label lblNom;
-        private System.Windows.Forms.TextBox txtApellidoDocente;
-        private System.Windows.Forms.TextBox txtNombreDocente;
+        private System.Windows.Forms.DataGridView dgvEquiposSel;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipoSel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ComboBox cbxEjercicio;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

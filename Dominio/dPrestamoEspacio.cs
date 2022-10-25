@@ -16,10 +16,10 @@ namespace Dominio
             unP.altaPrestamoEspacio(prestamo);
         }
 
-        public List<ePrestamoEspacio> listarPrestamoEspacio()
+        public List<ePrestamoEspacio> listarPrestamoEspacioPendiente()
         {
             pPrestamoEspacio unP = new pPrestamoEspacio();
-            return unP.listarPrestamoEspacio();
+            return unP.listarPrestamoEspacioPendiente();
         }
 
         public void modificarPrestamoEspacio(ePrestamoEspacio prestamoActual)

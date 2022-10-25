@@ -150,7 +150,9 @@ namespace Software_del_Pañol.GestionDePrestamos
             if (dgvPrestamoEquipos.Columns[e.ColumnIndex].Name == "EquiposAsociados")
             {
                 frmEquiposPrestamo m1 = new frmEquiposPrestamo(Convert.ToInt32(dgvPrestamoEquipos.CurrentRow.Cells["ID"].Value));
+                this.AddOwnedForm(m1);
                 m1.Show();
+
             }
         }
 
@@ -177,6 +179,11 @@ namespace Software_del_Pañol.GestionDePrestamos
                     frmModificarPrestamoEspacios m1 = new frmModificarPrestamoEspacios(Convert.ToInt32(dgvPrestamoEspacios.CurrentRow.Cells["IDPES"].Value));
                     m1.Show();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            actualizarDgv();
         }
     }
 }

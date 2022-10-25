@@ -30,9 +30,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
         private void frmConfirmarPrestamoEspacio_Load(object sender, EventArgs e)
         {
+            activarCampos(false);
             btnAnterior.Enabled = false;
             dPrestamoEspacio unPE = new dPrestamoEspacio();
-            _prestamo = unPE.listarPrestamoEspacio(estadoP.Pendiente);
+            _prestamo = unPE.listarPrestamoEspacioPendiente();
 
             if (_prestamo.Any())
             {
@@ -64,8 +65,14 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             prestamoActual.fecha_devolucion = dtpDevolucion.Value;
             prestamoActual.fecha_retiro = dtpRetiro.Value;
             prestamoActual.fecha_solicitado = DateTime.Now;
-            prestamoActual.curso = txtCurso.Text;
-            prestamoActual.ejercicio = txtEjercicio.Text;
+            prestamoActual.curso = cbxCurso.Text;
+            prestamoActual.ejercicio = cbxEjercicio.Text;
+            if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 3;
+            else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 2;
+            else
+            {
+                prestamoActual.prioridad = 1;
+            }
             prestamoActual.espacio = (eEspacio)cbxEspacio.SelectedValue;
             prestamoActual.espacio.disponible = false;
 
@@ -85,7 +92,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
                 unDE.modificarEspacio(prestamoActual.espacio);
 
-                _prestamo = unPE.listarPrestamoEspacio(estadoP.Pendiente);
+                _prestamo = unPE.listarPrestamoEspacioPendiente();
 
                 lblMensaje.Text = "Solicitud confirmada correctamente";
 
@@ -105,15 +112,6 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                 eReserva reserva = new eReserva();
                 dReserva unR = new dReserva();
                 reserva.prestamoCR = prestamoActual;
-                try
-                {
-                    reserva.numMesa = Convert.ToInt32(Interaction.InputBox("Ingrese N° de mesa"));
-                    unR.altaReserva(reserva);
-                }
-                catch
-                {
-                    MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                }
             }
         }
 
@@ -227,8 +225,8 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             dtpRetiro.Enabled = estado;
             dtpDevolucion.Enabled = estado;
             dtpSolicitado.Enabled = estado;
-            txtCurso.Enabled = estado;
-            txtEjercicio.Enabled = estado;
+            cbxCurso.Enabled = estado;
+            cbxEjercicio.Enabled = estado;
             cbxEspacio.Enabled = estado;
         }
 
@@ -239,21 +237,25 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             dtpRetiro.Value = DateTime.Now;
             dtpDevolucion.Value = DateTime.Now;
             dtpSolicitado.Value = DateTime.Now;
-            txtCurso.Text = "";
-            txtEjercicio.Text = "";
+            cbxCurso.Text = "";
+            cbxEjercicio.Text = "";
             cbxEspacio.SelectedItem = "";
         }
 
         public void mostrarPrestamoActual()
         {
             lblPrestamoActual.Text = "Prestamo N°" + prestamoActual.id;
+            lblPrioridad.Text = "Prioridad : " + prestamoActual.prioridad;
+            if (lblPrioridad.Text == "Prioridad : 1") lblPrioridad.ForeColor = Color.Green;
+            else if (lblPrioridad.Text == "Prioridad : 2") lblPrioridad.ForeColor = Color.Gold;
+            else if (lblPrioridad.Text == "Prioridad : 3") lblPrioridad.ForeColor = Color.Red;
             txtNombreResponsable.Text = prestamoActual.responsable.nombre;
             txtApellidoResponsable.Text = prestamoActual.responsable.apellido;
             dtpSolicitado.Value = prestamoActual.fecha_solicitado;
             dtpRetiro.Value = prestamoActual.fecha_retiro;
             dtpDevolucion.Value = prestamoActual.fecha_devolucion;
-            txtCurso.Text = prestamoActual.curso;
-            txtEjercicio.Text = prestamoActual.ejercicio;
+            cbxCurso.Text = prestamoActual.curso;
+            cbxEjercicio.Text = prestamoActual.ejercicio;
             cbxEspacio.Text = prestamoActual.espacio.nom;
         }
 

@@ -54,7 +54,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(124)))), ((int)(((byte)(234)))));
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
             this.btnConfirmar.Location = new System.Drawing.Point(386, 162);
@@ -187,6 +187,7 @@
             this.Ejercicio.DataPropertyName = "ejercicio";
             this.Ejercicio.HeaderText = "Ejercicio";
             this.Ejercicio.Name = "Ejercicio";
+            this.Ejercicio.ReadOnly = true;
             this.Ejercicio.Width = 89;
             // 
             // Curso
@@ -194,6 +195,7 @@
             this.Curso.DataPropertyName = "curso";
             this.Curso.HeaderText = "Curso";
             this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
             this.Curso.Width = 71;
             // 
             // Prioridad

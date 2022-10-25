@@ -211,6 +211,9 @@
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarEspacio.resx">
+      <DependentUpon>frmSolicitarEspacio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarPrestamoUrgente.resx">
       <DependentUpon>frmSolicitarPrestamoUrgente.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +279,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flechaNotis.png" />

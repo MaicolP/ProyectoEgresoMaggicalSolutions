@@ -32,7 +32,7 @@ namespace Software_del_Pañol.PrestamoEspacios
         }
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-            if (txtCurso.Text == "" || txtEjercicio.Text == "")
+            if (cbxCurso.Text == "" || cbxEjercicio.Text == "")
             {
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
                 lblMensaje.Text = "Por favor complete todos los campos";
@@ -50,19 +50,25 @@ namespace Software_del_Pañol.PrestamoEspacios
                 prestamo.fecha_devolucion = dtpDevolucion.Value;
                 prestamo.fecha_retiro = dtpRetiro.Value;
                 prestamo.fecha_solicitado = DateTime.Now;
-                prestamo.curso = txtCurso.Text;
-                prestamo.ejercicio = txtEjercicio.Text;
+                prestamo.curso = cbxCurso.Text;
+                prestamo.ejercicio = cbxEjercicio.Text;
+                if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamo.prioridad = 3;
+                else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamo.prioridad = 2;
+                else
+                {
+                    prestamo.prioridad = 1;
+                }
                 prestamo.espacio = (eEspacio)cbxEspacio.SelectedValue;
                 prestamo.estadoP = estadoP.Pendiente.ToString();
 
-                dPrestamoEspacio unPr = new dPrestamoEspacio();
-                unPr.altaPrestamoEspacio(prestamo);
+                dPrestamoEspacio undp = new dPrestamoEspacio();
+                undp.altaPrestamoEspacio(prestamo);
 
                 lblMensaje.ForeColor = System.Drawing.Color.CornflowerBlue;
                 lblMensaje.Text = "Se ha envíado la solicitud";
 
-                txtCurso.Text = "";
-                txtEjercicio.Text = "";
+                cbxCurso.Text = "";
+                cbxEjercicio.Text = "";
                 cbxEspacio.ResetText();
             }
 

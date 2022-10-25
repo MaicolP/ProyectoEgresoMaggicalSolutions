@@ -12,5 +12,9 @@ namespace Entidades
         public string ejercicio { get; set; }
         public string curso { get; set; }
         public eReserva reserva = new eReserva();
+
     }
+
+    //public enum ejercicio { Rodaje, Práctica }
+    //public enum curso { PrimeroBachillerato, SegundoBachillerato, TerceroBachillerato, PrimeroTecnicatura, SegundoTecnicatura, Fines}
 }

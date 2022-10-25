@@ -163,3 +163,11 @@ C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Soft
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmGestionDePrestamosConReserva.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEquipos.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEspacios.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.ConfirmacionPrestamo.frmConfirmarPrestamoEquipos.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.ConfirmacionPrestamo.frmConfirmarPrestamoEspacio.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmGestionDePrestamosConReserva.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.frmSolicitarLibro.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEquipos.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmModificarPrestamoEspacios.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.GestionDePrestamos.frmEquiposPrestamo.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.PrestamoEspacios.frmSolicitarEspacio.resources

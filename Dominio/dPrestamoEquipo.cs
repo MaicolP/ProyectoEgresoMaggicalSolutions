@@ -28,10 +28,10 @@ namespace Dominio
             unPE.modificarPrestamoEquipo(prestamo);
         }
 
-        public List<ePrestamoEquipo> listarPrestamoEquipo()
+        public List<ePrestamoEquipo> listarPrestamoEquipoPendiente()
         {
             pPrestamoEquipo unPE = new pPrestamoEquipo();
-            return unPE.listarPrestamoEquipo();
+            return unPE.listarPrestamoEquipoPendiente();
         }
 
         public List<ePrestamoEquipo> listarPrestamoEquipo(estadoP estado)
