@@ -14,7 +14,7 @@ namespace Entidades
         public DateTime fecha_solicitado { get; set; }
         public int duracion { get; set; }
         public eUsuario responsable = new eUsuario();
-        public eAsisTec asisTec { get; set; }
+        public eAsisTec asisTec = new eAsisTec();
         public string estadoP { get; set; }
     }
     public enum estadoP { Pendiente, EnCurso, Finalizado }

@@ -11,22 +11,51 @@ namespace Persistencia
 {
     public class pPrestamoUrgente : clsPersistencia
     {
-        public void altaPrestamoUrgente(ePrestamoUrgente p)
+        public void altaPrestamoUrgente(ePrestamoUrgente prestamo)
         {
-            string consultaSQL = "";
-            ejecutarSQL(consultaSQL);
+            string consultaSQL1 = "INSERT INTO prestamo(fecha_retiro, fecha_devolucion, fecha_solicitada, id_usuario, estado) VALUES('" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', '" + prestamo.responsable.id + "', '" + prestamo.estadoP + "');";
+            ejecutarSQL(consultaSQL1);
+            string consultaSQL2 = "INSERT INTO prestamo_directo(id_prestamo) VALUES((SELECT MAX(id_prestamo) FROM prestamo))";
+            ejecutarSQL(consultaSQL2);
+            string consultaSQL3 = "INSERT INTO prestamo_urgente(id_prestamo) VALUES((SELECT MAX(id_prestamo) FROM prestamo))";
+            ejecutarSQL(consultaSQL3);
+
+            pEquipo unE = new pEquipo();
+
+            foreach (eEquipo eq in prestamo._equipos)
+            {
+                consultaSQL1 = "INSERT INTO pu_eq VALUES((SELECT MAX(id_prestamo) FROM prestamo), '" + eq.id + "');";
+                ejecutarSQL(consultaSQL1);
+                eq.estado = estadoEq.Reservado.ToString();
+                unE.modificarEquipo(eq);
+            }
         }
 
-        public void bajaPrestamoUrgente(ePrestamoUrgente p)
+        public void bajaPrestamoUrgente(ePrestamoUrgente prestamo)
         {
-            string consultaSQL = "";
+            String consultaSQL = "DELETE FROM prestamo_urgente WHERE id_prestamo = '" + prestamo.id + "';";
             ejecutarSQL(consultaSQL);
+            String consultaSQL2 = "DELETE FROM prestamo_directo WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL2);
+            String consultaSQL3 = "DELETE FROM prestamo WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL3);
+
+            String consultaSQL4 = "DELETE FROM pu_eq WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL4);
         }
 
-        public void modificarPrestamoUrgente(ePrestamoUrgente p)
+        public void modificarPrestamoUrgente(ePrestamoUrgente prestamo)
         {
-            string consultaSQL = "";
-            ejecutarSQL(consultaSQL);
+            string consultaSQL1 = "UPDATE prestamo SET fecha_retiro = '" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', id_usuario = '" + prestamo.responsable.id + "', estado = '" + prestamo.estadoP + "' WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL1);
+
+            String consultaSQL4 = "DELETE FROM pu_eq WHERE id_prestamo = '" + prestamo.id + "';";
+            ejecutarSQL(consultaSQL4);
+            foreach (eEquipo eq in prestamo._equipos)
+            {
+                consultaSQL1 = "INSERT INTO pu_eq VALUES('" + prestamo.id + "', '" + eq.id + "');";
+                ejecutarSQL(consultaSQL1);
+            }
         }
 
         public List<ePrestamoUrgente> listarPrestamoUrgente()
