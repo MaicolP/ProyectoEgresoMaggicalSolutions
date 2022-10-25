@@ -55,6 +55,7 @@
             this.librosFísicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosVirtualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.préstamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosUrgentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarioDeReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -375,12 +376,22 @@
             // 
             // prestamosConReservaToolStripMenuItem
             // 
+            this.prestamosConReservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.préstamosConReservaToolStripMenuItem});
             this.prestamosConReservaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.prestamosConReservaToolStripMenuItem.Name = "prestamosConReservaToolStripMenuItem";
             this.prestamosConReservaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
             this.prestamosConReservaToolStripMenuItem.Size = new System.Drawing.Size(211, 39);
-            this.prestamosConReservaToolStripMenuItem.Text = "Préstamos con reserva";
+            this.prestamosConReservaToolStripMenuItem.Text = "Gestión de préstamos ";
             this.prestamosConReservaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // préstamosConReservaToolStripMenuItem
+            // 
+            this.préstamosConReservaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.préstamosConReservaToolStripMenuItem.Name = "préstamosConReservaToolStripMenuItem";
+            this.préstamosConReservaToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.préstamosConReservaToolStripMenuItem.Text = "Préstamos con reserva";
+            this.préstamosConReservaToolStripMenuItem.Click += new System.EventHandler(this.gestiónDePréstamosConReservaToolStripMenuItem_Click);
             // 
             // prestamosUrgentesToolStripMenuItem
             // 
@@ -535,5 +546,6 @@
         private System.Windows.Forms.ToolStripMenuItem confirmarPrestamoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equipoCToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem espacioCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem préstamosConReservaToolStripMenuItem;
     }
 }

@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +51,7 @@
     <Compile Include="dPrestamoLibro.cs" />
     <Compile Include="dPrestamoEspacio.cs" />
     <Compile Include="dPrestamoUrgente.cs" />
+    <Compile Include="dReserva.cs" />
     <Compile Include="dResponsable.cs" />
     <Compile Include="dRotura.cs" />
     <Compile Include="dUsuario.cs" />

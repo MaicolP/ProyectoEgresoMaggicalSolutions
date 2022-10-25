@@ -11,5 +11,6 @@ namespace Entidades
         public int prioridad { get; set; }
         public string ejercicio { get; set; }
         public string curso { get; set; }
+        public eReserva reserva = new eReserva();
     }
 }

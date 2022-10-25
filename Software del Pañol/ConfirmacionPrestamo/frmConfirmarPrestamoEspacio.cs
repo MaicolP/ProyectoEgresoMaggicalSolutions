@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Dominio;
+using Microsoft.VisualBasic;
 
 
 namespace Software_del_Pañol.ConfirmacionPrestamo
@@ -99,6 +100,19 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                     auxP--;
                     siguientePrestamo();
                     activarCampos(false);
+                }
+
+                eReserva reserva = new eReserva();
+                dReserva unR = new dReserva();
+                reserva.prestamoCR = prestamoActual;
+                try
+                {
+                    reserva.numMesa = Convert.ToInt32(Interaction.InputBox("Ingrese N° de mesa"));
+                    unR.altaReserva(reserva);
+                }
+                catch
+                {
+                    MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }
             }
         }

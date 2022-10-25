@@ -40,6 +40,19 @@ namespace Persistencia
             ejecutarSQL(consultaSQL);
         }
 
+        public List<eEspacio> listarEspaciosDisponibles()
+        {
+            List<eEspacio> _espacios = new List<eEspacio>();
+            String consultaSQL = "SELECT * FROM espacio WHERE estado = 'True' ;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _espacios.Add(recrearE(resultado));
+            }
+            return _espacios;
+
+        }
+
         public void modificarEspacio(eEspacio espacio)
         {
             String consultaSQL = "UPDATE espacio SET nombre='" + espacio.nom + "', estado='" + espacio.disponible + "' WHERE id_espacio = '" + espacio.id + "';";

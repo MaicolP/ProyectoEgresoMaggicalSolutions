@@ -45,5 +45,15 @@ namespace Dominio
             pPrestamoEquipo unPE = new pPrestamoEquipo();
             return unPE.listarPESinDevolver();
         }
+        public List<ePrestamoEquipo> listarPrestamoEquipoNoPendiente()
+        {
+            pPrestamoEquipo unPE = new pPrestamoEquipo();
+            return unPE.listarPrestamoEquipoNoPendiente();
+        }
+        public List<ePrestamoEquipo> listarPrestamoEquipoxId(int idPrestamo)
+        {
+            pPrestamoEquipo unPE = new pPrestamoEquipo();
+            return unPE.listarPrestamoEquipoxId(idPrestamo);
+        }
     }
 }

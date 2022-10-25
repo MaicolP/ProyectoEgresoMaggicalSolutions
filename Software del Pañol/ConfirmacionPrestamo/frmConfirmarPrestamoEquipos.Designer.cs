@@ -568,7 +568,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(400, 280);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(392, 298);
             this.dgvEquiposSel.TabIndex = 176;
             // 
             // id_equipoSel
@@ -699,7 +699,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(400, 280);
+            this.dgvEquipos.Size = new System.Drawing.Size(400, 298);
             this.dgvEquipos.TabIndex = 175;
             // 
             // id_equipo
@@ -864,7 +864,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 1047);
+            this.ClientSize = new System.Drawing.Size(902, 749);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.dgvEquiposSel);
             this.Controls.Add(this.dgvEquipos);

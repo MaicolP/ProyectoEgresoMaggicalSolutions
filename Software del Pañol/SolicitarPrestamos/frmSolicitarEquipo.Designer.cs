@@ -149,7 +149,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(885, 966);
+            this.panel1.Size = new System.Drawing.Size(885, 689);
             this.panel1.TabIndex = 1;
             // 
             // btnEliminar
@@ -222,7 +222,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(400, 385);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 298);
             this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
@@ -353,7 +353,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(400, 385);
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 298);
             this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
@@ -697,7 +697,7 @@
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(301, 843);
+            this.lblMensaje.Location = new System.Drawing.Point(301, 829);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(255, 36);
             this.lblMensaje.TabIndex = 79;
@@ -752,15 +752,15 @@
             this.txtNombreDocente.Size = new System.Drawing.Size(217, 26);
             this.txtNombreDocente.TabIndex = 75;
             // 
-            // frmSolicitarLibro
+            // frmSolicitarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 1026);
+            this.ClientSize = new System.Drawing.Size(885, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTitulo);
-            this.Name = "frmSolicitarLibro";
+            this.Name = "frmSolicitarEquipo";
             this.Text = "frmAltaUsuario";
             this.Load += new System.EventHandler(this.frmGestionDeEquipo_Load);
             this.pnlTitulo.ResumeLayout(false);
