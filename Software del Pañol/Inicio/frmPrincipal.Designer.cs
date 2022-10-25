@@ -56,16 +56,15 @@
             this.librosVirtualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.préstamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosUrgentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarioDeReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.urgenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.confirmarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.urgenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitulo.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -295,7 +294,6 @@
             this.gestionDeEspaciosToolStripMenuItem,
             this.gestionDeLibrosToolStripMenuItem,
             this.prestamosConReservaToolStripMenuItem,
-            this.prestamosUrgentesToolStripMenuItem,
             this.calendarioDeReservasToolStripMenuItem,
             this.solicitarPrestamoToolStripMenuItem,
             this.confirmarPrestamoToolStripMenuItem});
@@ -394,15 +392,6 @@
             this.préstamosConReservaToolStripMenuItem.Text = "Préstamos con reserva";
             this.préstamosConReservaToolStripMenuItem.Click += new System.EventHandler(this.gestiónDePréstamosConReservaToolStripMenuItem_Click);
             // 
-            // prestamosUrgentesToolStripMenuItem
-            // 
-            this.prestamosUrgentesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.prestamosUrgentesToolStripMenuItem.Name = "prestamosUrgentesToolStripMenuItem";
-            this.prestamosUrgentesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.prestamosUrgentesToolStripMenuItem.Size = new System.Drawing.Size(211, 39);
-            this.prestamosUrgentesToolStripMenuItem.Text = "Préstamos urgentes";
-            this.prestamosUrgentesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // calendarioDeReservasToolStripMenuItem
             // 
             this.calendarioDeReservasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -451,6 +440,14 @@
             this.libroToolStripMenuItem.Text = "Libros";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
             // 
+            // urgenteToolStripMenuItem
+            // 
+            this.urgenteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.urgenteToolStripMenuItem.Name = "urgenteToolStripMenuItem";
+            this.urgenteToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.urgenteToolStripMenuItem.Text = "Urgente";
+            this.urgenteToolStripMenuItem.Click += new System.EventHandler(this.urgenteToolStripMenuItem_Click);
+            // 
             // confirmarPrestamoToolStripMenuItem
             // 
             this.confirmarPrestamoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -466,7 +463,7 @@
             // 
             this.equipoCToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.equipoCToolStripMenuItem1.Name = "equipoCToolStripMenuItem1";
-            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(134, 26);
+            this.equipoCToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.equipoCToolStripMenuItem1.Text = "Equipo";
             this.equipoCToolStripMenuItem1.Click += new System.EventHandler(this.equipoCToolStripMenuItem1_Click);
             // 
@@ -474,17 +471,9 @@
             // 
             this.espacioCToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.espacioCToolStripMenuItem.Name = "espacioCToolStripMenuItem";
-            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
+            this.espacioCToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.espacioCToolStripMenuItem.Text = "Espacio";
             this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
-            // 
-            // urgenteToolStripMenuItem
-            // 
-            this.urgenteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.urgenteToolStripMenuItem.Name = "urgenteToolStripMenuItem";
-            this.urgenteToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-            this.urgenteToolStripMenuItem.Text = "Urgente";
-            this.urgenteToolStripMenuItem.Click += new System.EventHandler(this.urgenteToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -532,7 +521,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeLibrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosConReservaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prestamosUrgentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calendarioDeReservasToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
