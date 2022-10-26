@@ -44,6 +44,22 @@ namespace Persistencia
             return _prestamoEspacios;
         }
 
+        public List<ePrestamoEspacio> listarPrestamoEquipoXMes(int ano, int mes)
+        {
+            List<ePrestamoEspacio> _prestamoEspacios = new List<ePrestamoEspacio>();
+            String consultaSQL = "SELECT * FROM prestamo " +
+                                 "INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo " +
+                                 "INNER JOIN prestamo_espacios ON prestamo.id_prestamo = prestamo_espacios.id_prestamo " +
+                                 "INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario " +
+                                 "WHERE((prestamo.fecha_retiro BETWEEN '" + ano + "-" + mes + "-01' AND '" + ano + "-" + mes + "-31') OR(prestamo.fecha_devolucion BETWEEN '" + ano + "-" + mes + "-01' AND '" + ano + "-" + mes +"-31')) AND(prestamo.estado = 'EnCurso') ORDER BY prestamo_espacios.id_prestamo; ";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEspacios.Add(recrearPE(resultado));
+            }
+            return _prestamoEspacios;
+        }
+
         public void modificarPrestamoEspacio(ePrestamoEspacio prestamoActual)
         {
             String consultaSQL = "UPDATE prestamo SET fecha_retiro = '" + prestamoActual.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamoActual.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamoActual.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', estado = '" + prestamoActual.estadoP + "' WHERE id_prestamo = '" + prestamoActual.id + "';";

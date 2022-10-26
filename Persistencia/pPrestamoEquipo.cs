@@ -159,5 +159,21 @@ namespace Persistencia
             }
             return _prestamoEquipo;
         }
+
+        public List<ePrestamoEquipo> listarPrestamoEquipoXMes(int ano, int mes)
+        {
+            List<ePrestamoEquipo> _prestamoEquipo = new List<ePrestamoEquipo>();
+            string consultaSQL = "SELECT * FROM prestamo " +
+                                 "INNER JOIN prestamo_con_reserva ON prestamo.id_prestamo = prestamo_con_reserva.id_prestamo " +
+                                 "INNER JOIN prestamo_equipos ON prestamo.id_prestamo = prestamo_equipos.id_prestamo " +
+                                 "INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario " +
+                                 "WHERE((prestamo.fecha_retiro BETWEEN '" + ano + "-" + mes + "-01' AND '" + ano + "-" + mes + "-31') OR(prestamo.fecha_devolucion BETWEEN '" + ano + "-" + mes + "-01' AND '" + ano + "-" + mes + "-31')) AND(prestamo.estado = 'EnCurso') ORDER BY prestamo_equipos.id_prestamo; ";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while (resultado.Read())
+            {
+                _prestamoEquipo.Add(recrearPE(resultado));
+            }
+            return _prestamoEquipo;
+        }
     }
 }

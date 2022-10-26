@@ -8,12 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Dominio;
 
 namespace Software_del_Pañol.Calendario
 {
     public partial class frmCalendario : Form
     {
         int mes, ano;
+        List<ePrestamoEquipo> _pEquipo = new List<ePrestamoEquipo>();
+        List<ePrestamoEspacio> _pEspacio = new List<ePrestamoEspacio>();
+        List<contenedorDia> _contDia = new List<contenedorDia>();
 
         public frmCalendario()
         {
@@ -22,14 +27,16 @@ namespace Software_del_Pañol.Calendario
 
         private void frmCalendario_Load(object sender, EventArgs e)
         {
+            DateTime hoy = DateTime.Now;
+            mes = hoy.Month;
+            ano = hoy.Year;
+
             mostrarDias();
         }
 
         private void mostrarDias()
         {
-            DateTime hoy = DateTime.Now;
-            mes = hoy.Month;
-            ano = hoy.Year;
+            _contDia.Clear();
 
             string nomMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblFecha.Text = nomMes + " " + ano;
@@ -42,15 +49,47 @@ namespace Software_del_Pañol.Calendario
 
             for (int i = 0; i < diasDeLaSemana; i++)
             {
-                contenedorBlanco contBlanco = new contenedorBlanco();  
+                contenedorBlanco contBlanco = new contenedorBlanco();
                 fpnlCalendario.Controls.Add(contBlanco);
             }
 
             for (int i = 1; i <= dias; i++)
             {
                 contenedorDia dia = new contenedorDia();
+                dia.num = i;
+                _contDia.Add(dia);
                 dia.dias(i);
                 fpnlCalendario.Controls.Add(dia);
+            }
+
+            datosDias();
+        }
+
+        private void datosDias()
+        {
+            dPrestamoEquipo unPEq = new dPrestamoEquipo();
+            _pEquipo = unPEq.listarPrestamoEquipoXMes(ano, mes);
+
+            dPrestamoEspacio unPEs = new dPrestamoEspacio();
+            _pEspacio = unPEs.listarPrestamoEquipoXMes(ano, mes);
+
+            foreach (var dia in _contDia)
+            {
+                foreach(var p in _pEquipo)
+                {
+                    if (dia.num == p.fecha_retiro.Day || dia.num == p.fecha_devolucion.Day)
+                    {
+                        dia.alertaPrestamoEquipo(p);
+                    }
+                }
+
+                foreach (var p in _pEspacio)
+                {
+                    if (dia.num == p.fecha_retiro.Day || dia.num == p.fecha_devolucion.Day)
+                    {
+                        dia.alertaPrestamoEspacio(p);
+                    }
+                }
             }
         }
 
@@ -66,27 +105,7 @@ namespace Software_del_Pañol.Calendario
                 ano++;
             }
 
-            string nomMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
-            lblFecha.Text = nomMes + " " + ano;
-
-            DateTime principioDelMes = new DateTime(ano, mes, 1);
-
-            int dias = DateTime.DaysInMonth(ano, mes);
-
-            int diasDeLaSemana = Convert.ToInt32(principioDelMes.DayOfWeek.ToString("d"));
-
-            for (int i = 0; i < diasDeLaSemana; i++)
-            {
-                contenedorBlanco contBlanco = new contenedorBlanco();
-                fpnlCalendario.Controls.Add(contBlanco);
-            }
-
-            for (int i = 1; i <= dias; i++)
-            {
-                contenedorDia dia = new contenedorDia();
-                dia.dias(i);
-                fpnlCalendario.Controls.Add(dia);
-            }
+            mostrarDias();
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -101,27 +120,7 @@ namespace Software_del_Pañol.Calendario
                 ano--;
             }
 
-            string nomMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
-            lblFecha.Text = nomMes + " " + ano;
-
-            DateTime principioDelMes = new DateTime(ano, mes, 1);
-
-            int dias = DateTime.DaysInMonth(ano, mes);
-
-            int diasDeLaSemana = Convert.ToInt32(principioDelMes.DayOfWeek.ToString("d"));
-
-            for (int i = 0; i < diasDeLaSemana; i++)
-            {
-                contenedorBlanco contBlanco = new contenedorBlanco();
-                fpnlCalendario.Controls.Add(contBlanco);
-            }
-
-            for (int i = 1; i <= dias; i++)
-            {
-                contenedorDia dia = new contenedorDia();
-                dia.dias(i);
-                fpnlCalendario.Controls.Add(dia);
-            }
+            mostrarDias();
         }
     }
 }
