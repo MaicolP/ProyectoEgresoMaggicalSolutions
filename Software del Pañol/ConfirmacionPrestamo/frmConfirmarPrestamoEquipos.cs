@@ -536,5 +536,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             e.Graphics.DrawString("Firma asistente técnico", font, Brushes.Black, new RectangleF(180, 1030, 800, 30));
             e.Graphics.DrawString("Firma responsable", font, Brushes.Black, new RectangleF(495, 1030, 800, 30));
         }
+
+        private void lblMensaje_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,8 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEspacios;
         }
 
@@ -57,6 +59,7 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
             CerrarConexion();
             return _prestamoEspacios;
         }
@@ -80,6 +83,8 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEspacios;
         }
 
@@ -92,6 +97,8 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEspacios;
         }
 
@@ -104,6 +111,8 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEspacios;
         }
 
@@ -116,6 +125,8 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEspacios;
         }
 

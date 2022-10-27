@@ -68,6 +68,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 
@@ -80,6 +82,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 
@@ -93,6 +97,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 
@@ -122,7 +128,8 @@ namespace Persistencia
                 auxLibro.id = fila.GetInt32("id_libro");
                 prestamo._libros.Add(unPE.buscarLibro(auxLibro));
             }
-
+            resultado.Close();
+            CerrarConexion();
             return prestamo;
         }
     }

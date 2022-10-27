@@ -31,7 +31,8 @@ namespace Persistencia
             {
                 _asisTec.Add(recrearAT(resultado));
             }
-
+            resultado.Close();
+            CerrarConexion();
             return _asisTec;
         }
 
@@ -56,6 +57,8 @@ namespace Persistencia
             {
                 asisTec = recrearAT(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return asisTec;
         }
     }

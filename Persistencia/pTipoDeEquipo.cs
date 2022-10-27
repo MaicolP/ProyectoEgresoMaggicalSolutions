@@ -39,7 +39,8 @@ namespace Persistencia
             {
                 _tipos.Add(recrearT(resultado));
             }
-
+            resultado.Close();
+            CerrarConexion();
             return _tipos;
         }
 
@@ -63,7 +64,8 @@ namespace Persistencia
             {
                 tipo = recrearT(resultado);
             }
-
+            resultado.Close();
+            CerrarConexion();
             return tipo;
         }
     }

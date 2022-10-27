@@ -238,16 +238,20 @@ namespace Software_del_Pañol
             cambiarFormHijo(new frmGestionDePrestamosConReserva());
         }
 
-        #endregion
-
-        private void préstamosDirectosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void préstamosDirectosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             cambiarFormHijo(new frmGestionDePrestamosDirectos());
         }
+
+        #endregion
+
+        #region Calendario
 
         private void calendarioDeReservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cambiarFormHijo(new frmCalendario());
         }
+
+        #endregion
     }
 }

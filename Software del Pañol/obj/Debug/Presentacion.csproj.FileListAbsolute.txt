@@ -186,3 +186,6 @@ C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Soft
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.PrestamosDirectos.frmLibrosPrestamo.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.PrestamosDirectos.frmModificarPrestamoLibros.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.PrestamosDirectos.frmModificarPrestamoUrgente.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorBlanco.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorDia.resources
+C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.frmCalendario.resources

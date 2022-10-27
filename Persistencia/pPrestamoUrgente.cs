@@ -53,6 +53,8 @@ namespace Persistencia
             {
                 prestamo = recrearP(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return prestamo;
         }
 
@@ -79,6 +81,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 
@@ -91,6 +95,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 
@@ -103,6 +109,8 @@ namespace Persistencia
             {
                 _prestamos.Add(recrearP(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamos;
         }
 

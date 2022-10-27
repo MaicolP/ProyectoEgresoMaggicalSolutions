@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
@@ -39,6 +38,8 @@
             this.pnlCont = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblHumedad = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.librosVirtualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.préstamosConReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.préstamosDirectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarioDeReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,35 +65,16 @@
             this.confirmarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.préstamosDirectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.msMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximizar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnMaximizar.Location = new System.Drawing.Point(1085, 9);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(28, 24);
-            this.btnMaximizar.TabIndex = 11;
-            this.btnMaximizar.Text = "⬜";
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // btnMinimizar
             // 
@@ -101,7 +84,7 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnMinimizar.Location = new System.Drawing.Point(1051, 9);
+            this.btnMinimizar.Location = new System.Drawing.Point(1085, 9);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizar.TabIndex = 10;
@@ -130,7 +113,6 @@
             this.pnlTitulo.BackColor = System.Drawing.Color.White;
             this.pnlTitulo.Controls.Add(this.lblFecha);
             this.pnlTitulo.Controls.Add(this.btnCerrar);
-            this.pnlTitulo.Controls.Add(this.btnMaximizar);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.panel3);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -208,6 +190,25 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 113);
             this.panel4.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Software_del_Pañol.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(50, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 2);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -372,6 +373,14 @@
             this.préstamosConReservaToolStripMenuItem.Text = "Préstamos con reserva";
             this.préstamosConReservaToolStripMenuItem.Click += new System.EventHandler(this.gestiónDePréstamosConReservaToolStripMenuItem_Click);
             // 
+            // préstamosDirectosToolStripMenuItem
+            // 
+            this.préstamosDirectosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.préstamosDirectosToolStripMenuItem.Name = "préstamosDirectosToolStripMenuItem";
+            this.préstamosDirectosToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.préstamosDirectosToolStripMenuItem.Text = "Préstamos directos";
+            this.préstamosDirectosToolStripMenuItem.Click += new System.EventHandler(this.préstamosDirectosToolStripMenuItem_Click_1);
+            // 
             // calendarioDeReservasToolStripMenuItem
             // 
             this.calendarioDeReservasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -456,25 +465,6 @@
             this.espacioCToolStripMenuItem.Text = "Espacio";
             this.espacioCToolStripMenuItem.Click += new System.EventHandler(this.espacioCToolStripMenuItem_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Software_del_Pañol.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 2);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,20 +487,19 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel pnlTitulo;

@@ -39,7 +39,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnMaximizar = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -151,7 +150,7 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnMinimizar.Location = new System.Drawing.Point(342, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(376, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 24);
             this.btnMinimizar.TabIndex = 8;
@@ -162,7 +161,6 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMenu.Controls.Add(this.btnMaximizar);
             this.pnlMenu.Controls.Add(this.btnMinimizar);
             this.pnlMenu.Controls.Add(this.btnCerrar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
@@ -170,22 +168,6 @@
             this.pnlMenu.Size = new System.Drawing.Size(438, 30);
             this.pnlMenu.TabIndex = 9;
             this.pnlMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlMenu_MouseDown);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximizar.Enabled = false;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximizar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnMaximizar.Location = new System.Drawing.Point(376, 0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(28, 24);
-            this.btnMaximizar.TabIndex = 9;
-            this.btnMaximizar.Text = "⬜";
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // lblMensaje
             // 
@@ -241,7 +223,6 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Button btnMaximizar;
     }
 }
 

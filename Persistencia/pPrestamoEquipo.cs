@@ -71,6 +71,8 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEquipo;
         }
 
@@ -83,6 +85,8 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEquipo;
         }
 
@@ -95,6 +99,8 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEquipo;
         }
 
@@ -107,6 +113,8 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _prestamoEquipo;
         }
 
@@ -144,7 +152,7 @@ namespace Persistencia
                 auxEq.id = fila.GetInt32("id_equipo");
                 prestamo._equipos.Add(unPE.buscarEquipo(auxEq));
             }
-
+            CerrarConexion();
             return prestamo;
         }
 
@@ -157,6 +165,7 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            CerrarConexion();
             return _prestamoEquipo;
         }
 
@@ -173,6 +182,7 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            resultado.Close();
             CerrarConexion();
             return _prestamoEquipo;
         }

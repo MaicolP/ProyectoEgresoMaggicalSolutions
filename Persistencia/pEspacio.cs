@@ -31,6 +31,8 @@ namespace Persistencia
             {
                 _espacios.Add(recrearE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _espacios;
         }
 
@@ -49,6 +51,8 @@ namespace Persistencia
             {
                 _espacios.Add(recrearE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _espacios;
 
         }
@@ -68,6 +72,8 @@ namespace Persistencia
             {
                 espacio = recrearE(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return espacio;
         }
 

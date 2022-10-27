@@ -22,7 +22,6 @@ namespace Persistencia
             }
 
             public List<eLibro> listarLibro()
-
             {
                 List<eLibro> _libros = new List<eLibro>();
                 String consultaSQL = "SELECT * FROM libro ;";
@@ -31,6 +30,8 @@ namespace Persistencia
                 {
                     _libros.Add(recrearL(resultado));
                 }
+                resultado.Close();
+                CerrarConexion();
                 return _libros;
             }
 
@@ -44,6 +45,8 @@ namespace Persistencia
                 {
                     _libros.Add(recrearL(resultado));
                 }
+                resultado.Close();
+                CerrarConexion();
                 return _libros;
             }
 
@@ -68,6 +71,8 @@ namespace Persistencia
                 {
                     libro = recrearL(resultado);
                 }
+                resultado.Close();
+                CerrarConexion();
                 return libro;
             }
 

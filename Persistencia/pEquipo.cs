@@ -41,6 +41,8 @@ namespace Persistencia
             {
                 equipo = recrearE(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return equipo;
         }
 
@@ -53,6 +55,8 @@ namespace Persistencia
             {
                 _equipos.Add(recrearE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _equipos;
         }
 
@@ -67,6 +71,8 @@ namespace Persistencia
             {
                 _equipos.Add(recrearE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _equipos;
         }
 
@@ -80,6 +86,8 @@ namespace Persistencia
             {
                 _equipos.Add(recrearE(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _equipos;
         }
 

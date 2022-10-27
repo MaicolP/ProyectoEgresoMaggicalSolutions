@@ -33,6 +33,8 @@ namespace Persistencia
             {
                 _responsables.Add(recrearR(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _responsables;
         }
 
@@ -45,6 +47,8 @@ namespace Persistencia
             {
                 _responsables.Add(recrearR(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _responsables;
         }
 
@@ -69,6 +73,8 @@ namespace Persistencia
             {
                 responsable = recrearR(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return responsable;
         }
     }

@@ -39,7 +39,8 @@ namespace Persistencia
             {
                 _roturas.Add(recrearRotura(resultado));
             }
-
+            resultado.Close();
+            CerrarConexion();
             return _roturas;
         }
 
@@ -53,7 +54,8 @@ namespace Persistencia
             {
                 _roturas.Add(recrearRotura(resultado));
             }
-
+            resultado.Close();
+            CerrarConexion();
             return _roturas;
         }
 
@@ -67,7 +69,8 @@ namespace Persistencia
             {
                 rotura = recrearRotura(resultado);
             }
-
+            resultado.Close();
+            CerrarConexion();
             return rotura;
         }
 

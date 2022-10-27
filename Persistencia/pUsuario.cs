@@ -19,6 +19,8 @@ namespace Persistencia
             {
                 usuario = recrearU(resultado);
             }
+            resultado.Close();
+            CerrarConexion();
             return usuario;
         }
 
@@ -50,6 +52,8 @@ namespace Persistencia
             {
                 _usuarios.Add(recrearU(resultado));
             }
+            resultado.Close();
+            CerrarConexion();
             return _usuarios;
         }
 
@@ -74,6 +78,7 @@ namespace Persistencia
             {
                 usuario = recrearU(resultado);
             }
+            CerrarConexion();
             return usuario;
         }
     }
