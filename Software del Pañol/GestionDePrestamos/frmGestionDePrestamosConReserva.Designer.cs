@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrestamoEquipos = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDevolución = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +58,8 @@
             this.cbxTipoPrestamo = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvPrestamoEspacios = new System.Windows.Forms.DataGridView();
+            this.EliminarEs = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ModificarEs = new System.Windows.Forms.DataGridViewImageColumn();
             this.IDPES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,10 +76,7 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.EliminarEs = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ModificarEs = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEspacios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -150,6 +151,24 @@
             this.dgvPrestamoEquipos.Size = new System.Drawing.Size(867, 449);
             this.dgvPrestamoEquipos.TabIndex = 59;
             this.dgvPrestamoEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoEquipos_CellClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.Width = 5;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "";
+            this.Modificar.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Modificar.Width = 5;
             // 
             // ID
             // 
@@ -274,7 +293,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(606, 72);
+            this.lblEstado.Location = new System.Drawing.Point(501, 72);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(75, 26);
             this.lblEstado.TabIndex = 58;
@@ -290,7 +309,7 @@
             "Todos",
             "En Curso",
             "Finalizado"});
-            this.cbxEstado.Location = new System.Drawing.Point(698, 72);
+            this.cbxEstado.Location = new System.Drawing.Point(593, 72);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(133, 25);
             this.cbxEstado.TabIndex = 57;
@@ -385,6 +404,24 @@
             this.dgvPrestamoEspacios.Size = new System.Drawing.Size(867, 449);
             this.dgvPrestamoEspacios.TabIndex = 60;
             this.dgvPrestamoEspacios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoEspacios_CellClick);
+            // 
+            // EliminarEs
+            // 
+            this.EliminarEs.HeaderText = "";
+            this.EliminarEs.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.EliminarEs.Name = "EliminarEs";
+            this.EliminarEs.ReadOnly = true;
+            this.EliminarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EliminarEs.Width = 5;
+            // 
+            // ModificarEs
+            // 
+            this.ModificarEs.HeaderText = "";
+            this.ModificarEs.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.ModificarEs.Name = "ModificarEs";
+            this.ModificarEs.ReadOnly = true;
+            this.ModificarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ModificarEs.Width = 5;
             // 
             // IDPES
             // 
@@ -510,41 +547,18 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // EliminarEs
+            // btnImprimir
             // 
-            this.EliminarEs.HeaderText = "";
-            this.EliminarEs.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.EliminarEs.Name = "EliminarEs";
-            this.EliminarEs.ReadOnly = true;
-            this.EliminarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EliminarEs.Width = 5;
-            // 
-            // ModificarEs
-            // 
-            this.ModificarEs.HeaderText = "";
-            this.ModificarEs.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.ModificarEs.Name = "ModificarEs";
-            this.ModificarEs.ReadOnly = true;
-            this.ModificarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ModificarEs.Width = 5;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.Width = 5;
-            // 
-            // Modificar
-            // 
-            this.Modificar.HeaderText = "";
-            this.Modificar.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Modificar.Width = 5;
+            this.btnImprimir.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(740, 72);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(89, 27);
+            this.btnImprimir.TabIndex = 79;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmGestionDePrestamosConReserva
             // 
@@ -552,6 +566,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(885, 575);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvPrestamoEspacios);
             this.Controls.Add(this.dgvPrestamoEquipos);
@@ -614,5 +629,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

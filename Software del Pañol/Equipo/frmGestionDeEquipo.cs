@@ -284,8 +284,6 @@ namespace Software_del_Pañol
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
-
             DGVPrinter printer = new DGVPrinter();
 
             printer.Title = "Lista de equipos";

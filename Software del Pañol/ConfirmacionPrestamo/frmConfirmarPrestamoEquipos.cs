@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Dominio;
 using Microsoft.VisualBasic;
+using System.Drawing.Printing;
 
 
 namespace Software_del_Pañol.ConfirmacionPrestamo
@@ -195,7 +196,13 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            dPrestamoEquipo prestamo = new dPrestamoEquipo();
+            prntDoc = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            prntDoc.PrinterSettings = ps;
+            prntDoc.PrintPage += Imprimir;
+            prntDoc.Print();
+
+            /*dPrestamoEquipo prestamo = new dPrestamoEquipo();
 
             prestamoActual.fecha_solicitado = dtpSolicitado.Value;
             prestamoActual.fecha_retiro = dtpRetiro.Value;
@@ -244,7 +251,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             catch
             {
                MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }
+            }*/
         }
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
@@ -261,7 +268,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                 {
                     this._equiposSel.Add(eq);
                     dgvEquiposSel.DataSource = null;
-                    dgvEquiposSel.DataSource = _equiposSel;
+                    foreach (eEquipo unEq in _equiposSel)
+                    {
+                        dgvEquiposSel.Rows.Add(unEq.nombre, unEq.nroSerie, unEq.observaciones);
+                    }
                     actualizarDgv();
                 }
             }
@@ -284,7 +294,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                     }
                 }
                 dgvEquiposSel.DataSource = null;
-                dgvEquiposSel.DataSource = this._equiposSel;
+                foreach (eEquipo unEq in _equiposSel)
+                {
+                    dgvEquiposSel.Rows.Add(unEq.nombre, unEq.nroSerie, unEq.observaciones);
+                }
                 actualizarDgv();
             }
         }
@@ -437,6 +450,81 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             btnConfirmar.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        public void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            Font font = new Font("Arial", 16, FontStyle.Underline, GraphicsUnit.Point);
+
+            e.Graphics.DrawString("PLANILLA DE PRÉSTAMOS PAÑOL AUDIOVISUAL", font, Brushes.Black, new RectangleF(20, 40, 600, 30));
+
+            font = new Font("Arial" , 16, FontStyle.Regular, GraphicsUnit.Point);
+
+            String fecha_retiro = prestamoActual.fecha_retiro.ToShortDateString(); 
+
+            e.Graphics.DrawString("FECHA RETIRO : " + fecha_retiro, font, Brushes.Black, new RectangleF(20, 90, 600, 30));
+
+            String hora_retiro = prestamoActual.fecha_retiro.ToShortTimeString();
+
+            e.Graphics.DrawString("HORA RETIRO : " + hora_retiro, font, Brushes.Black, new RectangleF(20, 140, 600, 30));
+
+            String fecha_devolucion = prestamoActual.fecha_devolucion.ToShortDateString();
+
+            e.Graphics.DrawString("FECHA DEVOLUCIÓN : " + fecha_devolucion, font, Brushes.Black, new RectangleF(20, 190, 600, 30));
+
+            String hora_devolucion = prestamoActual.fecha_devolucion.ToShortTimeString();
+
+            e.Graphics.DrawString("HORA DEVOLUCIÓN : " + hora_devolucion, font, Brushes.Black, new RectangleF(20, 240, 600, 30));
+
+            e.Graphics.DrawString("RESPONSABLE DEL EQUIPO : " + prestamoActual.responsable.nombre + " " + prestamoActual.responsable.apellido , font, Brushes.Black, new RectangleF(20, 290, 800, 30));
+
+            e.Graphics.DrawString("DOCENTE RESPONSABLE : " + prestamoActual.nomDocente + " " + prestamoActual.apeDocente, font, Brushes.Black, new RectangleF(20, 340, 800, 30));
+
+            e.Graphics.DrawString("LOCACIONES : " + prestamoActual.locaciones, font, Brushes.Black, new RectangleF(20, 390, 800, 30));
+
+            e.Graphics.DrawString("TRANSPORTE : " + prestamoActual.transporte, font, Brushes.Black, new RectangleF(20, 440, 800, 30));
+
+            e.Graphics.DrawString("EQUIPO DE RODAJE : " + prestamoActual.equipoRodaje, font, Brushes.Black, new RectangleF(20, 490, 800, 30));
+
+            e.Graphics.DrawString("CURSO: " + prestamoActual.curso, font, Brushes.Black, new RectangleF(20, 540, 800, 30));
+
+            e.Graphics.DrawString("EJERCICIO : " + prestamoActual.ejercicio, font, Brushes.Black, new RectangleF(20, 590, 800, 30));
+
+            const int DGV_ALTO = 35;
+            int left = e.MarginBounds.Left - 50, top = e.MarginBounds.Top + 590;
+
+            foreach (DataGridViewColumn col in dgvEquiposSel.Columns)
+            {
+                e.Graphics.DrawString(col.HeaderText, new Font("Arial", 16, FontStyle.Bold), Brushes.Black, left, top);
+                left += col.Width;
+
+                if (col.Index < dgvEquiposSel.ColumnCount - 1)
+                    e.Graphics.DrawLine(Pens.Gray, left - 5, top, left - 5, top + 43 + (dgvEquiposSel.RowCount) * DGV_ALTO);
+            }
+            left = e.MarginBounds.Left - 50;
+            e.Graphics.FillRectangle(Brushes.Black, left, top + 40, e.MarginBounds.Right - left + 50, 3);
+            top += 43;
+
+            foreach (DataGridViewRow row in dgvEquiposSel.Rows)
+            {
+                if (row.Index == dgvEquiposSel.RowCount) break;
+                left = e.MarginBounds.Left -50;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    e.Graphics.DrawString(Convert.ToString(cell.Value), new Font("Segoe UI", 13), Brushes.Black, left, top + 4);
+                    left += cell.OwningColumn.Width;
+                }
+                top += DGV_ALTO;
+                e.Graphics.DrawLine(Pens.Gray, e.MarginBounds.Left - 50, top, e.MarginBounds.Right + 50, top);
+            }
+
+            e.Graphics.DrawString("__________________", font, Brushes.Black, new RectangleF(150, 1000, 800, 30));
+            e.Graphics.DrawString("__________________", font, Brushes.Black, new RectangleF(450, 1000, 800, 30));
+
+            font = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Point);
+
+            e.Graphics.DrawString("Firma asistente técnico", font, Brushes.Black, new RectangleF(180, 1030, 800, 30));
+            e.Graphics.DrawString("Firma responsable", font, Brushes.Black, new RectangleF(495, 1030, 800, 30));
         }
     }
 }

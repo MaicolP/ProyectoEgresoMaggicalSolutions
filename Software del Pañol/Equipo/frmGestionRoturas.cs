@@ -75,6 +75,20 @@ namespace Software_del_Pañol
 
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+
+            printer.Title = "Informe de roturas";
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "PañolAudiovisual";//Footer
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(dgvRoturas);
+        }
+
         #endregion
 
         #region DataGridView

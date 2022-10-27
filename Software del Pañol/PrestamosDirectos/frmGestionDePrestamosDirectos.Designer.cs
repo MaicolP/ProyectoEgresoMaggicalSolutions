@@ -37,28 +37,29 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvPrestamoLibros = new System.Windows.Forms.DataGridView();
             this.dgvPrestamoUrgente = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EliminarUr = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ModificarUr = new System.Windows.Forms.DataGridViewImageColumn();
+            this.IDPUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDevolución = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaSolicitada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResponsableUr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EquiposAsociados = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.EquiposAsociadosUr = new System.Windows.Forms.DataGridViewLinkColumn();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.cbxTipoPrestamo = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.EliminarLi = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ModificarEs = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ModificarLi = new System.Windows.Forms.DataGridViewImageColumn();
             this.IDPLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResponsableLi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LibrosAsociados = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,13 +109,13 @@
             this.dgvPrestamoLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPrestamoLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EliminarLi,
-            this.ModificarEs,
+            this.ModificarLi,
             this.IDPLB,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.Responsable,
+            this.ResponsableLi,
             this.dataGridViewTextBoxColumn7,
             this.LibrosAsociados});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -127,7 +128,7 @@
             this.dgvPrestamoLibros.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPrestamoLibros.EnableHeadersVisualStyles = false;
             this.dgvPrestamoLibros.GridColor = System.Drawing.Color.Gray;
-            this.dgvPrestamoLibros.Location = new System.Drawing.Point(3, 115);
+            this.dgvPrestamoLibros.Location = new System.Drawing.Point(6, 114);
             this.dgvPrestamoLibros.MultiSelect = false;
             this.dgvPrestamoLibros.Name = "dgvPrestamoLibros";
             this.dgvPrestamoLibros.ReadOnly = true;
@@ -169,16 +170,16 @@
             this.dgvPrestamoUrgente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPrestamoUrgente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPrestamoUrgente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
-            this.Modificar,
-            this.ID,
+            this.EliminarUr,
+            this.ModificarUr,
+            this.IDPUR,
             this.FechaRetiro,
             this.FechaDevolución,
             this.FechaSolicitada,
             this.Duracion,
-            this.IDUsuario,
+            this.ResponsableUr,
             this.Estado,
-            this.EquiposAsociados});
+            this.EquiposAsociadosUr});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +190,7 @@
             this.dgvPrestamoUrgente.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPrestamoUrgente.EnableHeadersVisualStyles = false;
             this.dgvPrestamoUrgente.GridColor = System.Drawing.Color.Gray;
-            this.dgvPrestamoUrgente.Location = new System.Drawing.Point(3, 115);
+            this.dgvPrestamoUrgente.Location = new System.Drawing.Point(6, 114);
             this.dgvPrestamoUrgente.MultiSelect = false;
             this.dgvPrestamoUrgente.Name = "dgvPrestamoUrgente";
             this.dgvPrestamoUrgente.ReadOnly = true;
@@ -197,33 +198,34 @@
             this.dgvPrestamoUrgente.RowHeadersVisible = false;
             this.dgvPrestamoUrgente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvPrestamoUrgente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPrestamoUrgente.Size = new System.Drawing.Size(867, 449);
+            this.dgvPrestamoUrgente.Size = new System.Drawing.Size(864, 449);
             this.dgvPrestamoUrgente.TabIndex = 66;
+            this.dgvPrestamoUrgente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamoUrgentes_CellClick);
             // 
-            // Eliminar
+            // EliminarUr
             // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.Width = 5;
+            this.EliminarUr.HeaderText = "";
+            this.EliminarUr.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
+            this.EliminarUr.Name = "EliminarUr";
+            this.EliminarUr.ReadOnly = true;
+            this.EliminarUr.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EliminarUr.Width = 5;
             // 
-            // Modificar
+            // ModificarUr
             // 
-            this.Modificar.HeaderText = "";
-            this.Modificar.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Modificar.Width = 5;
+            this.ModificarUr.HeaderText = "";
+            this.ModificarUr.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.ModificarUr.Name = "ModificarUr";
+            this.ModificarUr.ReadOnly = true;
+            this.ModificarUr.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ModificarUr.Width = 5;
             // 
-            // ID
+            // IDPUR
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 47;
+            this.IDPUR.HeaderText = "ID";
+            this.IDPUR.Name = "IDPUR";
+            this.IDPUR.ReadOnly = true;
+            this.IDPUR.Width = 47;
             // 
             // FechaRetiro
             // 
@@ -253,12 +255,12 @@
             this.Duracion.ReadOnly = true;
             this.Duracion.Width = 95;
             // 
-            // IDUsuario
+            // ResponsableUr
             // 
-            this.IDUsuario.HeaderText = "Responsable";
-            this.IDUsuario.Name = "IDUsuario";
-            this.IDUsuario.ReadOnly = true;
-            this.IDUsuario.Width = 117;
+            this.ResponsableUr.HeaderText = "Responsable";
+            this.ResponsableUr.Name = "ResponsableUr";
+            this.ResponsableUr.ReadOnly = true;
+            this.ResponsableUr.Width = 117;
             // 
             // Estado
             // 
@@ -267,25 +269,25 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 77;
             // 
-            // EquiposAsociados
+            // EquiposAsociadosUr
             // 
-            this.EquiposAsociados.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.EquiposAsociados.HeaderText = "Equipos asociados";
-            this.EquiposAsociados.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.EquiposAsociados.Name = "EquiposAsociados";
-            this.EquiposAsociados.ReadOnly = true;
-            this.EquiposAsociados.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EquiposAsociados.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EquiposAsociados.Text = "Ver lista de equipos";
-            this.EquiposAsociados.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.EquiposAsociados.Width = 156;
+            this.EquiposAsociadosUr.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.EquiposAsociadosUr.HeaderText = "Equipos asociados";
+            this.EquiposAsociadosUr.LinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.EquiposAsociadosUr.Name = "EquiposAsociadosUr";
+            this.EquiposAsociadosUr.ReadOnly = true;
+            this.EquiposAsociadosUr.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EquiposAsociadosUr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EquiposAsociadosUr.Text = "Ver lista de equipos";
+            this.EquiposAsociadosUr.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.EquiposAsociadosUr.Width = 156;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(603, 73);
+            this.lblEstado.Location = new System.Drawing.Point(495, 76);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(75, 26);
             this.lblEstado.TabIndex = 65;
@@ -301,7 +303,7 @@
             "Todos",
             "En Curso",
             "Finalizado"});
-            this.cbxEstado.Location = new System.Drawing.Point(695, 73);
+            this.cbxEstado.Location = new System.Drawing.Point(587, 76);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(133, 25);
             this.cbxEstado.TabIndex = 64;
@@ -332,8 +334,22 @@
             this.lblTitulo.Text = "Gestión de Préstamos directos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(736, 75);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(89, 27);
+            this.btnImprimir.TabIndex = 78;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // EliminarLi
             // 
+            this.EliminarLi.FillWeight = 122.7025F;
             this.EliminarLi.HeaderText = "";
             this.EliminarLi.Image = global::Software_del_Pañol.Properties.Resources.eliminarr;
             this.EliminarLi.Name = "EliminarLi";
@@ -341,17 +357,19 @@
             this.EliminarLi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EliminarLi.Width = 5;
             // 
-            // ModificarEs
+            // ModificarLi
             // 
-            this.ModificarEs.HeaderText = "";
-            this.ModificarEs.Image = global::Software_del_Pañol.Properties.Resources.modificar;
-            this.ModificarEs.Name = "ModificarEs";
-            this.ModificarEs.ReadOnly = true;
-            this.ModificarEs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ModificarEs.Width = 5;
+            this.ModificarLi.FillWeight = 126.9036F;
+            this.ModificarLi.HeaderText = "";
+            this.ModificarLi.Image = global::Software_del_Pañol.Properties.Resources.modificar;
+            this.ModificarLi.Name = "ModificarLi";
+            this.ModificarLi.ReadOnly = true;
+            this.ModificarLi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ModificarLi.Width = 5;
             // 
             // IDPLB
             // 
+            this.IDPLB.FillWeight = 93.79925F;
             this.IDPLB.HeaderText = "ID";
             this.IDPLB.Name = "IDPLB";
             this.IDPLB.ReadOnly = true;
@@ -359,6 +377,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 93.79925F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Fecha Retiro";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -366,6 +385,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 93.79925F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Fecha Devolución";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -373,6 +393,7 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 93.79925F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Fecha Solicitada";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -380,20 +401,24 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 93.79925F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Duracion";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 95;
             // 
-            // Responsable
+            // ResponsableLi
             // 
-            this.Responsable.HeaderText = "Responsable";
-            this.Responsable.Name = "Responsable";
-            this.Responsable.ReadOnly = true;
-            this.Responsable.Width = 117;
+            this.ResponsableLi.FillWeight = 93.79925F;
+            this.ResponsableLi.HeaderText = "Responsable";
+            this.ResponsableLi.Name = "ResponsableLi";
+            this.ResponsableLi.ReadOnly = true;
+            this.ResponsableLi.ToolTipText = "mensaje";
+            this.ResponsableLi.Width = 117;
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 93.79925F;
             this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -402,6 +427,7 @@
             // LibrosAsociados
             // 
             this.LibrosAsociados.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.LibrosAsociados.FillWeight = 93.79925F;
             this.LibrosAsociados.HeaderText = "Libros Asociados";
             this.LibrosAsociados.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.LibrosAsociados.Name = "LibrosAsociados";
@@ -415,6 +441,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(885, 575);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvPrestamoLibros);
             this.Controls.Add(this.dgvPrestamoUrgente);
@@ -438,28 +465,29 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvPrestamoLibros;
         private System.Windows.Forms.DataGridView dgvPrestamoUrgente;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Modificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRetiro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDevolución;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSolicitada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewLinkColumn EquiposAsociados;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.ComboBox cbxTipoPrestamo;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.DataGridViewImageColumn EliminarUr;
+        private System.Windows.Forms.DataGridViewImageColumn ModificarUr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPUR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRetiro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDevolución;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSolicitada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResponsableUr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewLinkColumn EquiposAsociadosUr;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.DataGridViewImageColumn EliminarLi;
-        private System.Windows.Forms.DataGridViewImageColumn ModificarEs;
+        private System.Windows.Forms.DataGridViewImageColumn ModificarLi;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPLB;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResponsableLi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewLinkColumn LibrosAsociados;
     }

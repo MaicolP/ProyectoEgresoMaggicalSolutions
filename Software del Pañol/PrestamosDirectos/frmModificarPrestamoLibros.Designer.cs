@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificarPrestamoLibros));
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.dgvPrestamoEq = new System.Windows.Forms.DataGridView();
+            this.dgvPrestamoLibros = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRetiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +41,7 @@
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -54,37 +55,38 @@
             this.btnConfirmar.TabIndex = 155;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // dgvPrestamoEq
+            // dgvPrestamoLibros
             // 
-            this.dgvPrestamoEq.AllowUserToAddRows = false;
-            this.dgvPrestamoEq.AllowUserToDeleteRows = false;
-            this.dgvPrestamoEq.AllowUserToResizeColumns = false;
-            this.dgvPrestamoEq.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvPrestamoEq.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPrestamoEq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPrestamoLibros.AllowUserToAddRows = false;
+            this.dgvPrestamoLibros.AllowUserToDeleteRows = false;
+            this.dgvPrestamoLibros.AllowUserToResizeColumns = false;
+            this.dgvPrestamoLibros.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvPrestamoLibros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPrestamoLibros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPrestamoEq.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPrestamoEq.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPrestamoEq.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPrestamoEq.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPrestamoEq.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPrestamoEq.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(124)))), ((int)(((byte)(234)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPrestamoEq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPrestamoEq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvPrestamoEq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPrestamoLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPrestamoLibros.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPrestamoLibros.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPrestamoLibros.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPrestamoLibros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPrestamoLibros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(124)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPrestamoLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPrestamoLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPrestamoLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.FechaRetiro,
             this.FechaDevolucion,
@@ -92,25 +94,25 @@
             this.Duracion,
             this.Responsable,
             this.Estado});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrestamoEq.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPrestamoEq.EnableHeadersVisualStyles = false;
-            this.dgvPrestamoEq.GridColor = System.Drawing.Color.Gray;
-            this.dgvPrestamoEq.Location = new System.Drawing.Point(28, 46);
-            this.dgvPrestamoEq.MultiSelect = false;
-            this.dgvPrestamoEq.Name = "dgvPrestamoEq";
-            this.dgvPrestamoEq.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPrestamoEq.RowHeadersVisible = false;
-            this.dgvPrestamoEq.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvPrestamoEq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPrestamoEq.Size = new System.Drawing.Size(551, 92);
-            this.dgvPrestamoEq.TabIndex = 154;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPrestamoLibros.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPrestamoLibros.EnableHeadersVisualStyles = false;
+            this.dgvPrestamoLibros.GridColor = System.Drawing.Color.Gray;
+            this.dgvPrestamoLibros.Location = new System.Drawing.Point(28, 46);
+            this.dgvPrestamoLibros.MultiSelect = false;
+            this.dgvPrestamoLibros.Name = "dgvPrestamoLibros";
+            this.dgvPrestamoLibros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPrestamoLibros.RowHeadersVisible = false;
+            this.dgvPrestamoLibros.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvPrestamoLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPrestamoLibros.Size = new System.Drawing.Size(551, 92);
+            this.dgvPrestamoLibros.TabIndex = 154;
             // 
             // ID
             // 
@@ -170,10 +172,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 234);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.dgvPrestamoEq);
+            this.Controls.Add(this.dgvPrestamoLibros);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmModificarPrestamoLibros";
-            this.Text = "frmModificarPrestamoLibros";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoEq)).EndInit();
+            this.Load += new System.EventHandler(this.frmModificarPrestamoLibros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamoLibros)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +184,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.DataGridView dgvPrestamoEq;
+        private System.Windows.Forms.DataGridView dgvPrestamoLibros;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRetiro;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDevolucion;

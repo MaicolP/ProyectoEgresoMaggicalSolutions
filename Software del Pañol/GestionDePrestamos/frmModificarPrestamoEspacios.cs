@@ -38,9 +38,9 @@ namespace Software_del_Pañol.GestionDePrestamos
         {
             ePrestamoEspacio unPES = new ePrestamoEspacio();
             unPES.id = Convert.ToInt32(dgvPrestamoEs.CurrentCell.OwningRow.Cells["ID"].Value);
-            unPES.fecha_retiro = (DateTime)dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaRetiro"].Value;
-            unPES.fecha_devolucion = (DateTime)dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaDevolucion"].Value;
-            unPES.fecha_solicitado = (DateTime)dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaSolicitada"].Value;
+            unPES.fecha_retiro = Convert.ToDateTime(dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaRetiro"].Value);
+            unPES.fecha_devolucion = Convert.ToDateTime(dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaDevolucion"].Value);
+            unPES.fecha_solicitado = Convert.ToDateTime(dgvPrestamoEs.CurrentCell.OwningRow.Cells["FechaSolicitada"].Value);
             unPES.duracion = Convert.ToInt32(dgvPrestamoEs.CurrentCell.OwningRow.Cells["Duracion"].Value);
             unPES.responsable.id = Convert.ToInt32(dgvPrestamoEs.CurrentCell.OwningRow.Cells["IDUsuario"].Value);
             unPES.estadoP = dgvPrestamoEs.CurrentCell.OwningRow.Cells["Estado"].Value.ToString();

@@ -185,6 +185,52 @@ namespace Software_del_Pañol.GestionDePrestamos
         {
             actualizarDgv();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cbxTipoPrestamo.Text == "Préstamo de equipos")
+            {
+                dgvPrestamoEquipos.Columns["Eliminar"].Visible = false;
+                dgvPrestamoEquipos.Columns["Modificar"].Visible = false;
+                dgvPrestamoEquipos.Columns["EquiposAsociados"].Visible = false;
+
+                DGVPrinter printer = new DGVPrinter();
+
+                printer.Title = "Préstamos de equipos";
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "PañolAudiovisual";//Footer
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvPrestamoEquipos);
+
+                dgvPrestamoEquipos.Columns["Eliminar"].Visible = true;
+                dgvPrestamoEquipos.Columns["Modificar"].Visible = true;
+                dgvPrestamoEquipos.Columns["EquiposAsociados"].Visible = true;
+            }
+            else
+            {
+                dgvPrestamoEspacios.Columns["EliminarEs"].Visible = false;
+                dgvPrestamoEspacios.Columns["ModificarEs"].Visible = false;
+                this.dgvPrestamoEspacios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+                DGVPrinter printer = new DGVPrinter();
+
+                printer.Title = "Préstamos de espacios";
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "PañolAudiovisual";//Footer
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvPrestamoEspacios);
+
+                this.dgvPrestamoEspacios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvPrestamoEspacios.Columns["EliminarEs"].Visible = true;
+                dgvPrestamoEspacios.Columns["ModificarEs"].Visible = true;
+            }
+        }
     }
 }
 

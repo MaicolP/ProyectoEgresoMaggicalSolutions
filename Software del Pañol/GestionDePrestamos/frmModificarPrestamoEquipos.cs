@@ -35,9 +35,9 @@ namespace Software_del_Pañol.GestionDePrestamos
         {
             ePrestamoEquipo unPEQ = new ePrestamoEquipo();
             unPEQ.id = Convert.ToInt32(dgvPrestamoEq.CurrentCell.OwningRow.Cells["ID"].Value);
-            unPEQ.fecha_retiro = (DateTime)dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaRetiro"].Value;
-            unPEQ.fecha_devolucion = (DateTime)dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaDevolucion"].Value;
-            unPEQ.fecha_solicitado = (DateTime)dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaSolicitada"].Value;
+            unPEQ.fecha_retiro = Convert.ToDateTime(dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaRetiro"].Value);
+            unPEQ.fecha_devolucion = Convert.ToDateTime(dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaDevolucion"].Value);
+            unPEQ.fecha_solicitado = Convert.ToDateTime(dgvPrestamoEq.CurrentCell.OwningRow.Cells["FechaSolicitada"].Value);
             unPEQ.duracion = Convert.ToInt32(dgvPrestamoEq.CurrentCell.OwningRow.Cells["Duracion"].Value);
             unPEQ.estadoP = dgvPrestamoEq.CurrentCell.OwningRow.Cells["Estado"].Value.ToString();
             unPEQ.responsable.id = Convert.ToInt32(dgvPrestamoEq.CurrentCell.OwningRow.Cells["Responsable"].Value);

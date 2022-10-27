@@ -135,49 +135,101 @@ namespace Software_del_Pañol.PrestamosDirectos
                     actualizarDgv();
                 }
             }
-        }
-           /* if (dgvPrestamoEquipos.Columns[e.ColumnIndex].Name == "Modificar")
+        
+           if (dgvPrestamoLibros.Columns[e.ColumnIndex].Name == "ModificarLi")
             {
-                frmModificarPrestamoEquipos m1 = new frmModificarPrestamoEquipos(Convert.ToInt32(dgvPrestamoEquipos.CurrentRow.Cells["ID"].Value));
+                frmModificarPrestamoLibros m1 = new frmModificarPrestamoLibros(Convert.ToInt32(dgvPrestamoLibros.CurrentRow.Cells["IDPLB"].Value));
                 m1.Show();
             }
-            if (dgvPrestamoEquipos.Columns[e.ColumnIndex].Name == "EquiposAsociados")
+            if (dgvPrestamoLibros.Columns[e.ColumnIndex].Name == "LibrosAsociados")
             {
-                frmEquiposPrestamo m1 = new frmEquiposPrestamo(Convert.ToInt32(dgvPrestamoEquipos.CurrentRow.Cells["ID"].Value));
-                this.AddOwnedForm(m1);
+                frmLibrosPrestamo m1 = new frmLibrosPrestamo(Convert.ToInt32(dgvPrestamoLibros.CurrentRow.Cells["IDPLB"].Value));
                 m1.Show();
 
             }
+
         }
 
-        private void dgvPrestamoEspacios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPrestamoUrgentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPrestamoEspacios.Columns[e.ColumnIndex].Name == "EliminarEs")
+            if (dgvPrestamoUrgente.Columns[e.ColumnIndex].Name == "EliminarUr")
             {
-                eReserva reserva = new eReserva();
-                ePrestamoEspacio pEspacio = new ePrestamoEspacio();
-                pEspacio.id = Convert.ToInt32(dgvPrestamoEspacios.CurrentRow.Cells["IDPES"].Value);
-                DialogResult result = MessageBox.Show("Está seguro que desea eliminar el préstamo " + pEspacio.id +
+                ePrestamoUrgente pUrgente = new ePrestamoUrgente();
+                pUrgente.id = Convert.ToInt32(dgvPrestamoUrgente.CurrentRow.Cells["IDPUR"].Value);
+                DialogResult result = MessageBox.Show("Está seguro que desea eliminar el préstamo " + pUrgente.id +
                                " ?", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.OK)
                 {
-                    dReserva unR = new dReserva();
-                    dPrestamoEspacio unPES = new dPrestamoEspacio();
-                    unPES.bajaPrestamoEspacio(pEspacio);
-                    unR.bajaReserva(pEspacio.id);
+                    dPrestamoUrgente unPUR = new dPrestamoUrgente();
+                    unPUR.bajaPrestamoUrgente(pUrgente);
                     actualizarDgv();
                 }
             }
-            if (dgvPrestamoEspacios.Columns[e.ColumnIndex].Name == "ModificarEs")
+            if (dgvPrestamoUrgente.Columns[e.ColumnIndex].Name == "ModificarUr")
             {
-                frmModificarPrestamoEspacios m1 = new frmModificarPrestamoEspacios(Convert.ToInt32(dgvPrestamoEspacios.CurrentRow.Cells["IDPES"].Value));
+                frmModificarPrestamoUrgente m1 = new frmModificarPrestamoUrgente(Convert.ToInt32(dgvPrestamoUrgente.CurrentRow.Cells["IDPUR"].Value));
                 m1.Show();
             }
-        }*/
-       
+            if (dgvPrestamoUrgente.Columns[e.ColumnIndex].Name == "EquiposAsociadosUr")
+            {
+                frmEquiposPUrgente m1 = new frmEquiposPUrgente(Convert.ToInt32(dgvPrestamoUrgente.CurrentRow.Cells["IDPUR"].Value));
+                m1.Show();
+
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             actualizarDgv();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (cbxTipoPrestamo.Text == "Préstamos de libros")
+            {
+                dgvPrestamoLibros.Columns["EliminarLi"].Visible = false;
+                dgvPrestamoLibros.Columns["ModificarLi"].Visible = false;
+                dgvPrestamoLibros.Columns["LibrosAsociados"].Visible = false;
+                this.dgvPrestamoLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+                DGVPrinter printer = new DGVPrinter();
+
+                printer.Title = "Préstamos de libros";
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "PañolAudiovisual";//Footer
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvPrestamoLibros);
+
+                this.dgvPrestamoLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvPrestamoLibros.Columns["EliminarLi"].Visible = true;
+                dgvPrestamoLibros.Columns["ModificarLi"].Visible = true;
+                dgvPrestamoLibros.Columns["LibrosAsociados"].Visible = true;
+            }
+            else
+            {
+                dgvPrestamoUrgente.Columns["EliminarUr"].Visible = false;
+                dgvPrestamoUrgente.Columns["ModificarUr"].Visible = false;
+                dgvPrestamoUrgente.Columns["EquiposAsociadosUr"].Visible = false;
+                this.dgvPrestamoUrgente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+                DGVPrinter printer = new DGVPrinter();
+
+                printer.Title = "Préstamos urgentes";
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "PañolAudiovisual";//Footer
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(dgvPrestamoUrgente);
+
+                this.dgvPrestamoUrgente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvPrestamoUrgente.Columns["EliminarUr"].Visible = true;
+                dgvPrestamoUrgente.Columns["ModificarUr"].Visible = true;
+                dgvPrestamoUrgente.Columns["EquiposAsociadosUr"].Visible = true;
+            }
         }
     }
 }

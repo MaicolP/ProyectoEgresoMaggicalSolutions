@@ -28,6 +28,12 @@ namespace Dominio
             unPE.modificarPrestamoLibro(prestamo);
         }
 
+        public ePrestamoLibro buscarPrestamoLibro(ePrestamoLibro prestamo)
+        {
+            pPrestamoLibro unPL = new pPrestamoLibro();
+            return unPL.buscarPrestamoLibro(prestamo);
+        }
+
         public List<ePrestamoLibro> listarPrestamoLibro()
         {
             pPrestamoLibro unPE = new pPrestamoLibro();

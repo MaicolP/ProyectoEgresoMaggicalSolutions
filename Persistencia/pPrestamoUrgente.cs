@@ -44,9 +44,21 @@ namespace Persistencia
             ejecutarSQL(consultaSQL4);
         }
 
+        public ePrestamoUrgente buscarPrestamoUrgente(ePrestamoUrgente prestamo)
+        {
+            string consultaSQL = "SELECT * FROM prestamo INNER JOIN prestamo_directo ON prestamo.id_prestamo = prestamo_directo.id_prestamo INNER JOIN prestamo_urgente ON prestamo.id_prestamo = prestamo_urgente.id_prestamo INNER JOIN usuario ON prestamo.id_usuario = usuario.id_usuario WHERE prestamo.id_prestamo = '" + prestamo.id + "';";
+            ePrestamoUrgente prestamoUr = new ePrestamoUrgente();
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            while(resultado.Read())
+            {
+                prestamo = recrearP(resultado);
+            }
+            return prestamo;
+        }
+
         public void modificarPrestamoUrgente(ePrestamoUrgente prestamo)
         {
-            string consultaSQL1 = "UPDATE prestamo SET fecha_retiro = '" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', id_usuario = '" + prestamo.responsable.id + "', estado = '" + prestamo.estadoP + "' WHERE id_prestamo = '" + prestamo.id + "';";
+            string consultaSQL1 = "UPDATE prestamo SET fecha_retiro = '" + prestamo.fecha_retiro.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_devolucion = '" + prestamo.fecha_devolucion.ToString("yyyy-MM-dd hh:mm:ss") + "', fecha_solicitada = '" + prestamo.fecha_solicitado.ToString("yyyy-MM-dd hh:mm:ss") + "', duracion = '" + prestamo.duracion + "',id_usuario = '" + prestamo.responsable.id + "', estado = '" + prestamo.estadoP + "' WHERE id_prestamo = '" + prestamo.id + "';";
             ejecutarSQL(consultaSQL1);
 
             String consultaSQL4 = "DELETE FROM pu_eq WHERE id_prestamo = '" + prestamo.id + "';";
@@ -106,6 +118,7 @@ namespace Persistencia
             prestamo.fecha_devolucion = new DateTime(fechaDevolucion.Year, fechaDevolucion.Month, fechaDevolucion.Day, fechaDevolucion.Hour, fechaDevolucion.Minute, fechaDevolucion.Second);
             MySqlDateTime fechaSolicitado = resultado.GetMySqlDateTime("fecha_solicitada");
             prestamo.fecha_solicitado = new DateTime(fechaSolicitado.Year, fechaSolicitado.Month, fechaSolicitado.Day, fechaSolicitado.Hour, fechaSolicitado.Minute, fechaSolicitado.Second);
+            prestamo.duracion = resultado.GetInt32("duracion");
             prestamo.responsable.ci = resultado.GetString("ci");
             prestamo.responsable = unPU.buscarUsuario(prestamo.responsable);
             prestamo.estadoP = resultado.GetString("estado");
