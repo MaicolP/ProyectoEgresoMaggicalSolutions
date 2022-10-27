@@ -46,11 +46,12 @@
             // 
             // fpnlContenedor
             // 
+            this.fpnlContenedor.AutoScroll = true;
             this.fpnlContenedor.Controls.Add(this.label1);
             this.fpnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpnlContenedor.Location = new System.Drawing.Point(0, 16);
             this.fpnlContenedor.Name = "fpnlContenedor";
-            this.fpnlContenedor.Size = new System.Drawing.Size(120, 73);
+            this.fpnlContenedor.Size = new System.Drawing.Size(120, 99);
             this.fpnlContenedor.TabIndex = 1;
             // 
             // label1
@@ -73,7 +74,7 @@
             this.Controls.Add(this.fpnlContenedor);
             this.Controls.Add(this.lblDia);
             this.Name = "contenedorDia";
-            this.Size = new System.Drawing.Size(120, 89);
+            this.Size = new System.Drawing.Size(120, 115);
             this.Load += new System.EventHandler(this.contenedorDia_Load);
             this.fpnlContenedor.ResumeLayout(false);
             this.fpnlContenedor.PerformLayout();

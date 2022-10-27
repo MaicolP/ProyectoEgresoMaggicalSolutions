@@ -83,6 +83,26 @@ namespace Software_del_Pañol.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flechaCalendario {
+            get {
+                object obj = ResourceManager.GetObject("flechaCalendario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flechaCalendario2 {
+            get {
+                object obj = ResourceManager.GetObject("flechaCalendario2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flechaNotis {
             get {
                 object obj = ResourceManager.GetObject("flechaNotis", resourceCulture);

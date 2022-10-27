@@ -53,7 +53,7 @@ namespace Persistencia
 
             resultado = comando.ExecuteReader();
 
-            return resultado; 
+            return resultado;
         }
 
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendario));
             this.fpnlCalendario = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -38,8 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // 
             this.fpnlCalendario.Location = new System.Drawing.Point(0, 84);
             this.fpnlCalendario.Name = "fpnlCalendario";
-            this.fpnlCalendario.Size = new System.Drawing.Size(884, 597);
+            this.fpnlCalendario.Size = new System.Drawing.Size(884, 749);
             this.fpnlCalendario.TabIndex = 0;
             // 
             // pnlTitulo
@@ -158,25 +159,29 @@
             this.label6.Text = "Sábado";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Location = new System.Drawing.Point(798, 28);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 29);
-            this.btnSiguiente.TabIndex = 1;
-            this.btnSiguiente.Text = "Sig";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_CLick);
-            // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(717, 28);
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAnterior.Image = global::Software_del_Pañol.Properties.Resources.flechaCalendario2;
+            this.btnAnterior.Location = new System.Drawing.Point(832, 21);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 29);
+            this.btnAnterior.Size = new System.Drawing.Size(41, 29);
             this.btnAnterior.TabIndex = 2;
-            this.btnAnterior.Text = "Ant";
             this.btnAnterior.UseVisualStyleBackColor = true;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.Location = new System.Drawing.Point(785, 21);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(41, 29);
+            this.btnSiguiente.TabIndex = 1;
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_CLick);
             // 
             // frmCalendario
             // 
@@ -184,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 693);
+            this.ClientSize = new System.Drawing.Size(885, 845);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

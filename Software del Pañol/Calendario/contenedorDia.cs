@@ -14,6 +14,7 @@ namespace Software_del_Pañol.Calendario
     public partial class contenedorDia : UserControl
     {
         public int num { get; set; }
+        public int mes { get; set; }
         List<ePrestamoEquipo> _pEq = new List<ePrestamoEquipo>();
         List<ePrestamoEspacio> _pEs = new List<ePrestamoEspacio>();
 
@@ -34,11 +35,11 @@ namespace Software_del_Pañol.Calendario
 
         public void alertaPrestamoEquipo(ePrestamoEquipo p)
         {
-            if (this.num == p.fecha_retiro.Day)
+            if (this.num == p.fecha_retiro.Day && this.mes == p.fecha_retiro.Month)
             {
                 nuevoLbl("P. equipo " + p.id, tipo.RETIRO);
             }
-            else if (this.num == p.fecha_devolucion.Day)
+            if (this.num == p.fecha_devolucion.Day && this.mes == p.fecha_devolucion.Month)
             {
                 nuevoLbl("P. equipo " + p.id, tipo.DEVOLUCION);
             }
@@ -47,11 +48,11 @@ namespace Software_del_Pañol.Calendario
 
         public void alertaPrestamoEspacio(ePrestamoEspacio p)
         {
-            if (this.num == p.fecha_retiro.Day)
+            if (this.num == p.fecha_retiro.Day && this.mes == p.fecha_retiro.Month)
             {
                 nuevoLbl("P. espacio " + p.id, tipo.RETIRO);
             }
-            else if (this.num == p.fecha_devolucion.Day)
+            if (this.num == p.fecha_devolucion.Day && this.mes == p.fecha_devolucion.Month)
             {
                 nuevoLbl("P. espacio " + p.id, tipo.DEVOLUCION);
             }
@@ -66,14 +67,15 @@ namespace Software_del_Pañol.Calendario
             lblNoti.Location = new System.Drawing.Point(3, 0);
             lblNoti.Name = "lblNoti";
             lblNoti.MaximumSize = new System.Drawing.Size(120, 0);
-            lblNoti.Size = new System.Drawing.Size(120, 16);
+            lblNoti.Margin = new Padding(0,1,0,2);
+            lblNoti.Size = new System.Drawing.Size(110, 16);
             lblNoti.TabIndex = 2;
             lblNoti.Dock = DockStyle.Top;
 
             lblNoti.Text = txt;
 
-            if(tipo == tipo.DEVOLUCION) lblNoti.BackColor = Color.LightGreen;
-            if(tipo == tipo.RETIRO) lblNoti.BackColor = Color.OrangeRed;
+            if(tipo == tipo.DEVOLUCION) lblNoti.BackColor = Color.Firebrick;
+            if(tipo == tipo.RETIRO) lblNoti.BackColor = Color.LightGreen;
 
             fpnlContenedor.Controls.Add(lblNoti);
         }

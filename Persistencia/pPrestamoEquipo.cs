@@ -173,6 +173,7 @@ namespace Persistencia
             {
                 _prestamoEquipo.Add(recrearPE(resultado));
             }
+            CerrarConexion();
             return _prestamoEquipo;
         }
     }

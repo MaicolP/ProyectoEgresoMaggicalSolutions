@@ -57,6 +57,7 @@ namespace Persistencia
             {
                 _prestamoEspacios.Add(recrearPE(resultado));
             }
+            CerrarConexion();
             return _prestamoEspacios;
         }
 

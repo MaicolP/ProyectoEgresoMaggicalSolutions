@@ -57,6 +57,7 @@ namespace Software_del_Pañol.Calendario
             {
                 contenedorDia dia = new contenedorDia();
                 dia.num = i;
+                dia.mes = mes;
                 _contDia.Add(dia);
                 dia.dias(i);
                 fpnlCalendario.Controls.Add(dia);
