@@ -200,9 +200,11 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             PrinterSettings ps = new PrinterSettings();
             prntDoc.PrinterSettings = ps;
             prntDoc.PrintPage += Imprimir;
-            prntDoc.Print();
+            PrintPreviewDialog ppd = new PrintPreviewDialog { Document = prntDoc };
+            ((Form)ppd).WindowState = FormWindowState.Maximized;
+            ppd.ShowDialog();
 
-            /*dPrestamoEquipo prestamo = new dPrestamoEquipo();
+            dPrestamoEquipo prestamo = new dPrestamoEquipo();
 
             prestamoActual.fecha_solicitado = dtpSolicitado.Value;
             prestamoActual.fecha_retiro = dtpRetiro.Value;
@@ -251,7 +253,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             catch
             {
                MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }*/
+            }
         }
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
@@ -458,9 +460,9 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
             e.Graphics.DrawString("PLANILLA DE PRÉSTAMOS PAÑOL AUDIOVISUAL", font, Brushes.Black, new RectangleF(20, 40, 600, 30));
 
-            font = new Font("Arial" , 16, FontStyle.Regular, GraphicsUnit.Point);
+            font = new Font("Arial", 16, FontStyle.Regular, GraphicsUnit.Point);
 
-            String fecha_retiro = prestamoActual.fecha_retiro.ToShortDateString(); 
+            String fecha_retiro = prestamoActual.fecha_retiro.ToShortDateString();
 
             e.Graphics.DrawString("FECHA RETIRO : " + fecha_retiro, font, Brushes.Black, new RectangleF(20, 90, 600, 30));
 
@@ -476,7 +478,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
             e.Graphics.DrawString("HORA DEVOLUCIÓN : " + hora_devolucion, font, Brushes.Black, new RectangleF(20, 240, 600, 30));
 
-            e.Graphics.DrawString("RESPONSABLE DEL EQUIPO : " + prestamoActual.responsable.nombre + " " + prestamoActual.responsable.apellido , font, Brushes.Black, new RectangleF(20, 290, 800, 30));
+            e.Graphics.DrawString("RESPONSABLE DEL EQUIPO : " + prestamoActual.responsable.nombre + " " + prestamoActual.responsable.apellido, font, Brushes.Black, new RectangleF(20, 290, 800, 30));
 
             e.Graphics.DrawString("DOCENTE RESPONSABLE : " + prestamoActual.nomDocente + " " + prestamoActual.apeDocente, font, Brushes.Black, new RectangleF(20, 340, 800, 30));
 
@@ -489,6 +491,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             e.Graphics.DrawString("CURSO: " + prestamoActual.curso, font, Brushes.Black, new RectangleF(20, 540, 800, 30));
 
             e.Graphics.DrawString("EJERCICIO : " + prestamoActual.ejercicio, font, Brushes.Black, new RectangleF(20, 590, 800, 30));
+
+            dgvEquiposSel.Columns["NombreS"].Width = 200;
+            dgvEquiposSel.Columns["NroSerieS"].Width = 120;
+            dgvEquiposSel.Columns["ObservacionesS"].Width = 300;
 
             const int DGV_ALTO = 35;
             int left = e.MarginBounds.Left - 50, top = e.MarginBounds.Top + 590;
@@ -517,6 +523,10 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                 top += DGV_ALTO;
                 e.Graphics.DrawLine(Pens.Gray, e.MarginBounds.Left - 50, top, e.MarginBounds.Right + 50, top);
             }
+
+            dgvEquiposSel.Columns["NombreS"].Width = 110;
+            dgvEquiposSel.Columns["NroSerieS"].Width = 111;
+            dgvEquiposSel.Columns["ObservacionesS"].Width = 111;
 
             e.Graphics.DrawString("__________________", font, Brushes.Black, new RectangleF(150, 1000, 800, 30));
             e.Graphics.DrawString("__________________", font, Brushes.Black, new RectangleF(450, 1000, 800, 30));

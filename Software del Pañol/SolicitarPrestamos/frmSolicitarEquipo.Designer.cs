@@ -122,6 +122,7 @@
             this.btnEliminar.TabIndex = 137;
             this.btnEliminar.Text = "Quitar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvEquiposSel
             // 
@@ -180,7 +181,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 293);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 281);
             this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
@@ -311,7 +312,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(383, 293);
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 281);
             this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
@@ -455,6 +456,7 @@
             this.btnAgregarEquipo.TabIndex = 129;
             this.btnAgregarEquipo.Text = "Agregar";
             this.btnAgregarEquipo.UseVisualStyleBackColor = false;
+            this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click_1);
             // 
             // label11
             // 
@@ -647,6 +649,7 @@
             this.btnSolicitar.TabIndex = 111;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = false;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
             // 
             // lblNom
             // 
@@ -720,7 +723,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 914);
+            this.ClientSize = new System.Drawing.Size(902, 749);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvEquiposSel);
             this.Controls.Add(this.dgvEquipos);

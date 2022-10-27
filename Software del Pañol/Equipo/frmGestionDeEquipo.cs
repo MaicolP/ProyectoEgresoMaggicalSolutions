@@ -293,7 +293,7 @@ namespace Software_del_Pañol
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.Footer = "PañolAudiovisual";//Footer
             printer.FooterSpacing = 15;
-            printer.PrintDataGridView(dgvEquipos);
+            printer.PrintPreviewNoDisplay(dgvEquipos);
 
         }
 

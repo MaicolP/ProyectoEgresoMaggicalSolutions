@@ -87,9 +87,10 @@
             this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prntDoc = new System.Drawing.Printing.PrintDocument();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroSerieS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObservacionesS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHyD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
@@ -636,9 +637,10 @@
             this.dgvEquiposSel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquiposSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEquiposSel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7});
+            this.NombreS,
+            this.NroSerieS,
+            this.ObservacionesS,
+            this.CHyD});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -657,7 +659,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(332, 564);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(332, 864);
             this.dgvEquiposSel.TabIndex = 182;
             // 
             // dgvEquipos
@@ -717,7 +719,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(349, 564);
+            this.dgvEquipos.Size = new System.Drawing.Size(332, 864);
             this.dgvEquipos.TabIndex = 181;
             // 
             // id_equipo
@@ -791,35 +793,44 @@
             this.Tipo.ReadOnly = true;
             this.Tipo.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // NombreS
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.FillWeight = 5.295561F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
+            this.NombreS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NombreS.DataPropertyName = "nombre";
+            this.NombreS.FillWeight = 110F;
+            this.NombreS.HeaderText = "Nombre";
+            this.NombreS.Name = "NombreS";
+            this.NombreS.ReadOnly = true;
+            this.NombreS.Width = 110;
             // 
-            // dataGridViewTextBoxColumn3
+            // NroSerieS
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "nroSerie";
-            this.dataGridViewTextBoxColumn3.FillWeight = 9.932862F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nro Serie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 120;
+            this.NroSerieS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NroSerieS.DataPropertyName = "nroSerie";
+            this.NroSerieS.FillWeight = 111F;
+            this.NroSerieS.HeaderText = "Nro Serie";
+            this.NroSerieS.Name = "NroSerieS";
+            this.NroSerieS.ReadOnly = true;
+            this.NroSerieS.Width = 111;
             // 
-            // dataGridViewTextBoxColumn7
+            // ObservacionesS
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "observaciones";
-            this.dataGridViewTextBoxColumn7.FillWeight = 284.7716F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Observaciones";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 280;
+            this.ObservacionesS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ObservacionesS.DataPropertyName = "observaciones";
+            this.ObservacionesS.FillWeight = 111F;
+            this.ObservacionesS.HeaderText = "Observaciones";
+            this.ObservacionesS.Name = "ObservacionesS";
+            this.ObservacionesS.ReadOnly = true;
+            this.ObservacionesS.Width = 111;
+            // 
+            // CHyD
+            // 
+            this.CHyD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CHyD.HeaderText = "CH/DEV";
+            this.CHyD.Name = "CHyD";
+            this.CHyD.ReadOnly = true;
+            this.CHyD.Visible = false;
+            this.CHyD.Width = 10;
             // 
             // frmConfirmarPrestamoEquipos
             // 
@@ -936,8 +947,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Drawing.Printing.PrintDocument prntDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroSerieS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHyD;
     }
 }
