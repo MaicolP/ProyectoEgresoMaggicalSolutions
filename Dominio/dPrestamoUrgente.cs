@@ -45,5 +45,11 @@ namespace Dominio
             pPrestamoUrgente unPU = new pPrestamoUrgente();
             unPU.modificarPrestamoUrgente(prestamo);
         }
+
+        public ePrestamoUrgente buscarPrestamoUrgente(ePrestamoUrgente prestamo)
+        {
+            pPrestamoUrgente unPUR = new pPrestamoUrgente();
+            return unPUR.buscarPrestamoUrgente(prestamo);
+        }
     }
 }

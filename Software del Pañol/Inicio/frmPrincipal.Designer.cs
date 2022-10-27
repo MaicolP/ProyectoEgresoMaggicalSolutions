@@ -63,6 +63,7 @@
             this.confirmarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.espacioCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.préstamosDirectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
@@ -354,7 +355,8 @@
             // prestamosConReservaToolStripMenuItem
             // 
             this.prestamosConReservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.préstamosConReservaToolStripMenuItem});
+            this.préstamosConReservaToolStripMenuItem,
+            this.préstamosDirectosToolStripMenuItem});
             this.prestamosConReservaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.prestamosConReservaToolStripMenuItem.Name = "prestamosConReservaToolStripMenuItem";
             this.prestamosConReservaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
@@ -544,5 +546,6 @@
         private System.Windows.Forms.ToolStripMenuItem espacioCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem préstamosConReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem urgenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem préstamosDirectosToolStripMenuItem;
     }
 }

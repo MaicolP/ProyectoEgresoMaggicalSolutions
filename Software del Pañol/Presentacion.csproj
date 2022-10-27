@@ -150,6 +150,36 @@
     <Compile Include="Libros\frmGestionDeLibrosFisico.Designer.cs">
       <DependentUpon>frmGestionDeLibrosFisico.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrestamosDirectos\frmEquiposPUrgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmEquiposPUrgente.Designer.cs">
+      <DependentUpon>frmEquiposPUrgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmGestionDePrestamosDirectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmGestionDePrestamosDirectos.Designer.cs">
+      <DependentUpon>frmGestionDePrestamosDirectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmLibrosPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmLibrosPrestamo.Designer.cs">
+      <DependentUpon>frmLibrosPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmModificarPrestamoLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmModificarPrestamoLibros.Designer.cs">
+      <DependentUpon>frmModificarPrestamoLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmModificarPrestamoUrgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamosDirectos\frmModificarPrestamoUrgente.Designer.cs">
+      <DependentUpon>frmModificarPrestamoUrgente.cs</DependentUpon>
+    </Compile>
     <Compile Include="SolicitarPrestamos\frmSolicitarEspacio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +273,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamosDirectos\frmEquiposPUrgente.resx">
+      <DependentUpon>frmEquiposPUrgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamosDirectos\frmGestionDePrestamosDirectos.resx">
+      <DependentUpon>frmGestionDePrestamosDirectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamosDirectos\frmLibrosPrestamo.resx">
+      <DependentUpon>frmLibrosPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamosDirectos\frmModificarPrestamoLibros.resx">
+      <DependentUpon>frmModificarPrestamoLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamosDirectos\frmModificarPrestamoUrgente.resx">
+      <DependentUpon>frmModificarPrestamoUrgente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SolicitarPrestamos\frmSolicitarEspacio.resx">
       <DependentUpon>frmSolicitarEspacio.cs</DependentUpon>

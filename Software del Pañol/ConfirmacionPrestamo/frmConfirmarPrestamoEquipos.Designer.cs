@@ -76,15 +76,6 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.dgvEquiposSel = new System.Windows.Forms.DataGridView();
-            this.id_equipoSel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.id_equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +86,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prntDoc = new System.Drawing.Printing.PrintDocument();
+            this.NombreS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroSerieS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObservacionesS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHyD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
@@ -625,7 +621,7 @@
             this.dgvEquiposSel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquiposSel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEquiposSel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEquiposSel.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquiposSel.BackgroundColor = System.Drawing.Color.White;
             this.dgvEquiposSel.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -641,15 +637,10 @@
             this.dgvEquiposSel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquiposSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEquiposSel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_equipoSel,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn8});
+            this.NombreS,
+            this.NroSerieS,
+            this.ObservacionesS,
+            this.CHyD});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -668,79 +659,8 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(349, 276);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(332, 864);
             this.dgvEquiposSel.TabIndex = 182;
-            // 
-            // id_equipoSel
-            // 
-            this.id_equipoSel.DataPropertyName = "id";
-            this.id_equipoSel.HeaderText = "Id";
-            this.id_equipoSel.Name = "id_equipoSel";
-            this.id_equipoSel.ReadOnly = true;
-            this.id_equipoSel.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "nroSerie";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nro Serie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "fechaIngreso";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Fecha Ingreso";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "precio";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "estado";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "observaciones";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Observaciones";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "asegurado";
-            this.dataGridViewCheckBoxColumn1.FalseValue = "";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Asegurado";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.TrueValue = "";
-            this.dataGridViewCheckBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "tipo";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Tipo";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Visible = false;
             // 
             // dgvEquipos
             // 
@@ -799,7 +719,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(366, 276);
+            this.dgvEquipos.Size = new System.Drawing.Size(332, 864);
             this.dgvEquipos.TabIndex = 181;
             // 
             // id_equipo
@@ -873,13 +793,52 @@
             this.Tipo.ReadOnly = true;
             this.Tipo.Visible = false;
             // 
+            // NombreS
+            // 
+            this.NombreS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NombreS.DataPropertyName = "nombre";
+            this.NombreS.FillWeight = 110F;
+            this.NombreS.HeaderText = "Nombre";
+            this.NombreS.Name = "NombreS";
+            this.NombreS.ReadOnly = true;
+            this.NombreS.Width = 110;
+            // 
+            // NroSerieS
+            // 
+            this.NroSerieS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NroSerieS.DataPropertyName = "nroSerie";
+            this.NroSerieS.FillWeight = 111F;
+            this.NroSerieS.HeaderText = "Nro Serie";
+            this.NroSerieS.Name = "NroSerieS";
+            this.NroSerieS.ReadOnly = true;
+            this.NroSerieS.Width = 111;
+            // 
+            // ObservacionesS
+            // 
+            this.ObservacionesS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ObservacionesS.DataPropertyName = "observaciones";
+            this.ObservacionesS.FillWeight = 111F;
+            this.ObservacionesS.HeaderText = "Observaciones";
+            this.ObservacionesS.Name = "ObservacionesS";
+            this.ObservacionesS.ReadOnly = true;
+            this.ObservacionesS.Width = 111;
+            // 
+            // CHyD
+            // 
+            this.CHyD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CHyD.HeaderText = "CH/DEV";
+            this.CHyD.Name = "CHyD";
+            this.CHyD.ReadOnly = true;
+            this.CHyD.Visible = false;
+            this.CHyD.Width = 10;
+            // 
             // frmConfirmarPrestamoEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(885, 1061);
+            this.ClientSize = new System.Drawing.Size(902, 749);
             this.Controls.Add(this.dgvEquiposSel);
             this.Controls.Add(this.dgvEquipos);
             this.Controls.Add(this.lblPrioridad);
@@ -977,15 +936,6 @@
         private System.Windows.Forms.ComboBox cbxEjercicio;
         private System.Windows.Forms.Label lblPrioridad;
         private System.Windows.Forms.DataGridView dgvEquiposSel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_equipoSel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_equipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -996,5 +946,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Drawing.Printing.PrintDocument prntDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroSerieS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHyD;
     }
 }
