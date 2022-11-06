@@ -67,9 +67,9 @@ namespace Software_del_Pañol.PrestamoEspacios
                 lblMensaje.ForeColor = System.Drawing.Color.CornflowerBlue;
                 lblMensaje.Text = "Se ha envíado la solicitud";
 
-                cbxCurso.Text = "";
-                cbxEjercicio.Text = "";
-                cbxEspacio.ResetText();
+                cbxCurso.Items.Clear();
+                cbxEjercicio.Items.Clear();
+                cbxEspacio.Items.Clear();
             }
 
         }

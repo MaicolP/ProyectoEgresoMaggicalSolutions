@@ -96,6 +96,12 @@
     <Compile Include="Equipo\frmGestionDeEquipo.Designer.cs">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipo\frmImprimirEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipo\frmImprimirEquipo.Designer.cs">
+      <DependentUpon>frmImprimirEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipo\frmTiposDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipo\frmGestionDeEquipo.resx">
       <DependentUpon>frmGestionDeEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipo\frmImprimirEquipo.resx">
+      <DependentUpon>frmImprimirEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipo\frmTiposDeEquipo.resx">
       <DependentUpon>frmTiposDeEquipo.cs</DependentUpon>

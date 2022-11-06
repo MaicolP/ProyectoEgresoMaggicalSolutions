@@ -61,7 +61,7 @@ namespace Software_del_Pañol
             if (_librosSel.Any() == false)
             {
                 lblMensaje.ForeColor = Color.Red;
-                lblMensaje.Text = "Porfavor seleccione algún libro";
+                lblMensaje.Text = "Por favor seleccione algún libro";
             }
             else if (validarfecha() == false)
             {

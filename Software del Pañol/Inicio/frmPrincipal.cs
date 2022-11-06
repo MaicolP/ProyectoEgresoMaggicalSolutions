@@ -16,6 +16,7 @@ using Software_del_Pañol.ConfirmacionPrestamo;
 using Software_del_Pañol.GestionDePrestamos;
 using Software_del_Pañol.PrestamosDirectos;
 using Software_del_Pañol.Calendario;
+using Software_del_Pañol.Equipo;
 
 namespace Software_del_Pañol
 {
@@ -159,7 +160,10 @@ namespace Software_del_Pañol
         {
             cambiarFormHijo(new frmTiposDeEquipo());
         }
-
+        public void abrirImpresionEquipo()
+        {
+            cambiarFormHijo(new frmImprimirEquipo());
+        }
         #endregion
 
         #region Gestion de espacios

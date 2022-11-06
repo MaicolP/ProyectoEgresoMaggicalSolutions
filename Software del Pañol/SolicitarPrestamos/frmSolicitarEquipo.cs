@@ -184,6 +184,11 @@ namespace Software_del_Pañol
                 lblMensaje.ForeColor = Color.Red;
                 lblMensaje.Text = "Complete todos los campos";
             }
+            else if (_equiposSel.Any() == false)
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Por favor seleccione algún equipo";
+            }
             else if (validarfecha() == false)
             {
                 lblMensaje.ForeColor = Color.Red;
@@ -220,11 +225,11 @@ namespace Software_del_Pañol
 
                 txtApellidoDocente.Clear();
                 txtNombreDocente.Clear();
-                cbxCurso.Text="";
                 txtEquipoRodaje.Clear();
                 txtTransporte.Clear();
-                cbxEjercicio.Text="";
                 txtLocaciones.Clear();
+                cbxCurso.Items.Clear();
+                cbxEjercicio.Items.Clear();
 
                 lblMensaje.ForeColor = Color.CornflowerBlue;
                 lblMensaje.Text = "Se envió la solicitud";

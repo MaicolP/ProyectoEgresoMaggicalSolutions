@@ -189,3 +189,7 @@ C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Soft
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorBlanco.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorDia.resources
 C:\Users\Administrador\Source\Repos\MaicolP\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.frmCalendario.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorBlanco.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.contenedorDia.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Calendario.frmCalendario.resources
+C:\Users\lucas\Source\Repos\ProyectoEgresoMaggicalSolutions\Software del Pañol\obj\Debug\Software_del_Pañol.Equipo.frmImprimirEquipo.resources

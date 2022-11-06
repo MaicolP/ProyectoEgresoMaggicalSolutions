@@ -354,12 +354,14 @@
             this.cbxCurso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCurso.FormattingEnabled = true;
             this.cbxCurso.Items.AddRange(new object[] {
+            "",
             "Primero Bachillerato",
             "Segundo Bachillerato",
             "Tercero Bachillerato",
             "Primero Tecnicatura",
             "Segundo Tecnicatura",
-            "Fines"});
+            "Fines",
+            ""});
             this.cbxCurso.Location = new System.Drawing.Point(480, 338);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(179, 25);

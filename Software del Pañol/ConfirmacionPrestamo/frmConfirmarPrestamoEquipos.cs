@@ -177,6 +177,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                 prestamo.bajaPrestamoEquipo(prestamoActual);
                 _prestamos = prestamo.listarPrestamoEquipo(estadoP.Pendiente);
 
+                lblMensaje.ForeColor = Color.Red;
                 lblMensaje.Text = "Solicitud eliminada correctamente";
 
                 if (_prestamos.Count == 0)
@@ -196,63 +197,83 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            prntDoc = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            prntDoc.PrinterSettings = ps;
-            prntDoc.PrintPage += Imprimir;
-            PrintPreviewDialog ppd = new PrintPreviewDialog { Document = prntDoc };
-            ((Form)ppd).WindowState = FormWindowState.Maximized;
-            ppd.ShowDialog();
-
-            dPrestamoEquipo prestamo = new dPrestamoEquipo();
-
-            prestamoActual.fecha_solicitado = dtpSolicitado.Value;
-            prestamoActual.fecha_retiro = dtpRetiro.Value;
-            prestamoActual.fecha_devolucion = dtpDevolucion.Value;
-            prestamoActual.curso = cbxCurso.Text;
-            prestamoActual.ejercicio = cbxEjercicio.Text;
-            if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 3;
-            else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 2;
-            else
+            if (cbxCurso.Text == "" || txtEquipoRodaje.Text == "" || txtTransporte.Text == "" || cbxEjercicio.Text == "" || txtLocaciones.Text == "" || txtNombreDocente.Text == "" || txtApellidoDocente.Text == "" || txtNombreResponsable.Text == "" || txtApellidoResponsable.Text == "")
             {
-                prestamoActual.prioridad = 1;
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Complete todos los campos";
             }
-            prestamoActual.equipoRodaje = txtEquipoRodaje.Text;
-            prestamoActual.locaciones = txtLocaciones.Text;
-            prestamoActual.nomDocente = txtNombreDocente.Text;
-            prestamoActual.apeDocente = txtApellidoDocente.Text;
-            prestamoActual.transporte = txtTransporte.Text;
-            prestamoActual.estadoP = estadoP.EnCurso.ToString();
-            prestamoActual._equipos = _equiposSel;
-
-            prestamo.modificarPrestamoEquipo(prestamoActual);
-            _prestamos = prestamo.listarPrestamoEquipoPendiente();
-
-            lblMensaje.Text = "Solicitud confirmada correctamente";
-
-            if (_prestamos.Count == 0)
+            else if (_equiposSel.Any() == false)
             {
-                desactivarBotones();
-                vaciarCampos();
-                activarCampos(false);
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Por favor seleccione algún equipo";
+            } 
+            else if (validarfecha() == false)
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Asegurese que la fecha sea 1 día mayor que la fecha actual";
             }
             else
             {
-                auxP--;
-                siguientePrestamo();
-                activarCampos(false);
-            }
-            eReserva reserva = new eReserva();
-            dReserva unR = new dReserva();
-            reserva.prestamoCR = prestamoActual;
-            try
-            {
-                reserva.numMesa = Convert.ToInt32(Interaction.InputBox("Ingrese N° de mesa"));
-                unR.altaReserva(reserva);
-            }
-            catch
-            {
-               MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                eReserva reserva = new eReserva();
+                dReserva unR = new dReserva();
+                reserva.prestamoCR = prestamoActual;
+                /* try
+                {
+                    reserva.numMesa = Convert.ToInt32(Interaction.InputBox("Ingrese N° de mesa", MessageBoxButtons.OKCancel , MessageBoxIcon.Question));
+                    unR.altaReserva(reserva);
+                }
+                catch
+                {
+                    MessageBox.Show("Valor incorrecto", "Alerta de seguridad", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                }*/
+
+                dPrestamoEquipo prestamo = new dPrestamoEquipo();
+
+                prestamoActual.fecha_solicitado = dtpSolicitado.Value;
+                prestamoActual.fecha_retiro = dtpRetiro.Value;
+                prestamoActual.fecha_devolucion = dtpDevolucion.Value;
+                prestamoActual.curso = cbxCurso.Text;
+                prestamoActual.ejercicio = cbxEjercicio.Text;
+                if ((cbxCurso.Text == "Tercero Bachillerato" && cbxEjercicio.Text == "Rodaje") || (cbxCurso.Text == "Segundo Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 3;
+                else if ((cbxCurso.Text == "Primero Tecnicatura" && cbxEjercicio.Text == "Rodaje")) prestamoActual.prioridad = 2;
+                else
+                {
+                    prestamoActual.prioridad = 1;
+                }
+                prestamoActual.equipoRodaje = txtEquipoRodaje.Text;
+                prestamoActual.locaciones = txtLocaciones.Text;
+                prestamoActual.nomDocente = txtNombreDocente.Text;
+                prestamoActual.apeDocente = txtApellidoDocente.Text;
+                prestamoActual.transporte = txtTransporte.Text;
+                prestamoActual.estadoP = estadoP.EnCurso.ToString();
+                prestamoActual._equipos = _equiposSel;
+
+                prestamo.modificarPrestamoEquipo(prestamoActual);
+                _prestamos = prestamo.listarPrestamoEquipoPendiente();
+
+                lblMensaje.ForeColor = Color.CornflowerBlue;
+                lblMensaje.Text = "Solicitud confirmada correctamente";
+
+                if (_prestamos.Count == 0)
+                {
+                    desactivarBotones();
+                    vaciarCampos();
+                    activarCampos(false);
+                }
+                else
+                {
+                    auxP--;
+                    siguientePrestamo();
+                    activarCampos(false);
+                }
+
+                prntDoc = new PrintDocument();
+                PrinterSettings ps = new PrinterSettings();
+                prntDoc.PrinterSettings = ps;
+                prntDoc.PrintPage += Imprimir;
+                PrintPreviewDialog ppd = new PrintPreviewDialog { Document = prntDoc };
+                ((Form)ppd).WindowState = FormWindowState.Maximized;
+                ppd.ShowDialog();
             }
         }
 
@@ -407,8 +428,8 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             dtpRetiro.Value = DateTime.Now;
             dtpDevolucion.Value = DateTime.Now;
             dtpSolicitado.Value = DateTime.Now;
-            cbxCurso.Text = "";
-            cbxEjercicio.Text = "";
+            cbxCurso.Items.Clear();
+            cbxEjercicio.Items.Clear();
             txtEquipoRodaje.Text = "";
             txtTransporte.Text = "";
             txtLocaciones.Text = "";
@@ -537,9 +558,16 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             e.Graphics.DrawString("Firma responsable", font, Brushes.Black, new RectangleF(495, 1030, 800, 30));
         }
 
-        private void lblMensaje_Click(object sender, EventArgs e)
+        private bool validarfecha()
         {
-
+            bool aux = false;
+            TimeSpan difDia = dtpRetiro.Value - DateTime.Now;
+            TimeSpan difReserva = dtpDevolucion.Value - dtpRetiro.Value;
+            if (difDia.Days >= 1 && difReserva.TotalHours > 0)
+            {
+                aux = true;
+            }
+            return aux;
         }
     }
 }

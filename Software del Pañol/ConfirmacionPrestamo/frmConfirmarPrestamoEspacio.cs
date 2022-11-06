@@ -62,7 +62,19 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            prestamoActual.fecha_devolucion = dtpDevolucion.Value;
+            if (cbxCurso.Text == "" ||  cbxEjercicio.Text == "" ||  txtNombreResponsable.Text == "" || txtApellidoResponsable.Text == "")
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Complete todos los campos";
+            }
+            else if (validarfecha() == false)
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Asegurese que la fecha sea 1 día mayor que la fecha actual";
+            }
+            else
+            {
+                prestamoActual.fecha_devolucion = dtpDevolucion.Value;
             prestamoActual.fecha_retiro = dtpRetiro.Value;
             prestamoActual.fecha_solicitado = DateTime.Now;
             prestamoActual.curso = cbxCurso.Text;
@@ -78,40 +90,43 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
 
             dEspacio unDE = new dEspacio();
 
-            if (unDE.buscarEspacio(prestamoActual.espacio).disponible == false)
-            {
-                lblMensaje.Text = "El espacio no está disponible";
-            }
-            else
-            {
-
-                prestamoActual.estadoP = estadoP.EnCurso.ToString();
-
-                dPrestamoEspacio unPE = new dPrestamoEspacio();
-                unPE.modificarPrestamoEspacio(prestamoActual);
-
-                unDE.modificarEspacio(prestamoActual.espacio);
-
-                _prestamo = unPE.listarPrestamoEspacioPendiente();
-
-                lblMensaje.Text = "Solicitud confirmada correctamente";
-
-                if (_prestamo.Count == 0)
+                if (unDE.buscarEspacio(prestamoActual.espacio).disponible == false)
                 {
-                    desactivarBotones();
-                    vaciarCampos();
-                    activarCampos(false);
+                    lblMensaje.ForeColor = Color.Red;
+                    lblMensaje.Text = "El espacio no está disponible";
                 }
                 else
                 {
-                    auxP--;
-                    siguientePrestamo();
-                    activarCampos(false);
-                }
 
-                eReserva reserva = new eReserva();
-                dReserva unR = new dReserva();
-                reserva.prestamoCR = prestamoActual;
+                    prestamoActual.estadoP = estadoP.EnCurso.ToString();
+
+                    dPrestamoEspacio unPE = new dPrestamoEspacio();
+                    unPE.modificarPrestamoEspacio(prestamoActual);
+
+                    unDE.modificarEspacio(prestamoActual.espacio);
+
+                    _prestamo = unPE.listarPrestamoEspacioPendiente();
+
+                    lblMensaje.ForeColor = Color.CornflowerBlue;
+                    lblMensaje.Text = "Solicitud confirmada correctamente";
+
+                    if (_prestamo.Count == 0)
+                    {
+                        desactivarBotones();
+                        vaciarCampos();
+                        activarCampos(false);
+                    }
+                    else
+                    {
+                        auxP--;
+                        siguientePrestamo();
+                        activarCampos(false);
+                    }
+
+                    eReserva reserva = new eReserva();
+                    dReserva unR = new dReserva();
+                    reserva.prestamoCR = prestamoActual;
+                }
             }
         }
 
@@ -129,6 +144,7 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
                 prestamo.bajaPrestamoEspacio(prestamoActual);
                 _prestamo = prestamo.listarPrestamoEspacio(estadoP.Pendiente);
 
+                lblMensaje.ForeColor = Color.Red;
                 lblMensaje.Text = "Solicitud eliminada correctamente";
 
                 if(_prestamo.Count == 0)
@@ -237,9 +253,9 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             dtpRetiro.Value = DateTime.Now;
             dtpDevolucion.Value = DateTime.Now;
             dtpSolicitado.Value = DateTime.Now;
-            cbxCurso.Text = "";
-            cbxEjercicio.Text = "";
-            cbxEspacio.SelectedItem = "";
+            cbxCurso.Items.Clear();
+            cbxEjercicio.Items.Clear();
+            cbxEspacio.Items.Clear();
         }
 
         public void mostrarPrestamoActual()
@@ -268,5 +284,18 @@ namespace Software_del_Pañol.ConfirmacionPrestamo
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
         }
+
+        private bool validarfecha()
+        {
+            bool aux = false;
+            TimeSpan difDia = dtpRetiro.Value - DateTime.Now;
+            TimeSpan difReserva = dtpDevolucion.Value - dtpRetiro.Value;
+            if (difDia.Days >= 1 && difReserva.TotalHours > 0)
+            {
+                aux = true;
+            }
+            return aux;
+        }
+
     }
 }

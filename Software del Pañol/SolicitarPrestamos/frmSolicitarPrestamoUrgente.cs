@@ -184,6 +184,11 @@ namespace Software_del_Pañol
                 lblMensaje.ForeColor = Color.Red;
                 lblMensaje.Text = "Complete todos los campos";
             }
+            else if (_equiposSel.Any() == false)
+            {
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Por favor seleccione algún equipo";
+            }
             else if (validarfecha() == false)
             {
                 lblMensaje.ForeColor = Color.Red;

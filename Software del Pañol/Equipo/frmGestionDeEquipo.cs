@@ -16,7 +16,8 @@ namespace Software_del_Pañol
 {
     public partial class frmGestionDeEquipo : Form
     {
-
+        public List<eEquipo> _equipos = new List<eEquipo>();
+        public List<eEquipo> _equiposSel = new List<eEquipo>();
         private List<eTipoDeEquipo> _tipos { get; set; }
 
         public frmGestionDeEquipo()
@@ -284,17 +285,22 @@ namespace Software_del_Pañol
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            DGVPrinter printer = new DGVPrinter();
+            frmPrincipal aux = (frmPrincipal)ActiveForm;
+            aux.abrirImpresionEquipo();
+            Close();
 
-            printer.Title = "Lista de equipos";
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = "PañolAudiovisual";//Footer
-            printer.FooterSpacing = 15;
-            printer.PrintPreviewNoDisplay(dgvEquipos);
 
+            /* DGVPrinter printer = new DGVPrinter();
+
+             printer.Title = "Lista de equipos";
+             printer.PageNumbers = true;
+             printer.PageNumberInHeader = false;
+             printer.PorportionalColumns = true;
+             printer.HeaderCellAlignment = StringAlignment.Near;
+             printer.Footer = "PañolAudiovisual";//Footer
+             printer.FooterSpacing = 15;
+             printer.PrintPreviewNoDisplay(dgvEquipos);
+             */
         }
 
 
