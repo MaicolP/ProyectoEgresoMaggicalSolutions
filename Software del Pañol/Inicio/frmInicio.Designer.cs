@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.fpnlContenido = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.pbxLinea = new System.Windows.Forms.PictureBox();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.pbxFlecha = new System.Windows.Forms.PictureBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.fpnlContenido.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,8 +59,21 @@
             this.pnlTitulo.Size = new System.Drawing.Size(885, 60);
             this.pnlTitulo.TabIndex = 0;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitulo.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(885, 60);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Bienvenido Administrador";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fpnlContenido
             // 
+            this.fpnlContenido.AutoScroll = true;
             this.fpnlContenido.BackColor = System.Drawing.Color.White;
             this.fpnlContenido.Controls.Add(this.panel1);
             this.fpnlContenido.Controls.Add(this.pnlNoti);
@@ -76,7 +89,7 @@
             this.panel1.Controls.Add(this.lblNom);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(882, 53);
+            this.panel1.Size = new System.Drawing.Size(870, 53);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox2
@@ -107,10 +120,9 @@
             this.pnlNoti.Controls.Add(this.pbxLinea);
             this.pnlNoti.Controls.Add(this.lblMensaje);
             this.pnlNoti.Controls.Add(this.pbxFlecha);
-            this.pnlNoti.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNoti.Location = new System.Drawing.Point(3, 62);
             this.pnlNoti.Name = "pnlNoti";
-            this.pnlNoti.Size = new System.Drawing.Size(882, 54);
+            this.pnlNoti.Size = new System.Drawing.Size(879, 54);
             this.pnlNoti.TabIndex = 0;
             this.pnlNoti.Visible = false;
             // 
@@ -119,7 +131,7 @@
             this.btnFinalizar.BackColor = System.Drawing.Color.Red;
             this.btnFinalizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(809, 20);
+            this.btnFinalizar.Location = new System.Drawing.Point(806, 24);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(70, 27);
             this.btnFinalizar.TabIndex = 56;
@@ -154,18 +166,6 @@
             this.pbxFlecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxFlecha.TabIndex = 1;
             this.pbxFlecha.TabStop = false;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitulo.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(885, 60);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Bienvenido Administrador";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmInicio
             // 

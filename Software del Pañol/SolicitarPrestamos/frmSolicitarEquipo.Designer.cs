@@ -96,7 +96,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(902, 60);
+            this.pnlTitulo.Size = new System.Drawing.Size(919, 60);
             this.pnlTitulo.TabIndex = 0;
             // 
             // lblTitulo
@@ -106,7 +106,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(902, 60);
+            this.lblTitulo.Size = new System.Drawing.Size(919, 60);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Formulario de solicitud de equipos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,7 +181,7 @@
             this.dgvEquiposSel.RowHeadersVisible = false;
             this.dgvEquiposSel.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquiposSel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 226);
+            this.dgvEquiposSel.Size = new System.Drawing.Size(383, 294);
             this.dgvEquiposSel.TabIndex = 106;
             // 
             // id_equipoSel
@@ -312,7 +312,7 @@
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(383, 226);
+            this.dgvEquipos.Size = new System.Drawing.Size(383, 294);
             this.dgvEquipos.TabIndex = 105;
             // 
             // id_equipo
@@ -632,7 +632,7 @@
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(319, 740);
+            this.lblMensaje.Location = new System.Drawing.Point(333, 774);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(255, 36);
             this.lblMensaje.TabIndex = 112;
@@ -643,7 +643,7 @@
             this.btnSolicitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(124)))), ((int)(((byte)(234)))));
             this.btnSolicitar.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSolicitar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSolicitar.Location = new System.Drawing.Point(322, 779);
+            this.btnSolicitar.Location = new System.Drawing.Point(336, 813);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(252, 56);
             this.btnSolicitar.TabIndex = 111;
@@ -723,7 +723,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(919, 749);
+            this.ClientSize = new System.Drawing.Size(919, 891);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvEquiposSel);
             this.Controls.Add(this.dgvEquipos);

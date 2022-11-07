@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eAsisTec.cs" />
+    <Compile Include="eLibroVirtual.cs" />
     <Compile Include="eResponsable.cs" />
     <Compile Include="eEquipo.cs" />
     <Compile Include="eEspacio.cs" />

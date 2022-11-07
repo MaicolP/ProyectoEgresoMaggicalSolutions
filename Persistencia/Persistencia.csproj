@@ -45,6 +45,7 @@
     <Compile Include="clsPersistencia.cs" />
     <Compile Include="pAsisTec.cs" />
     <Compile Include="pEquipo.cs" />
+    <Compile Include="pLibroVirtual.cs" />
     <Compile Include="pPrestamo.cs" />
     <Compile Include="pPrestamoCR.cs" />
     <Compile Include="pPrestamoEquipo.cs" />

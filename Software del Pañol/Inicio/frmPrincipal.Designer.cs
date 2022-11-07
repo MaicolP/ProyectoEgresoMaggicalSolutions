@@ -352,6 +352,7 @@
             this.librosVirtualesToolStripMenuItem.Name = "librosVirtualesToolStripMenuItem";
             this.librosVirtualesToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.librosVirtualesToolStripMenuItem.Text = "Libros Virtuales";
+            this.librosVirtualesToolStripMenuItem.Click += new System.EventHandler(this.librosVirtualesToolStripMenuItem_Click);
             // 
             // prestamosConReservaToolStripMenuItem
             // 

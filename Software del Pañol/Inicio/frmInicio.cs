@@ -147,7 +147,7 @@ namespace Software_del_Pañol
             Dock = System.Windows.Forms.DockStyle.Top;
             Location = new System.Drawing.Point(3, 62);
             Name = "pnlNoti";
-            Size = new System.Drawing.Size(882, 70);
+            Size = new System.Drawing.Size(867, 70);
             TabIndex = 0;
             
             if(tipo == tipoNoti.ATRASADOS)
@@ -158,7 +158,7 @@ namespace Software_del_Pañol
                 btnFinalizar.BackColor = System.Drawing.Color.Red;
                 btnFinalizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 btnFinalizar.ForeColor = System.Drawing.Color.White;
-                btnFinalizar.Location = new System.Drawing.Point(809, 20);
+                btnFinalizar.Location = new System.Drawing.Point(795, 20);
                 btnFinalizar.Name = "btnFinalizar";
                 btnFinalizar.Size = new System.Drawing.Size(70, 27);
                 btnFinalizar.TabIndex = 56;

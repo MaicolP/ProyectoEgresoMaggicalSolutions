@@ -17,6 +17,7 @@ using Software_del_Pañol.GestionDePrestamos;
 using Software_del_Pañol.PrestamosDirectos;
 using Software_del_Pañol.Calendario;
 using Software_del_Pañol.Equipo;
+using Software_del_Pañol.Libros;
 
 namespace Software_del_Pañol
 {
@@ -204,6 +205,11 @@ namespace Software_del_Pañol
         private void librosFísicosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cambiarFormHijo(new frmGestionDeLibrosFisico());
+        }
+
+        private void librosVirtualesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cambiarFormHijo(new frmGestionDeLibroVirtual());
         }
 
         #endregion

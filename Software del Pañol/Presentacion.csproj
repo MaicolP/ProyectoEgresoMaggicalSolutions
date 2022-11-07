@@ -156,6 +156,12 @@
     <Compile Include="Libros\frmGestionDeLibrosFisico.Designer.cs">
       <DependentUpon>frmGestionDeLibrosFisico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Libros\frmGestionDeLibroVirtual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Libros\frmGestionDeLibroVirtual.Designer.cs">
+      <DependentUpon>frmGestionDeLibroVirtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrestamosDirectos\frmEquiposPUrgente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libros\frmGestionDeLibroVirtual.resx">
+      <DependentUpon>frmGestionDeLibroVirtual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrestamosDirectos\frmEquiposPUrgente.resx">
       <DependentUpon>frmEquiposPUrgente.cs</DependentUpon>
