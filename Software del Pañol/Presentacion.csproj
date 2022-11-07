@@ -53,6 +53,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asistenteInstalador.cs" />
     <Compile Include="Calendario\contenedorBlanco.cs">
       <SubType>UserControl</SubType>
     </Compile>

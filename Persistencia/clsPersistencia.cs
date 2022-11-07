@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Persistencia
 {
@@ -17,7 +18,11 @@ namespace Persistencia
         {
             try
             {
-                miConexion = "server=localhost; uid=root ; password= ; database=bd_audiovisual;";
+                // Sin utilizar instalador :
+                // miConexion = "server=localhost; uid=root ; password= ; database=bd_audiovisual;";
+
+                // Utilizando el instalador :
+                miConexion = "server=" + File.ReadAllLines(@"C:\Program Files (x86)\Maggical Solutions\Software Pañol\data.txt")[0] + "; uid=root ; password= ; database=bd_audiovisual;";
 
                 con = new MySqlConnection(miConexion);
                 con.Open();
